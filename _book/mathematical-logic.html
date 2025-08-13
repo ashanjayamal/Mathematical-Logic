@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Mathematical logic | Mathematical Logic</title>
+  <meta name="description" content="<p>This book introduces foundational concepts in mathematical logic.
+It uses the HTML output format <code>bookdown::gitbook</code>,
+as specified in <code>_output.yml</code>.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Mathematical logic | Mathematical Logic" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This book introduces foundational concepts in mathematical logic.
+It uses the HTML output format <code>bookdown::gitbook</code>,
+as specified in <code>_output.yml</code>.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Mathematical logic | Mathematical Logic" />
+  
+  <meta name="twitter:description" content="<p>This book introduces foundational concepts in mathematical logic.
+It uses the HTML output format <code>bookdown::gitbook</code>,
+as specified in <code>_output.yml</code>.</p>" />
+  
+
+<meta name="author" content="Ashan De Silva" />
+
+
+<meta name="date" content="2025-08-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mathematical Logic</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="mathematical-logic.html"><a href="mathematical-logic.html"><i class="fa fa-check"></i><b>2</b> Mathematical logic</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#propositional-logic-logical-operators"><i class="fa fa-check"></i><b>2.1</b> Propositional logic &amp; Logical operators</a></li>
+<li class="chapter" data-level="2.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#statements-and-truth-values"><i class="fa fa-check"></i><b>2.2</b> Statements and Truth Values</a></li>
+<li class="chapter" data-level="2.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#more-about-propositions"><i class="fa fa-check"></i><b>2.3</b> More About Propositions</a></li>
+<li class="chapter" data-level="2.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-operators-connectives"><i class="fa fa-check"></i><b>2.4</b> Logical Operators / Connectives</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-table"><i class="fa fa-check"></i><b>2.4.1</b> Truth Table</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-operators"><i class="fa fa-check"></i><b>2.5</b> Logical Operators</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-negation-operator-simneg"><i class="fa fa-check"></i><b>2.5.1</b> The Negation Operator (<span class="math inline">\(\sim,\neg\)</span>)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-conjunction-operator-and"><i class="fa fa-check"></i><b>2.5.2</b> The Conjunction Operator — “and”</a></li>
+<li class="chapter" data-level="2.5.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-disjunction-operator-or"><i class="fa fa-check"></i><b>2.5.3</b> The Disjunction Operator — “or”</a></li>
+<li class="chapter" data-level="2.5.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-exclusive-or-operator-either-or"><i class="fa fa-check"></i><b>2.5.4</b> The Exclusive OR Operator — “either or”</a></li>
+<li class="chapter" data-level="2.5.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#implication-operator-implies"><i class="fa fa-check"></i><b>2.5.5</b> Implication Operator — “implies”</a></li>
+<li class="chapter" data-level="2.5.6" data-path="mathematical-logic.html"><a href="mathematical-logic.html#biconditional-logic-p-iff-q"><i class="fa fa-check"></i><b>2.5.6</b> Biconditional Logic: <span class="math inline">\(p \iff q\)</span></a></li>
+<li class="chapter" data-level="2.5.7" data-path="mathematical-logic.html"><a href="mathematical-logic.html#terminology"><i class="fa fa-check"></i><b>2.5.7</b> Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-tables-for-compound-propositions"><i class="fa fa-check"></i><b>2.6</b> Truth Tables for Compound Propositions</a></li>
+<li class="chapter" data-level="2.7" data-path="mathematical-logic.html"><a href="mathematical-logic.html#precedence-of-logical-operations"><i class="fa fa-check"></i><b>2.7</b> Precedence of Logical Operations</a></li>
+<li class="chapter" data-level="2.8" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-tables-and-logical-analysis"><i class="fa fa-check"></i><b>2.8</b> Truth Tables and Logical Analysis</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#constructing-a-truth-table"><i class="fa fa-check"></i><b>2.8.1</b> Constructing a Truth Table</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="mathematical-logic.html"><a href="mathematical-logic.html#tautologies-and-contradictions"><i class="fa fa-check"></i><b>2.9</b> Tautologies and Contradictions</a></li>
+<li class="chapter" data-level="2.10" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-equivalence"><i class="fa fa-check"></i><b>2.10</b> Logical Equivalence</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#useful-logical-equivalences"><i class="fa fa-check"></i><b>2.10.1</b> Useful Logical Equivalences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-algebra-of-propositions"><i class="fa fa-check"></i><b>2.11</b> The Algebra of Propositions</a></li>
+<li class="chapter" data-level="2.12" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-algebra-of-propositions-1"><i class="fa fa-check"></i><b>2.12</b> The Algebra of Propositions</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-laws-and-their-equivalences"><i class="fa fa-check"></i><b>2.12.1</b> Logical Laws and Their Equivalences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="mathematical-logic.html"><a href="mathematical-logic.html#predicate-logic-and-quantifiers"><i class="fa fa-check"></i><b>2.13</b> Predicate Logic and Quantifiers</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#predicates"><i class="fa fa-check"></i><b>2.13.1</b> Predicates</a></li>
+<li class="chapter" data-level="2.13.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#converting-predicates-to-propositions"><i class="fa fa-check"></i><b>2.13.2</b> Converting Predicates to Propositions</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Property of Ashan De Silva</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematical Logic</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mathematical-logic" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Mathematical logic<a href="mathematical-logic.html#mathematical-logic" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Mathematical logic is the branch of mathematics that studies the principles and methods of formal reasoning. It is based on symbolic languages that can express statements and arguments in a precise and unambiguous way.</p>
+<div id="propositional-logic-logical-operators" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Propositional logic &amp; Logical operators<a href="mathematical-logic.html#propositional-logic-logical-operators" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Propositional logic is a branch of mathematical logic that studies the logical relationships between propositions, which are statements that can be either true or false.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 2.1  (Proposition (Statement)) </strong></span>roposition (Statement) is a declarative sentence that is either true (T) or false (F), but not both.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 2.1  </strong></span></p>
+<ol style="list-style-type: lower-roman">
+<li>A square has all its sides equal.</li>
+<li>Every Odd number is not divisible by 2.</li>
+<li><span class="math inline">\(2 &lt; 3\)</span>.</li>
+<li><span class="math inline">\(\sqrt{2}\not\in \mathbb{Q}\)</span>.</li>
+<li><span class="math inline">\(\mathbb{Z}\subseteq \mathbb{Q}\)</span>.</li>
+<li>The set <span class="math inline">\(\{10, 20, 30\}\)</span> has three elements.</li>
+</ol>
+<p>They are all true.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.2  </strong></span></p>
+<ol style="list-style-type: lower-roman">
+<li>Every rectangle is a square.</li>
+<li><span class="math inline">\((2 +4)^2 = 2^2 4^2\)</span>.</li>
+<li><span class="math inline">\(\sqrt{2}\not\in\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\mathbb{R} \subseteq \mathbb{Q}\)</span>.</li>
+<li><span class="math inline">\(\{10, 11, 12\} \cap \mathbb{N}=\emptyset\)</span></li>
+</ol>
+<p>They are all false.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-1" class="remark"><em>Remark</em>. </span>No sentence can be called a statement if</p>
+<ul>
+<li>It is a question.</li>
+<li>It is an order or request.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 2.3  </strong></span></p>
+<ul>
+<li>“How old are you?” cannot be assigned true or false (In fact, it is a
+question). So, it is not a statement.</li>
+<li>“Close the door” cannot be assigned u-ue or false (Infect, it is a
+command). So, it cannot be called a statement.</li>
+<li>“x is a natural number” depends on the value of x. So, it is not
+considered as a statement. However, often it’s referred to as an
+open statement.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 2.4  </strong></span></p>
+<table>
+<colgroup>
+<col width="42%" />
+<col width="57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>NOT a statement</strong></th>
+<th><strong>Statement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Add <span class="math inline">\(5\)</span> to both sides.</td>
+<td>Adding <span class="math inline">\(5\)</span> to both sides of <span class="math inline">\(x − 5 = 37\)</span> gives <span class="math inline">\(x = 42\)</span>.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{Z}\)</span></td>
+<td><span class="math inline">\(42 \in \mathbb{Z}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(42\)</span></td>
+<td>42 is not a number.</td>
+</tr>
+<tr class="even">
+<td>What is the solution of 2x = 84?</td>
+<td>The solution of 2x = 84 is 42.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="statements-and-truth-values" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Statements and Truth Values<a href="mathematical-logic.html#statements-and-truth-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Note:</strong> The <strong>truth (T)</strong> or <strong>falsity (F)</strong> of a statement is called its <strong>truth value</strong>.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 2.2  </strong></span>A statement is called <strong>simple</strong> (or <em>atomic</em>) if it cannot be broken down into two or more statements.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Example 2.5  </strong></span></p>
+<ul>
+<li><span class="math inline">\(2\)</span> is an even number.</li>
+<li>A square has all its sides equal.</li>
+<li><span class="math inline">\(7\)</span> is an odd number.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definition 2.3  </strong></span>A <strong>compound statement</strong> is one which is made up of two or more simple statements.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.6  </strong></span></p>
+<ul>
+<li>“<span class="math inline">\(7\)</span> is both an odd and prime number” can be broken into two statements:
+<ul>
+<li>“<span class="math inline">\(7\)</span> is an odd number.”</li>
+<li>“<span class="math inline">\(7\)</span> is a prime number.”<br />
+</li>
+</ul></li>
+<li>So it is a compound statement.</li>
+</ul>
+</div>
+<p><strong>Note:</strong> The simple statements which constitute a compound statement are called <strong>component statements</strong>.</p>
+</div>
+<div id="more-about-propositions" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> More About Propositions<a href="mathematical-logic.html#more-about-propositions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>We use letters to denote propositions, such as <span class="math inline">\(p, q, r, s\)</span>.</li>
+<li>The <strong>truth value</strong> of a proposition is denoted as:
+<ul>
+<li><span class="math inline">\(T\)</span> for <strong>true</strong></li>
+<li><span class="math inline">\(F\)</span> for <strong>false</strong></li>
+</ul></li>
+</ul>
+<p>Using these notations, we can form new (compound) propositions from known propositions.<br />
+This area of logic is known as <strong>propositional calculus</strong> or <strong>propositional logic</strong>.</p>
+<blockquote>
+<p><em>Note:</em> Calculus here refers to the manipulation or computation with symbols.</p>
+</blockquote>
+<div class="example">
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 2.7  </strong></span>Let:
+- <span class="math inline">\(p\)</span>: 7 is an odd number.
+- <span class="math inline">\(q\)</span>: 7 is a prime number.
+- <span class="math inline">\(r\)</span>: <span class="math inline">\(5 &gt; 11\)</span></p>
+</div>
+</div>
+<div id="logical-operators-connectives" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Logical Operators / Connectives<a href="mathematical-logic.html#logical-operators-connectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>A <strong>logical operator</strong> is a rule defined by a <strong>truth table</strong>.</li>
+</ul>
+<div id="truth-table" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Truth Table<a href="mathematical-logic.html#truth-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A truth table shows the relationship between the truth values of propositions.<br />
+It is useful for:
+- Visually displaying how a logical operator works.
+- Determining the truth value of a compound proposition based on its component propositions.</p>
+</div>
+</div>
+<div id="logical-operators" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Logical Operators<a href="mathematical-logic.html#logical-operators" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here are some important logical operators:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>Operator</strong></th>
+<th align="center"><strong>Handle</strong></th>
+<th align="center"><strong>Notation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Negation</td>
+<td align="center">not</td>
+<td align="center"><span class="math inline">\(\sim ,\neg\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Conjunction</td>
+<td align="center">and</td>
+<td align="center"><span class="math inline">\(\land\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Disjunction</td>
+<td align="center">or</td>
+<td align="center"><span class="math inline">\(\lor\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Exclusive-or</td>
+<td align="center">xor</td>
+<td align="center"><span class="math inline">\(\oplus\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Implication</td>
+<td align="center">implies</td>
+<td align="center"><span class="math inline">\(\rightarrow\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Biconditional</td>
+<td align="center">if and only if (iff)</td>
+<td align="center"><span class="math inline">\(\leftrightarrow\)</span></td>
+</tr>
+</tbody>
+</table>
+<div id="the-negation-operator-simneg" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> The Negation Operator (<span class="math inline">\(\sim,\neg\)</span>)<a href="mathematical-logic.html#the-negation-operator-simneg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given any proposition <span class="math inline">\(p\)</span>, we can form a new proposition:<br />
+<strong>“It is not true that <span class="math inline">\(p\)</span>”</strong>, which is called the <strong>negation</strong> of <span class="math inline">\(p\)</span>.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 2.8  </strong></span>Let <span class="math inline">\(p\)</span>: “The number 2 is even.”<br />
+This statement is <strong>true</strong>.</p>
+<p>Negation:<br />
+<span class="math inline">\(\sim p\)</span>: “It is not true that the number 2 is even.”<br />
+This new statement is <strong>false</strong>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-13" class="definition"><strong>Definition 2.4  </strong></span>Let <span class="math inline">\(p\)</span> be a proposition.<br />
+The statement “<span class="math inline">\(p\)</span> is not the case” is another proposition called the <strong>negation</strong> of <span class="math inline">\(p\)</span>.<br />
+It is denoted <span class="math inline">\(\sim p\)</span> and read as “not <span class="math inline">\(p\)</span>”.</p>
+</div>
+<div id="truth-table-for-negation" class="section level4 hasAnchor" number="2.5.1.1">
+<h4><span class="header-section-number">2.5.1.1</span> Truth Table for Negation<a href="mathematical-logic.html#truth-table-for-negation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(\neg p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="alternate-expressions-for-negation" class="section level4 hasAnchor" number="2.5.1.2">
+<h4><span class="header-section-number">2.5.1.2</span> Alternate Expressions for Negation<a href="mathematical-logic.html#alternate-expressions-for-negation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="example">
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 2.9  </strong></span>Let <span class="math inline">\(P\)</span>: “The number 2 is even.”</p>
+<p>Then <span class="math inline">\(\sim P\)</span> can be expressed as:</p>
+<ul>
+<li>“It’s not true that the number 2 is even.”</li>
+<li>“It is false that the number 2 is even.”</li>
+<li>“The number 2 is not even.”</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 2.10  </strong></span>Let:
+- <span class="math inline">\(p\)</span>: “This book is interesting.”</p>
+<p>Then the negation <span class="math inline">\(\lnot p\)</span> (also written as <span class="math inline">\(\sim p\)</span>) can be read as:</p>
+<ol style="list-style-type: decimal">
+<li>“This book is not interesting.”</li>
+<li>“This book is uninteresting.”</li>
+<li>“It is not the case that this book is interesting.”</li>
+</ol>
+</div>
+<p><strong>Note</strong>:
+The symbol <span class="math inline">\(\lnot\)</span> is called the <strong>negation operator</strong>.<br />
+It operates on a single logical proposition by <strong>complementing its truth value</strong>.<br />
+For this reason, it is also called the <strong>logical complement</strong>.</p>
+<p>We now introduce logical operators that take <strong>two existing propositions</strong> and form a <strong>new compound proposition</strong>.</p>
+<p>These operators are known as <strong>logical connectives</strong>.</p>
+</div>
+</div>
+<div id="the-conjunction-operator-and" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> The Conjunction Operator — “and”<a href="mathematical-logic.html#the-conjunction-operator-and" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The word <strong>“and”</strong> can be used to combine two statements to form a new statement.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-16" class="example"><strong>Example 2.11  </strong></span>Let:</p>
+<ul>
+<li><span class="math inline">\(P\)</span>: The number 2 is even.</li>
+<li><span class="math inline">\(Q\)</span>: The number 3 is odd.</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li><span class="math inline">\(R_1\)</span>: “The number 2 is even and the number 3 is odd.”<br />
+This is a <strong>true</strong> statement because both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are true.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 2.12  </strong></span></p>
+<ul>
+<li><span class="math inline">\(R_2\)</span>: “The number 1 is even and the number 3 is odd.” → <strong>False</strong></li>
+<li><span class="math inline">\(R_3\)</span>: “The number 2 is even and the number 4 is odd.” → <strong>False</strong></li>
+<li><span class="math inline">\(R_4\)</span>: “The number 3 is even and the number 2 is odd.” → <strong>False</strong></li>
+</ul>
+</div>
+<div id="symbolic-notation" class="section level4 hasAnchor" number="2.5.2.1">
+<h4><span class="header-section-number">2.5.2.1</span> Symbolic Notation:<a href="mathematical-logic.html#symbolic-notation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We use the symbol <span class="math inline">\(\land\)</span> to represent “and”.<br />
+So, if <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are propositions, then <span class="math inline">\(P \land Q\)</span> means “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>”.</p>
+<ul>
+<li><span class="math inline">\(P \land Q\)</span> is <strong>true</strong> only if both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are true.</li>
+<li>Otherwise, <span class="math inline">\(P \land Q\)</span> is <strong>false</strong>.</li>
+</ul>
+<hr />
+</div>
+<div id="truth-table-for-conjunction" class="section level4 hasAnchor" number="2.5.2.2">
+<h4><span class="header-section-number">2.5.2.2</span> Truth Table for Conjunction<a href="mathematical-logic.html#truth-table-for-conjunction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(P\)</span></th>
+<th align="center"><span class="math inline">\(Q\)</span></th>
+<th align="center"><span class="math inline">\(P \land Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>In this table, <span class="math inline">\(T\)</span> stands for “True” and <span class="math inline">\(F\)</span> stands for “False”.<br />
+These are called <strong>truth values</strong>.</p>
+</blockquote>
+</div>
+</div>
+<div id="the-disjunction-operator-or" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> The Disjunction Operator — “or”<a href="mathematical-logic.html#the-disjunction-operator-or" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> be propositions.<br />
+The proposition “<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>” is called the <strong>disjunction</strong> of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, denoted by <span class="math inline">\(p \lor q\)</span>.</p>
+<ul>
+<li><span class="math inline">\(p \lor q\)</span> is <strong>false</strong> only when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are false.</li>
+<li>It is <strong>true</strong> otherwise.</li>
+</ul>
+<div id="truth-table-for-disjunction" class="section level4 hasAnchor" number="2.5.3.1">
+<h4><span class="header-section-number">2.5.3.1</span> Truth Table for Disjunction<a href="mathematical-logic.html#truth-table-for-disjunction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(p \lor q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>This is an <strong>inclusive or</strong>: true if either or both are true.</p>
+</blockquote>
+<div class="example">
+<p><span id="exm:unnamed-chunk-18" class="example"><strong>Example 2.13  </strong></span>Let:
+- <span class="math inline">\(S_1\)</span>: “The number 2 is even or the number 3 is odd.” → <strong>True</strong>
+- <span class="math inline">\(S_2\)</span>: “The number 1 is even or the number 3 is odd.” → <strong>True</strong>
+- <span class="math inline">\(S_3\)</span>: “The number 2 is even or the number 4 is odd.” → <strong>True</strong>
+- <span class="math inline">\(S_4\)</span>: “The number 3 is even or the number 2 is odd.” → <strong>False</strong></p>
+</div>
+</div>
+</div>
+<div id="the-exclusive-or-operator-either-or" class="section level3 hasAnchor" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> The Exclusive OR Operator — “either or”<a href="mathematical-logic.html#the-exclusive-or-operator-either-or" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> be propositions.<br />
+The <strong>exclusive or</strong> of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, denoted <span class="math inline">\(p \oplus q\)</span>, is:</p>
+<ul>
+<li><strong>True</strong> when exactly one of <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> is true.</li>
+<li><strong>False</strong> when both are true or both are false.</li>
+</ul>
+<div id="truth-table-for-exclusive-or" class="section level4 hasAnchor" number="2.5.4.1">
+<h4><span class="header-section-number">2.5.4.1</span> Truth Table for Exclusive OR<a href="mathematical-logic.html#truth-table-for-exclusive-or" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \oplus q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>“Either <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> is true, but not both.”</p>
+</blockquote>
+<p>Let <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> be propositions.<br />
+The <strong>exclusive or</strong> of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, denoted <span class="math inline">\(p \oplus q\)</span>, is:</p>
+<ul>
+<li><strong>True</strong> when exactly one of <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> is true.</li>
+<li><strong>False</strong> when both are true or both are false.</li>
+</ul>
+<div class="example">
+<p><span id="exm:unnamed-chunk-19" class="example"><strong>Example 2.14  </strong></span>Let:
+- <span class="math inline">\(p\)</span>: This book is interesting.
+- <span class="math inline">\(q\)</span>: I am staying at home.</p>
+<p>Then:
+- <span class="math inline">\(p \oplus q\)</span>: “Either this book is interesting, or I am staying at home, but not both.”</p>
+</div>
+</div>
+<div id="truth-table-for-exclusive-or-1" class="section level4 hasAnchor" number="2.5.4.2">
+<h4><span class="header-section-number">2.5.4.2</span> Truth Table for Exclusive OR<a href="mathematical-logic.html#truth-table-for-exclusive-or-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \oplus q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(p\)</span>: <span class="math inline">\(3 &gt; 1\)</span> → T<br />
+</li>
+<li><span class="math inline">\(q\)</span>: <span class="math inline">\(0 = 1\)</span> → F<br />
+</li>
+<li><span class="math inline">\(r\)</span>: <span class="math inline">\(2 = 1\)</span> → F</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li><span class="math inline">\(p \oplus q\)</span>: T<br />
+</li>
+<li><span class="math inline">\(p \oplus r\)</span>: T ⊕ F = T</li>
+</ul>
+</div>
+</div>
+<div id="implication-operator-implies" class="section level3 hasAnchor" number="2.5.5">
+<h3><span class="header-section-number">2.5.5</span> Implication Operator — “implies”<a href="mathematical-logic.html#implication-operator-implies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> be propositions.<br />
+The implication “If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span>” is written as <span class="math inline">\(P \Rightarrow Q\)</span>.</p>
+<ul>
+<li>This is called a <strong>conditional statement</strong>.</li>
+<li>It is <strong>false</strong> only when <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false.</li>
+<li>Otherwise, it is <strong>true</strong>.</li>
+</ul>
+<div class="example">
+<p><span id="exm:unnamed-chunk-20" class="example"><strong>Example 2.15  </strong></span>Let:</p>
+<ul>
+<li><span class="math inline">\(P\)</span>: The integer <span class="math inline">\(a\)</span> is a multiple of 6.</li>
+<li><span class="math inline">\(Q\)</span>: The integer <span class="math inline">\(a\)</span> is divisible by 2.</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li><span class="math inline">\(R\)</span>: “If <span class="math inline">\(a\)</span> is a multiple of 6, then <span class="math inline">\(a\)</span> is divisible by 2.”<br />
+This is a <strong>true</strong> statement.</li>
+</ul>
+<p>In general, given any two statements <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> whatsoever, we can form the new statement This is written symbolically as <span class="math inline">\(P \rightarrow Q\)</span>, which we read as or </p>
+<p>Like the symbols <span class="math inline">\(\land\)</span> (and) and <span class="math inline">\(\lor\)</span> (or), the symbol <span class="math inline">\(\rightarrow\)</span> has a very specific meaning. When we assert that the statement <span class="math inline">\(P \rightarrow Q\)</span> is true, we mean that if <span class="math inline">\(P\)</span> is true, then <span class="math inline">\(Q\)</span> must also be true. In other words, the condition of <span class="math inline">\(P\)</span> being true forces <span class="math inline">\(Q\)</span> to be true.</p>
+<p>A statement of the form <span class="math inline">\(P \rightarrow Q\)</span> is called a because it means <span class="math inline">\(Q\)</span> will be true under the condition that <span class="math inline">\(P\)</span> is true.</p>
+</div>
+<p>Think of <span class="math inline">\(p \rightarrow q\)</span> as a promise: whenever <span class="math inline">\(p\)</span> is true, <span class="math inline">\(q\)</span> will be true also.<br />
+There is only one way this promise can be broken—namely, if <span class="math inline">\(p\)</span> is true but <span class="math inline">\(q\)</span> is false.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-21" class="definition"><strong>Definition 2.5  </strong></span>Let <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> be propositions. The implication <span class="math inline">\(p \rightarrow q\)</span> is:</p>
+<ul>
+<li><strong>False</strong> when <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false<br />
+</li>
+<li><strong>True</strong> otherwise</li>
+</ul>
+<p>In this implication:
+- <span class="math inline">\(p\)</span> is called the <strong>hypothesis</strong> (or antecedent or premise)
+- <span class="math inline">\(q\)</span> is called the <strong>conclusion</strong> (or consequence)</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-22" class="example"><strong>Example 2.16  </strong></span>If <span class="math inline">\(\underbrace{\text{a polygon is a triangle,}}_\text{hypothesis,p}
+then
+\underbrace{ \text{ the sum of its angle measures is 180°.}}_\text{conclusion,q}\)</span></p>
+</div>
+<div id="ways-to-express-an-implication" class="section level4 hasAnchor" number="2.5.5.1">
+<h4><span class="header-section-number">2.5.5.1</span> Ways to express an implication<a href="mathematical-logic.html#ways-to-express-an-implication" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><span class="math inline">\(p \implies q\)</span></li>
+<li>“If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>”</li>
+<li>“If <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>”</li>
+<li>“<span class="math inline">\(p\)</span> is sufficient for <span class="math inline">\(q\)</span>”</li>
+<li>“<span class="math inline">\(q\)</span> if <span class="math inline">\(p\)</span>”</li>
+<li>“<span class="math inline">\(q\)</span> when <span class="math inline">\(p\)</span>”</li>
+<li>“<span class="math inline">\(p\)</span> implies <span class="math inline">\(q\)</span>”</li>
+<li>“<span class="math inline">\(p\)</span> only if <span class="math inline">\(q\)</span>”</li>
+<li>“<span class="math inline">\(q\)</span> is necessary for <span class="math inline">\(p\)</span>”</li>
+<li>“<span class="math inline">\(q\)</span> follows from <span class="math inline">\(p\)</span>”</li>
+</ul>
+</div>
+<div id="truth-table-for-p-implies-q" class="section level4 hasAnchor" number="2.5.5.2">
+<h4><span class="header-section-number">2.5.5.2</span> Truth Table for <span class="math inline">\(p \implies q\)</span><a href="mathematical-logic.html#truth-table-for-p-implies-q" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \implies q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center"><strong>F</strong></td>
+</tr>
+<tr class="odd">
+<td align="center"><span style="color:red">F</span></td>
+<td align="center"><span style="color:red">T</span></td>
+<td align="center"><span style="color:red">T</span></td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+</tbody>
+</table>
+<div class="remark">
+<p><span id="unlabeled-div-2" class="remark"><em>Remark</em>. </span></p>
+<ul>
+<li><span class="math inline">\(p \rightarrow q\)</span> is <strong><span style="color:red"> false</span> only when</strong> <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false.</li>
+<li><span class="math inline">\(p \rightarrow q\)</span> can be <strong>true even if</strong> <span class="math inline">\(p\)</span> is false.</li>
+<li>The truth of <span class="math inline">\(p \rightarrow q\)</span> does <strong>not require</strong> that either <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> is true.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-24" class="example"><strong>Example 2.17  </strong></span>Consider the statement:<br />
+<strong>“Employee pays taxes only if his income is more than 3 million.”</strong></p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(p\)</span>: Employee pays taxes<br />
+</li>
+<li><span class="math inline">\(q\)</span>: His income is more than 3 million</li>
+</ul>
+<p>Symbolically:</p>
+<p><span class="math display">\[
+p \implies q
+\]</span></p>
+<p>In other words:</p>
+<ul>
+<li>If employee pays taxes, then his income is more than 3 million.</li>
+<li>Employee’s income is more than 3 million, if he pays taxes.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 2.18  </strong></span>Consider the statement:<br />
+<em>“If <span class="math inline">\(n^2\)</span> is even, then <span class="math inline">\(n\)</span> is even.”</em></p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(p\)</span>: <span class="math inline">\(n^2\)</span> is even<br />
+</li>
+<li><span class="math inline">\(q\)</span>: <span class="math inline">\(n\)</span> is even</li>
+</ul>
+<p>Symbolically:</p>
+<p><span class="math display">\[
+p \implies q
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="biconditional-logic-p-iff-q" class="section level3 hasAnchor" number="2.5.6">
+<h3><span class="header-section-number">2.5.6</span> Biconditional Logic: <span class="math inline">\(p \iff q\)</span><a href="mathematical-logic.html#biconditional-logic-p-iff-q" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 2.6  </strong></span>Let <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> be propositions. The biconditional <span class="math inline">\(p \iff q\)</span> is:</p>
+<ul>
+<li><strong>True</strong> when <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have the same truth value<br />
+</li>
+<li><strong>False</strong> otherwise</li>
+</ul>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-3" class="remark"><em>Remark</em>. </span>The statement <span class="math inline">\(p \iff q\)</span> is true precisely when both <span class="math inline">\(p \Rightarrow q\)</span> and <span class="math inline">\(q \Rightarrow p\)</span> are true.<br />
+This is why we say:</p>
+<ul>
+<li>“<span class="math inline">\(p\)</span> if and only if <span class="math inline">\(q\)</span>”<br />
+</li>
+<li><span class="math inline">\(p \iff q \equiv (p \Rightarrow q) \land (q \Rightarrow p)\)</span></li>
+</ul>
+</div>
+<div id="alternate-phrasing" class="section level4 hasAnchor" number="2.5.6.1">
+<h4><span class="header-section-number">2.5.6.1</span> Alternate phrasing<a href="mathematical-logic.html#alternate-phrasing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Not surprisingly, there are many ways of saying <span class="math inline">\(P \iff Q\)</span> in English. The
+following constructions all mean <span class="math inline">\(P \iff Q\)</span>:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> if and only if <span class="math inline">\(Q\)</span>.</li>
+<li><span class="math inline">\(P\)</span> is necessary and sufficient for <span class="math inline">\(Q\)</span>.</li>
+<li>For <span class="math inline">\(P\)</span> it is necessary and suffcient that <span class="math inline">\(Q\)</span>.</li>
+<li><span class="math inline">\(P\)</span> is equivalent to <span class="math inline">\(Q\)</span>.</li>
+<li>If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span>, and conversely.</li>
+</ul>
+<p>The first three of these just combine constructions from the previous section
+to express that<span class="math inline">\(P \implies Q\)</span> and <span class="math inline">\(Q\implies  P\)</span>. In the last one, the words “<em>…and conversely</em>” mean that in addition to “<em>If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></em>” being true, the converse statement “*If <span class="math inline">\(Q\)</span>, then <span class="math inline">\(P\)</span>” is also true.</p>
+</div>
+<div id="truth-table-for-p-iff-q" class="section level4 hasAnchor" number="2.5.6.2">
+<h4><span class="header-section-number">2.5.6.2</span> Truth Table for <span class="math inline">\(p \iff q\)</span><a href="mathematical-logic.html#truth-table-for-p-iff-q" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \iff q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="21%" />
+<col width="21%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \Rightarrow q\)</span></th>
+<th align="center"><span class="math inline">\(q \Rightarrow p\)</span></th>
+<th align="center"><span class="math inline">\((p \Rightarrow q) \land (q \Rightarrow p)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Example 2.19  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li>“A number is divisible by 2 if and only if it is even.”</li>
+<li>“A number being even is a necessary and sufficient condition for it to be divisible by 2.”</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="terminology" class="section level3 hasAnchor" number="2.5.7">
+<h3><span class="header-section-number">2.5.7</span> Terminology<a href="mathematical-logic.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let the compound statement be:</p>
+<p>**“If** <span class="math inline">\(p\)</span>, <strong>then</strong> <span class="math inline">\(q\)</span>” — symbolically written as <span class="math inline">\(p \rightarrow q\)</span></p>
+<p>Components</p>
+<ul>
+<li><span class="math inline">\(p\)</span>: <strong>Premise</strong>, <strong>Hypothesis</strong>, or <strong>Antecedent</strong></li>
+<li><span class="math inline">\(q\)</span>: <strong>Conclusion</strong> or <strong>Consequent</strong></li>
+</ul>
+<hr />
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transformation</th>
+<th>Symbolic Form</th>
+<th>Verbal Form</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Converse</strong></td>
+<td><span class="math inline">\(q \rightarrow p\)</span></td>
+<td>If <span class="math inline">\(q\)</span>, then <span class="math inline">\(p\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Inverse</strong></td>
+<td><span class="math inline">\(\neg p \rightarrow \neg q\)</span></td>
+<td>If not <span class="math inline">\(p\)</span>, then not <span class="math inline">\(q\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Contrapositive</strong></td>
+<td><span class="math inline">\(\neg q \rightarrow \neg p\)</span></td>
+<td>If not <span class="math inline">\(q\)</span>, then not <span class="math inline">\(p\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Negation</strong></td>
+<td><span class="math inline">\(p \land \neg q\)</span></td>
+<td><span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false (i.e., the conditional fails)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="truth-tables-for-compound-propositions" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Truth Tables for Compound Propositions<a href="mathematical-logic.html#truth-tables-for-compound-propositions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To analyze compound propositions:</p>
+<ul>
+<li>Use separate columns for each sub-expression.</li>
+<li>Evaluate truth values for all combinations of truth values of the atomic propositions.</li>
+<li>The final column shows the truth value of the entire compound proposition.</li>
+</ul>
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 2.20  </strong></span></p>
+<blockquote>
+<p><strong>If a polygon is a triangle, then the sum of its angle measures is 180°</strong></p>
+</blockquote>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(p\)</span>: A polygon is a triangle<br />
+</li>
+<li><span class="math inline">\(q\)</span>: The sum of the angle measures of a polygon is <span class="math inline">\(180^\circ\)</span></li>
+</ul>
+<p>Then the compound statement is:</p>
+<ul>
+<li><span class="math inline">\(p \implies q\)</span></li>
+</ul>
+<ol start="2" style="list-style-type: lower-roman">
+<li><strong>Converse</strong></li>
+</ol>
+<blockquote>
+<p>The converse of a conditional statement <span class="math inline">\(p \implies q\)</span> is <span class="math inline">\(q \implies p\)</span></p>
+</blockquote>
+<p><strong>Statement</strong>:<br />
+<strong>If</strong> the sum of the angle measures of a polygon is <span class="math inline">\(180^\circ\)</span>, <strong>then</strong> the polygon is a triangle.<br />
+<strong>Symbolically</strong>: <span class="math inline">\(q \implies p\)</span></p>
+<ol start="3" style="list-style-type: lower-roman">
+<li><strong>Inverse</strong></li>
+</ol>
+<blockquote>
+<p>The inverse of a conditional statement <span class="math inline">\(p \implies q\)</span> is <span class="math inline">\(\neg p \implies \neg q\)</span></p>
+</blockquote>
+<p><strong>Statement</strong>:<br />
+<strong>If</strong> a polygon is <strong>not</strong> a triangle, <strong>then</strong> the sum of its angle measures is <strong>not</strong> <span class="math inline">\(180^\circ\)</span>.<br />
+<strong>Symbolically</strong>:<br />
+<span class="math inline">\(\neg p \rightarrow \neg q\)</span></p>
+<ol start="4" style="list-style-type: lower-roman">
+<li><strong>Contrapositive</strong></li>
+</ol>
+<blockquote>
+<p>The contrapositive of a conditional statement <span class="math inline">\(p \implies q\)</span> is <span class="math inline">\(\neg q \implies \neg p\)</span></p>
+</blockquote>
+<p><strong>Statement</strong>:<br />
+<strong>If</strong> the sum of the angle measures of a polygon is <strong>not</strong> <span class="math inline">\(180^\circ\)</span>, <strong>then</strong> the polygon is <strong>not</strong> a triangle.<br />
+<strong>Symbolically</strong>: <span class="math inline">\(\neg q \implies \neg p\)</span></p>
+<ol start="22" style="list-style-type: lower-alpha">
+<li><strong>Negation</strong></li>
+</ol>
+<blockquote>
+<p>The negation of a conditional statement <span class="math inline">\(p \implies q\)</span> is <span class="math inline">\(p \land \neg q\)</span></p>
+</blockquote>
+<p><strong>Statement</strong>:<br />
+A polygon <strong>is</strong> a triangle <strong>and</strong> the sum of its angle measures is <strong>not</strong> <span class="math inline">\(180^\circ\)</span>.<br />
+<strong>Symbolically</strong>: <span class="math inline">\(p \land \neg q\)</span></p>
+</div>
+</div>
+<div id="precedence-of-logical-operations" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Precedence of Logical Operations<a href="mathematical-logic.html#precedence-of-logical-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To reduce parentheses in logical expressions, follow this precedence order:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Operation</th>
+<th align="center">Symbol</th>
+<th align="center">Precedence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Negation</td>
+<td align="center"><span class="math inline">\(\neg\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">Conjunction</td>
+<td align="center"><span class="math inline">\(\land\)</span></td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">Disjunction</td>
+<td align="center"><span class="math inline">\(\lor\)</span></td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">Implication</td>
+<td align="center"><span class="math inline">\(\Rightarrow\)</span></td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">Biconditional</td>
+<td align="center"><span class="math inline">\(\Leftrightarrow\)</span></td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 2.21  </strong></span></p>
+<ul>
+<li><p><span class="math inline">\(p \lor q \land r\)</span> means:<span class="math inline">\(p \lor (q \land r)\)</span></p></li>
+<li><p><span class="math inline">\((p \lor q) \land r\)</span> requires parentheses to override precedence.</p></li>
+<li><p><span class="math inline">\(p \lor q \Rightarrow \neg r\)</span> means: <span class="math inline">\((p \lor q) \Rightarrow (\neg r)\)</span></p></li>
+<li><p><span class="math inline">\(p \lor (q \Rightarrow \neg r)\)</span> requires parentheses to clarify grouping.</p></li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 2.22  </strong></span>Parse the statement<br />
+<span class="math inline">\((\neg p) \Rightarrow (p \lor (q \land p))\)</span></p>
+<p>This uses:</p>
+<ul>
+<li>Negation on <span class="math inline">\(p\)</span></li>
+<li>Conjunction <span class="math inline">\(q \land p\)</span></li>
+<li>Disjunction <span class="math inline">\(p \lor (q \land p)\)</span></li>
+<li>Implication from <span class="math inline">\(\neg p\)</span> to the disjunction</li>
+</ul>
+</div>
+</div>
+<div id="truth-tables-and-logical-analysis" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Truth Tables and Logical Analysis<a href="mathematical-logic.html#truth-tables-and-logical-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="constructing-a-truth-table" class="section level3 hasAnchor" number="2.8.1">
+<h3><span class="header-section-number">2.8.1</span> Constructing a Truth Table<a href="mathematical-logic.html#constructing-a-truth-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To analyze a compound proposition:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Determine the number of atomic propositions</strong>:<br />
+If there are <span class="math inline">\(n\)</span> propositions, the truth table will have <span class="math inline">\(2^n\)</span> rows.</p></li>
+<li><p><strong>List all combinations of truth values</strong>:<br />
+Fill the first <span class="math inline">\(n\)</span> columns with all possible combinations of truth values for each proposition.</p></li>
+<li><p><strong>Evaluate each sub-expression</strong>:<br />
+Add columns for intermediate steps and compute their truth values row by row.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unnamed-chunk-32" class="example"><strong>Example 2.23  </strong></span>Construct a truth table for the compound proposition:<br />
+<span class="math display">\[
+(p \lor \neg q) \Rightarrow (p \land q)
+\]</span></p>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="12%" />
+<col width="18%" />
+<col width="15%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(\neg q\)</span></th>
+<th align="center"><span class="math inline">\(p \lor \neg q\)</span></th>
+<th align="center"><span class="math inline">\(p \land q\)</span></th>
+<th align="center"><span class="math inline">\((p \lor \neg q) \Rightarrow (p \land q)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-4" class="remark"><em>Remark</em>. </span>To construct the truth table for a given proposition:
+1 . Create a table with <span class="math inline">\(2^n\)</span> rows if a compound proposition involves <span class="math inline">\(n\)</span>.
+propsitions.
+2. Fill in the first <span class="math inline">\(n\)</span> columns with all possible cobinations.
+3. Determine and enter the truth value for each combination.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 2.24  </strong></span>For <span class="math inline">\(n=3\)</span>,</p>
+<p>This table lists all possible combinations of truth values for three atomic propositions: <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, and <span class="math inline">\(r\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+p &amp; q &amp; r \\
+\hline
+T &amp; T &amp; T \\
+F &amp; T &amp; T \\
+T &amp; F &amp; T \\
+F &amp; F &amp; T \\
+T &amp; T &amp; F \\
+F &amp; T &amp; F \\
+T &amp; F &amp; F \\
+F &amp; F &amp; F \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 2.1  </strong></span>Construct truth tables for the following compound propositions</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[
+\neg (P \lor Q) \lor (\neg P)
+\]</span></p></li>
+<li><p><span class="math display">\[
+\neg (P \Rightarrow Q)
+\]</span></p></li>
+<li><p><span class="math display">\[
+P \lor (Q \Rightarrow R)
+\]</span></p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 2.2  </strong></span>Suppose the statement <span class="math inline">\(((P \land Q) \lor R) \Rightarrow (R \lor S)\)</span> is <strong>false</strong>.<br />
+Find the truth values of <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, <span class="math inline">\(R\)</span>, and <span class="math inline">\(S\)</span> without constructing a full truth table.</p>
+</div>
+</div>
+</div>
+<div id="tautologies-and-contradictions" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Tautologies and Contradictions<a href="mathematical-logic.html#tautologies-and-contradictions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-37" class="definition"><strong>Definition 2.7  </strong></span></p>
+<ul>
+<li>A <strong>tautology</strong> is a compound proposition that is always true, regardless of the truth values of its components.</li>
+<li>A <strong>contradiction</strong> is a compound proposition that is always false.</li>
+<li>A <strong>contingency</strong> is a compound proposition that is neither a tautology nor a contradiction.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 2.25  </strong></span>Let <span class="math inline">\(p\)</span>: “This course is easy.”</p>
+<ol style="list-style-type: lower-roman">
+<li>Contradiction:<br />
+“This course is easy <strong>and</strong> this course is not easy”<br />
+Expression: <span class="math inline">\(p \land \neg p\)</span></li>
+</ol>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+p &amp; \neg p &amp; p \land \neg p \\
+\hline
+T &amp; F &amp; F \\
+F &amp; T &amp; F \\
+\hline
+\end{array}
+\]</span></p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Tautology:<br />
+“This course is easy <strong>or</strong> this course is not easy”<br />
+Expression: <span class="math inline">\(p \lor \neg p\)</span></li>
+</ol>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+p &amp; p \lor \neg p \\
+\hline
+T &amp; T \\
+F &amp; T \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="logical-equivalence" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Logical Equivalence<a href="mathematical-logic.html#logical-equivalence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-39" class="definition"><strong>Definition 2.8  </strong></span>Two compound propositions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are <strong>logically equivalent</strong> if they yield the same truth values for all combinations of truth values of their components. Denoted as:</p>
+<p><span class="math display">\[
+p \equiv q
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span></p>
+<ul>
+<li><span class="math inline">\(p \equiv q\)</span> means that <span class="math inline">\(p \iff q\)</span> is a tautology.</li>
+<li>The symbol <span class="math inline">\(\equiv\)</span> is not a logical connective; it asserts that the biconditional <span class="math inline">\(p \iff q\)</span> is always true.</li>
+</ul>
+</div>
+<div id="useful-logical-equivalences" class="section level3 hasAnchor" number="2.10.1">
+<h3><span class="header-section-number">2.10.1</span> Useful Logical Equivalences<a href="mathematical-logic.html#useful-logical-equivalences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These equivalences are foundational in propositional logic and are often used to simplify or transform logical expressions.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Double Negation</strong><br />
+<span class="math display">\[
+\neg(\neg p) \equiv p
+\]</span></p></li>
+<li><p><strong>De Morgan’s Law (Conjunction)</strong><br />
+<span class="math display">\[
+\neg(p \land q) \equiv \neg p \lor \neg q
+\]</span></p></li>
+<li><p><strong>De Morgan’s Law (Disjunction)</strong><br />
+<span class="math display">\[
+\neg(p \lor q) \equiv \neg p \land \neg q
+\]</span></p></li>
+<li><p><strong>Implication</strong><br />
+<span class="math display">\[
+p \Rightarrow q \equiv \neg p \lor q
+\]</span></p></li>
+<li><p><strong>Negation of Implication</strong><br />
+<span class="math display">\[
+\neg(p \Rightarrow q) \equiv p \land \neg q
+\]</span></p></li>
+</ol>
+</div>
+</div>
+<div id="the-algebra-of-propositions" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> The Algebra of Propositions<a href="mathematical-logic.html#the-algebra-of-propositions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="the-algebra-of-propositions-1" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> The Algebra of Propositions<a href="mathematical-logic.html#the-algebra-of-propositions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="logical-laws-and-their-equivalences" class="section level3 hasAnchor" number="2.12.1">
+<h3><span class="header-section-number">2.12.1</span> Logical Laws and Their Equivalences<a href="mathematical-logic.html#logical-laws-and-their-equivalences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="41%" />
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Law Name</th>
+<th>Disjunction-related Expression(s)</th>
+<th>Conjunction-related Expression(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Idempotent Laws</strong></td>
+<td><span class="math inline">\(p \lor p \equiv p\)</span></td>
+<td><span class="math inline">\(p \land p \equiv p\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Associative Laws</strong></td>
+<td><span class="math inline">\((p \lor q) \lor r \equiv p \lor (q \lor r)\)</span></td>
+<td><span class="math inline">\((p \land q) \land r \equiv p \land (q \land r)\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Commutative Laws</strong></td>
+<td><span class="math inline">\(p \lor q \equiv q \lor p\)</span></td>
+<td><span class="math inline">\(p \land q \equiv q \land p\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Distributive Laws</strong></td>
+<td><span class="math inline">\(p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)\)</span></td>
+<td><span class="math inline">\(p \land (q \lor r) \equiv (p \land q) \lor (p \land r)\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Identity Laws</strong></td>
+<td><span class="math inline">\(p \lor F \equiv p\)</span>, <span class="math inline">\(p \lor T \equiv T\)</span></td>
+<td><span class="math inline">\(p \land F \equiv F\)</span>, <span class="math inline">\(p \land T \equiv p\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Involution Law</strong></td>
+<td>—</td>
+<td><span class="math inline">\(\neg \neg p \equiv p\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Complement Laws</strong></td>
+<td><span class="math inline">\(\neg p \lor p \equiv T\)</span></td>
+<td><span class="math inline">\(\neg p \land p \equiv F\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>De Morgan’s Laws</strong></td>
+<td><span class="math inline">\(\neg (p \land q) \equiv \neg p \lor \neg q\)</span></td>
+<td><span class="math inline">\(\neg (p \lor q) \equiv \neg p \land \neg q\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Conditional Identities</strong></td>
+<td><span class="math inline">\(p \Rightarrow q \equiv \neg p \lor q\)</span></td>
+<td><span class="math inline">\(p \Leftrightarrow q \equiv (p \Rightarrow q) \land (q \Rightarrow p)\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 2.26  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><p>Show that:<br />
+<span class="math display">\[
+p \land \neg (q \Rightarrow \neg r) \equiv p \land (q \land r)
+\]</span></p></li>
+<li><p>Show that:<br />
+<span class="math display">\[
+p \Leftrightarrow q \equiv \neg q \Leftrightarrow \neg p
+\]</span></p></li>
+<li><p>Using logically equivalent statements (without truth tables), show:<br />
+<span class="math display">\[
+\neg (\neg p \land q) \land (p \lor q) \equiv p
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="predicate-logic-and-quantifiers" class="section level2 hasAnchor" number="2.13">
+<h2><span class="header-section-number">2.13</span> Predicate Logic and Quantifiers<a href="mathematical-logic.html#predicate-logic-and-quantifiers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider the following statements:</p>
+<p><span class="math display">\[
+x &gt; 3, \quad x = y + 3, \quad x + y = z
+\]</span></p>
+<p>The truth value of these statements has no meaning without specifying the values of <span class="math inline">\(x, y, z\)</span>.</p>
+<p>However, we can make propositions out of such statements.</p>
+<p>A <strong>predicate</strong> is a property that is true or false about the subject (in logic, we say “variable”) of a statement.</p>
+<p>For example:</p>
+<p><span class="math display">\[
+\text{``} \quad \underbrace{x}_{\text{subject}} \quad \underbrace{\text{is greater than 3&quot;}}_{\text{predicate}}
+\]</span></p>
+<div id="predicates" class="section level3 hasAnchor" number="2.13.1">
+<h3><span class="header-section-number">2.13.1</span> Predicates<a href="mathematical-logic.html#predicates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>predicate</strong> is a declarative sentence whose truth value depends on one or more variables.</p>
+<p>The statement:
+<span class="math display">\[
+x \text{ is greater than } 3
+\]</span></p>
+<p>has two parts:</p>
+<ul>
+<li>The <strong>predicate</strong>: “is greater than 3”</li>
+<li>The <strong>variable</strong>: <span class="math inline">\(x\)</span></li>
+</ul>
+<p>We denote this statement by <span class="math inline">\(P(x)\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> is the predicate “is greater than 3”</li>
+<li><span class="math inline">\(x\)</span> is the variable</li>
+</ul>
+<p>By assigning a value to <span class="math inline">\(x\)</span>, <span class="math inline">\(P(x)\)</span> becomes a <strong>proposition</strong> with a definite truth value:</p>
+<ul>
+<li><span class="math inline">\(P(5)\)</span>: “5 is greater than 3” → <strong>True</strong></li>
+<li><span class="math inline">\(P(2)\)</span>: “2 is greater than 3” → <strong>False</strong></li>
+</ul>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>A <strong>predicate</strong> is neither true nor false on its own.</li>
+<li>A predicate becomes a <strong>proposition</strong> when its variables are substituted with specific values.</li>
+<li>The <strong>domain</strong> (also called the universe or universe of discourse) of a predicate variable is the set of all values that may be substituted for the variable.</li>
+</ul>
+<div class="definition">
+<p><span id="def:unnamed-chunk-42" class="definition"><strong>Definition 2.9  </strong></span>Let <span class="math inline">\(A\)</span> be a nonempty set. An expression <span class="math inline">\(P(x)\)</span> defined on <span class="math inline">\(A\)</span> is called a <strong>predicate</strong> if:</p>
+<p><span class="math display">\[
+P(a) \text{ is either true or false for each } a \in A
+\]</span></p>
+<p>That is, <span class="math inline">\(P(a)\)</span> becomes a <strong>statement</strong> (i.e., a proposition with a definite truth value) whenever any element <span class="math inline">\(a \in A\)</span> is substituted for the variable <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-43" class="example"><strong>Example 2.27  </strong></span><strong>(i)</strong> Let <span class="math inline">\(P(x): x^2 &gt; 6\)</span>, where <span class="math inline">\(x \in \mathbb{N}\)</span></p>
+<ul>
+<li><span class="math inline">\(P(1)\)</span>: <span class="math inline">\(1^2 = 1 \not&gt; 6\)</span> → False<br />
+</li>
+<li><span class="math inline">\(P(2)\)</span>: <span class="math inline">\(2^2 = 4 \not&gt; 6\)</span> → False<br />
+</li>
+<li>For <span class="math inline">\(x \in \mathbb{N}\)</span> and <span class="math inline">\(x \ne 1, x \ne 2\)</span>, <span class="math inline">\(P(x)\)</span> is true.</li>
+</ul>
+<p><strong>(ii)</strong> Let <span class="math inline">\(P(x, y): x^2 + y^2 = 4\)</span>, where <span class="math inline">\(x, y \in \mathbb{R}\)</span></p>
+<ul>
+<li><span class="math inline">\(P(0, 2)\)</span>: <span class="math inline">\(0^2 + 2^2 = 4\)</span> → True<br />
+</li>
+<li><span class="math inline">\(P(1, 1)\)</span>: <span class="math inline">\(1^2 + 1^2 = 2\)</span> → False</li>
+</ul>
+</div>
+</div>
+<div id="converting-predicates-to-propositions" class="section level3 hasAnchor" number="2.13.2">
+<h3><span class="header-section-number">2.13.2</span> Converting Predicates to Propositions<a href="mathematical-logic.html#converting-predicates-to-propositions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are two standard methods:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Assign specific values to variables</strong><br />
+Example: <span class="math inline">\(P(3)\)</span>, <span class="math inline">\(P(0, 2)\)</span></p></li>
+<li><p><strong>Add quantifiers</strong></p>
+<ul>
+<li>Universal: <span class="math inline">\(\forall x \in \mathbb{N},\; P(x)\)</span><br />
+</li>
+<li>Existential: <span class="math inline">\(\exists x \in \mathbb{R},\; P(x)\)</span></li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,961 @@
+# Mathematical logic
+Mathematical logic is the branch of mathematics that studies the principles and methods of formal reasoning. It is based on symbolic languages that can express statements and arguments in a precise and unambiguous way.
+
+## Propositional logic & Logical operators
+Propositional logic is a branch of mathematical logic that studies the logical relationships between propositions, which are statements that can be either true or false.
+
+```{definition,name='Proposition (Statement)'}
+roposition (Statement) is a declarative sentence that is either true (T) or false (F), but not both.
+```
+
+```{example}
+
+(i) A square has all its sides equal.
+(ii) Every Odd number is not divisible by 2.
+(iii) $2 < 3$.
+(iv) $\sqrt{2}\not\in \mathbb{Q}$.
+(v) $\mathbb{Z}\subseteq \mathbb{Q}$.
+(vi) The set $\{10, 20, 30\}$ has three elements.
+
+They are all true.
+```
+
+```{example}
+(i) Every rectangle is a square.
+(ii) $(2 +4)^2 = 2^2 4^2$.
+(iii) $\sqrt{2}\not\in\mathbb{R}$.
+(iv) $\mathbb{R} \subseteq \mathbb{Q}$.
+(v) $\{10, 11, 12\} \cap \mathbb{N}=\emptyset$
+  
+They are all false.
+```
+
+```{remark}
+No sentence can be called a statement if
+
+- It is a question.
+- It is an order or request.
+```
+
+```{example}
+- "How old are you?" cannot be assigned true or false (In fact, it is a
+question). So, it is not a statement.
+- "Close the door" cannot be assigned u-ue or false (Infect, it is a
+command). So, it cannot be called a statement.
+- "x is a natural number" depends on the value of x. So, it is not
+considered as a statement. However, often it's referred to as an
+open statement.
+```
+
+```{example}
+| **NOT a statement**                          | **Statement**                                               |
+|---------------------------------------------|-------------------------------------------------------------|
+| Add $5$ to both sides.| Adding $5$ to both sides of $x − 5 = 37$ gives $x = 42$.|
+| $\mathbb{Z}$| $42 \in \mathbb{Z}$                                                      |
+| $42$| 42 is not a number.  |
+| What is the solution of 2x = 84?| The solution of 2x = 84 is 42.|
+```
+
+
+
+## Statements and Truth Values
+
+**Note:** The **truth (T)** or **falsity (F)** of a statement is called its **truth value**.
+
+```{definition}
+A statement is called **simple** (or *atomic*) if it cannot be broken down into two or more statements.
+```
+
+```{example}
+- \( 2 \) is an even number.
+- A square has all its sides equal.
+- \( 7 \) is an odd number.
+```
+
+```{definition}
+A **compound statement** is one which is made up of two or more simple statements.
+```
+
+```{example}
+- “\( 7 \) is both an odd and prime number” can be broken into two statements:
+    - "\( 7 \) is an odd number."
+    - "\( 7 \) is a prime number."  
+- So it is a compound statement.
+```
+
+**Note:** The simple statements which constitute a compound statement are called **component statements**.
+
+
+## More About Propositions
+
+- We use letters to denote propositions, such as \( p, q, r, s \).
+- The **truth value** of a proposition is denoted as:
+  - \( T \) for **true**
+  - \( F \) for **false**
+
+Using these notations, we can form new (compound) propositions from known propositions.  
+This area of logic is known as **propositional calculus** or **propositional logic**.
+
+> *Note:* Calculus here refers to the manipulation or computation with symbols.
+
+
+```{example}
+
+Let:
+- \( p \): 7 is an odd number.
+- \( q \): 7 is a prime number.
+- \( r \): \( 5 > 11 \)
+```
+
+
+## Logical Operators / Connectives
+
+- A **logical operator** is a rule defined by a **truth table**.
+
+### Truth Table
+
+A truth table shows the relationship between the truth values of propositions.  
+It is useful for:
+- Visually displaying how a logical operator works.
+- Determining the truth value of a compound proposition based on its component propositions.
+
+## Logical Operators
+
+Here are some important logical operators:
+
+| **Operator**      | **Handle**             | **Notation** |
+|:-----------------:|:----------------------:|:------------:|
+| Negation          | not                    | \( \sim ,\neg\)   |
+| Conjunction       | and                    | \( \land \)  |
+| Disjunction       | or                     | \( \lor \)   |
+| Exclusive-or      | xor                    | \( \oplus \) |
+| Implication       | implies                | \( \rightarrow \) |
+| Biconditional     | if and only if (iff)   | \( \leftrightarrow \) |
+
+
+### The Negation Operator (\( \sim,\neg \))
+
+Given any proposition \( p \), we can form a new proposition:  
+**“It is not true that \( p \)”**, which is called the **negation** of \( p \).
+
+```{example}
+Let \( p \): “The number 2 is even.”  
+This statement is **true**.
+
+Negation:  
+\( \sim p \): “It is not true that the number 2 is even.”  
+This new statement is **false**.
+```
+
+```{definition}
+Let \( p \) be a proposition.  
+The statement “\( p \) is not the case” is another proposition called the **negation** of \( p \).  
+It is denoted \( \sim p \) and read as “not \( p \)”.
+```
+
+#### Truth Table for Negation
+
+| \( p \) | \( \neg p \) |
+|:------:|:-------------:|
+| T      | F            |
+| F      | T            |
+
+
+
+#### Alternate Expressions for Negation
+
+```{example}
+Let \( P \): “The number 2 is even.”
+
+Then \( \sim P \) can be expressed as:
+  
+- “It’s not true that the number 2 is even.”
+- “It is false that the number 2 is even.”
+- “The number 2 is not even.”
+```
+
+
+```{example}
+Let:
+- \( p \): “This book is interesting.”
+
+Then the negation \( \lnot p \) (also written as \( \sim p \)) can be read as:
+  
+1. “This book is not interesting.”
+2. “This book is uninteresting.”
+3. “It is not the case that this book is interesting.”
+```
+
+
+**Note**:
+The symbol \( \lnot \) is called the **negation operator**.  
+It operates on a single logical proposition by **complementing its truth value**.  
+For this reason, it is also called the **logical complement**.
+
+
+
+We now introduce logical operators that take **two existing propositions** and form a **new compound proposition**.  
+
+These operators are known as **logical connectives**.
+
+### The Conjunction Operator — "and"
+
+The word **“and”** can be used to combine two statements to form a new statement.
+
+```{example}
+Let:
+  
+- \( P \): The number 2 is even.
+- \( Q \): The number 3 is odd.
+
+Then:
+  
+- \( R_1 \): “The number 2 is even and the number 3 is odd.”  
+  This is a **true** statement because both \( P \) and \( Q \) are true.
+```
+
+
+```{example}
+- \( R_2 \): “The number 1 is even and the number 3 is odd.” → **False**
+- \( R_3 \): “The number 2 is even and the number 4 is odd.” → **False**
+- \( R_4 \): “The number 3 is even and the number 2 is odd.” → **False**
+```
+
+
+#### Symbolic Notation:
+
+We use the symbol \( \land \) to represent “and”.  
+So, if \( P \) and \( Q \) are propositions, then \( P \land Q \) means “\( P \) and \( Q \)”.
+
+- \( P \land Q \) is **true** only if both \( P \) and \( Q \) are true.
+- Otherwise, \( P \land Q \) is **false**.
+
+---
+
+#### Truth Table for Conjunction
+
+| \( P \) | \( Q \) | \( P \land Q \) |
+|:--------:|:--------:|:-----------------:|
+| T      | T      | T               |
+| T      | F      | F               |
+| F      | T      | F               |
+| F      | F      | F               |
+
+> In this table, \( T \) stands for “True” and \( F \) stands for “False”.  
+> These are called **truth values**.
+
+### The Disjunction Operator — "or"
+
+Let \( p \) and \( q \) be propositions.  
+The proposition “\( p \) or \( q \)” is called the **disjunction** of \( p \) and \( q \), denoted by \( p \lor q \).
+
+- \( p \lor q \) is **false** only when both \( p \) and \( q \) are false.
+- It is **true** otherwise.
+
+#### Truth Table for Disjunction
+
+| \( p \) | \( q \) | \( p \lor q \) |
+|--------|--------|----------------|
+| T      | T      | T              |
+| T      | F      | T              |
+| F      | T      | T              |
+| F      | F      | F              |
+
+> This is an **inclusive or**: true if either or both are true.
+
+
+```{example}
+
+Let:
+- \( S_1 \): “The number 2 is even or the number 3 is odd.” → **True**
+- \( S_2 \): “The number 1 is even or the number 3 is odd.” → **True**
+- \( S_3 \): “The number 2 is even or the number 4 is odd.” → **True**
+- \( S_4 \): “The number 3 is even or the number 2 is odd.” → **False**
+
+```
+
+### The Exclusive OR Operator — "either or"
+
+Let \( p \) and \( q \) be propositions.  
+The **exclusive or** of \( p \) and \( q \), denoted \( p \oplus q \), is:
+
+- **True** when exactly one of \( p \) or \( q \) is true.
+- **False** when both are true or both are false.
+
+#### Truth Table for Exclusive OR
+
+| \( p \) | \( q \) | \( p \oplus q \) |
+|:--------:|:--------:|:------------------:|
+| T      | T      | F                |
+| T      | F      | T                |
+| F      | T      | T                |
+| F      | F      | F                |
+
+> “Either \( p \) or \( q \) is true, but not both.”
+
+
+
+
+Let \( p \) and \( q \) be propositions.  
+The **exclusive or** of \( p \) and \( q \), denoted \( p \oplus q \), is:
+
+- **True** when exactly one of \( p \) or \( q \) is true.
+- **False** when both are true or both are false.
+
+```{example}
+
+Let:
+- \( p \): This book is interesting.
+- \( q \): I am staying at home.
+
+Then:
+- \( p \oplus q \): “Either this book is interesting, or I am staying at home, but not both.”
+```
+
+#### Truth Table for Exclusive OR
+
+| \( p \) | \( q \) | \( p \oplus q \) |
+|:--------:|:--------:|:------------------:|
+| T      | T      | F                |
+| T      | F      | T                |
+| F      | T      | T                |
+| F      | F      | F                |
+
+
+
+- \( p \): \( 3 > 1 \) → T  
+- \( q \): \( 0 = 1 \) → F  
+- \( r \): \( 2 = 1 \) → F  
+
+Then:
+
+- \( p \oplus q \): T  
+- \( p \oplus r \): T ⊕ F = T
+
+
+
+### Implication Operator — "implies"
+
+Let \( P \) and \( Q \) be propositions.  
+The implication “If \( P \), then \( Q \)” is written as \( P \Rightarrow Q \).
+
+- This is called a **conditional statement**.
+- It is **false** only when \( P \) is true and \( Q \) is false.
+- Otherwise, it is **true**.
+
+```{example}
+Let:
+  
+- \( P \): The integer \( a \) is a multiple of 6.
+- \( Q \): The integer \( a \) is divisible by 2.
+
+Then:
+  
+- \( R \): “If \( a \) is a multiple of 6, then \( a \) is divisible by 2.”  
+  This is a **true** statement.
+
+In general, given any two statements \( P \) and \( Q \) whatsoever, we can form the new statement \emph{``If \( P \), then \( Q \).''} This is written symbolically as \( P \rightarrow Q \), which we read as \emph{``If \( P \), then \( Q \),''} or \emph{``\( P \) implies \( Q \).''} 
+
+Like the symbols \( \land \) (and) and \( \lor \) (or), the symbol \( \rightarrow \) has a very specific meaning. When we assert that the statement \( P \rightarrow Q \) is true, we mean that if \( P \) is true, then \( Q \) must also be true. In other words, the condition of \( P \) being true forces \( Q \) to be true.
+
+A statement of the form \( P \rightarrow Q \) is called a \emph{conditional statement} because it means \( Q \) will be true under the condition that \( P \) is true.
+```
+
+
+
+Think of \( p \rightarrow q \) as a promise: whenever \( p \) is true, \( q \) will be true also.  
+There is only one way this promise can be broken—namely, if \( p \) is true but \( q \) is false.
+
+```{definition}
+Let \( p \) and \( q \) be propositions. The implication \( p \rightarrow q \) is:
+  
+- **False** when \( p \) is true and \( q \) is false  
+- **True** otherwise
+
+In this implication:
+- \( p \) is called the **hypothesis** (or antecedent or premise)
+- \( q \) is called the **conclusion** (or consequence)
+```
+
+```{example}
+If  $\underbrace{\text{a polygon is a triangle,}}_\text{hypothesis,p}
+ then 
+\underbrace{ \text{ the sum of its angle measures is 180°.}}_\text{conclusion,q}$
+```
+
+#### Ways to express an implication
+- $p \implies q$
+- "If \( p \), then \( q \)"
+- "If \( p \), \( q \)"
+- "\( p \) is sufficient for \( q \)"
+- "\( q \) if \( p \)"
+- "\( q \) when \( p \)"
+- "\( p \) implies \( q \)"
+- "\( p \) only if \( q \)"
+- "\( q \) is necessary for \( p \)"
+- "\( q \) follows from \( p \)"
+
+####  Truth Table for \( p \implies q \)
+
+| \( p \) | \( q \) | \( p \implies q \) |
+|:--------:|:--------:|:------------------------:|
+| T      | T      | T                      |
+| T      | F      | **F**                  |
+| <span style="color:red">F</span>| <span style="color:red">T</span>|<span style="color:red">T</span> |
+| F      | F      | T                      |
+
+```{remark}
+- \( p \rightarrow q \) is **<span style="color:red"> false</span> only when** \( p \) is true and \( q \) is false.
+- \( p \rightarrow q \) can be **true even if** \( p \) is false.
+- The truth of \( p \rightarrow q \) does **not require** that either \( p \) or \( q \) is true.
+```
+
+```{example}
+
+Consider the statement:  
+**"Employee pays taxes only if his income is more than 3 million."**
+
+Let:  
+
+- \( p \): Employee pays taxes  
+- \( q \): His income is more than 3 million
+
+Symbolically:  
+
+
+\[
+p \implies q
+\]
+
+
+
+In other words:  
+
+- If employee pays taxes, then his income is more than 3 million.
+- Employee's income is more than 3 million, if he pays taxes.
+```
+
+```{example}
+Consider the statement:  
+*"If \( n^2 \) is even, then \( n \) is even."*
+
+Let: 
+  
+- \( p \): \( n^2 \) is even  
+- \( q \): \( n \) is even
+
+Symbolically:  
+
+
+\[
+p \implies q
+\]
+```
+
+### Biconditional Logic: \( p \iff q \)
+
+```{definition}
+Let \( p \) and \( q \) be propositions. The biconditional \( p \iff q \) is:
+  
+- **True** when \( p \) and \( q \) have the same truth value  
+- **False** otherwise
+```
+
+```{remark}
+The statement \( p \iff q \) is true precisely when both \( p \Rightarrow q \) and \( q \Rightarrow p \) are true.  
+This is why we say:  
+  
+- “\( p \) if and only if \( q \)”  
+- \( p \iff q \equiv (p \Rightarrow q) \land (q \Rightarrow p) \)
+```
+
+#### Alternate phrasing
+Not surprisingly, there are many ways of saying \(P \iff Q\) in English. The
+following constructions all mean \(P \iff Q\):
+
+- \(P\) if and only if \(Q\).
+- \( P \) is necessary and sufficient for \( Q \).
+- For \(P\) it is necessary and suffcient that \(Q\).
+- \(P\) is equivalent to \(Q\).
+- If \(P\), then \(Q\), and conversely.
+
+
+The first three of these just combine constructions from the previous section
+to express that\(P \implies Q\) and \(Q\implies  P\). In the last one, the words "*...and conversely*" mean that in addition to "*If \(P\), then \(Q\)*" being true, the converse statement "*If \(Q\), then \(P\)" is also true.
+
+#### Truth Table for \( p \iff q \)
+
+| \( p \) | \( q \) | \( p \iff q \) |
+|:--------:|:--------:|:----------------:|
+| T      | T      | T              |
+| T      | F      | F              |
+| F      | T      | F              |
+| F      | F      | T              |
+
+
+
+
+
+| \( p \) | \( q \) | \( p \Rightarrow q \) | \( q \Rightarrow p \) | \( (p \Rightarrow q) \land (q \Rightarrow p) \) |
+|:--------:|:--------:|:------------------------:|:------------------------:|:-----------------------------------------------:|
+|T|T|T|T|T|
+|T|F|F|T|F|
+|F|T|T|F|F|
+|F|F|T|T|T|
+
+```{example}
+1. "A number is divisible by 2 if and only if it is even."
+2. "A number being even is a necessary and sufficient condition for it to be divisible by 2."
+```
+
+### Terminology 
+
+Let the compound statement be:
+
+**"If** \( p \), **then** \( q \)" — symbolically written as \( p \rightarrow q \)
+
+Components
+
+- \( p \): **Premise**, **Hypothesis**, or **Antecedent**
+- \( q \): **Conclusion** or **Consequent**
+
+---
+
+
+
+| Transformation      | Symbolic Form            | Verbal Form                                                                 |
+|---------------------|--------------------------|------------------------------------------------------------------------------|
+| **Converse**        | \( q \rightarrow p \)     | If \( q \), then \( p \)                                                    |
+| **Inverse**         | \( \neg p \rightarrow \neg q \) | If not \( p \), then not \( q \)                                      |
+| **Contrapositive**  | \( \neg q \rightarrow \neg p \) | If not \( q \), then not \( p \)                                      |
+| **Negation**        | \( p \land \neg q \)      | \( p \) is true and \( q \) is false (i.e., the conditional fails)          |
+
+
+
+
+
+
+
+## Truth Tables for Compound Propositions
+
+To analyze compound propositions:
+
+- Use separate columns for each sub-expression.
+- Evaluate truth values for all combinations of truth values of the atomic propositions.
+- The final column shows the truth value of the entire compound proposition.
+
+
+
+```{example}
+> **If a polygon is a triangle, then the sum of its angle measures is 180°**
+
+Let:
+  
+- \( p \): A polygon is a triangle  
+- \( q \): The sum of the angle measures of a polygon is \(180^\circ\)
+
+Then the compound statement is:
+  
+- \( p \implies q \)
+
+(ii) **Converse**
+  
+> The converse of a conditional statement \( p \implies q \) is \( q \implies p \)
+
+**Statement**:  
+**If** the sum of the angle measures of a polygon is \(180^\circ\), **then** the polygon is a triangle.  
+**Symbolically**:  \( q \implies p \)
+
+(iii) **Inverse**
+  
+> The inverse of a conditional statement \( p \implies q \) is \( \neg p \implies \neg q \)
+
+**Statement**:  
+**If** a polygon is **not** a triangle, **then** the sum of its angle measures is **not** \(180^\circ\).  
+**Symbolically**:  
+\( \neg p \rightarrow \neg q \)
+
+(iv) **Contrapositive**
+  
+> The contrapositive of a conditional statement \( p \implies q \) is \( \neg q \implies \neg p \)
+
+**Statement**:  
+**If** the sum of the angle measures of a polygon is **not** \(180^\circ\), **then** the polygon is **not** a triangle.  
+**Symbolically**: \( \neg q \implies \neg p \)
+
+(v) **Negation**
+  
+> The negation of a conditional statement \( p \implies q \) is \( p \land \neg q \)
+
+**Statement**:  
+A polygon **is** a triangle **and** the sum of its angle measures is **not** \(180^\circ\).  
+**Symbolically**: \( p \land \neg q \)
+
+```
+
+
+## Precedence of Logical Operations
+
+To reduce parentheses in logical expressions, follow this precedence order:
+
+| Operation         | Symbol              | Precedence |
+|:-----------------:|:-------------------:|:------------:|
+| Negation         | \( \neg \)            | 1  |
+| Conjunction      | \( \land \)           | 2  |
+| Disjunction      | \( \lor \)            | 3  |
+| Implication      | \( \Rightarrow \)     | 4  |
+| Biconditional    | \( \Leftrightarrow \) | 5  |
+
+```{example}
+
+- \( p \lor q \land r \) means:\( p \lor (q \land r) \)
+
+- \( (p \lor q) \land r \) requires parentheses to override precedence.
+
+- \( p \lor q \Rightarrow \neg r \) means: \( (p \lor q) \Rightarrow (\neg r) \)
+
+- \( p \lor (q \Rightarrow \neg r) \) requires parentheses to clarify grouping.
+```
+
+```{example} 
+Parse the statement  
+\( (\neg p) \Rightarrow (p \lor (q \land p)) \)
+
+This uses:
+
+- Negation on \( p \)
+- Conjunction \( q \land p \)
+- Disjunction \( p \lor (q \land p) \)
+- Implication from \( \neg p \) to the disjunction
+```
+
+
+
+## Truth Tables and Logical Analysis
+
+### Constructing a Truth Table
+
+To analyze a compound proposition:
+
+1. **Determine the number of atomic propositions**:  
+   If there are \( n \) propositions, the truth table will have \( 2^n \) rows.
+
+2. **List all combinations of truth values**:  
+   Fill the first \( n \) columns with all possible combinations of truth values for each proposition.
+
+3. **Evaluate each sub-expression**:  
+   Add columns for intermediate steps and compute their truth values row by row.
+
+```{example}  
+Construct a truth table for the compound proposition:  
+\[
+(p \lor \neg q) \Rightarrow (p \land q)
+\]
+
+| \( p \) | \( q \) | \( \neg q \) | \( p \lor \neg q \) | \( p \land q \) | \( (p \lor \neg q) \Rightarrow (p \land q) \) |
+|:--------:|:--------:|:--------------:|:----------------------:|:------------------:|:-----------------------------------------------:|
+| T| T|F|T|T| T|
+| T| F|T|T|F| F|
+| F| T|F|F|F| T|
+| F| F|T|T|F| F|
+```
+
+```{remark}
+To construct the truth table for a given proposition:
+1 . Create a table with \(2^n\) rows if a compound proposition involves \(n\).
+propsitions.
+2. Fill in the first \(n\) columns with all possible cobinations.
+3. Determine and enter the truth value for each combination.
+```
+
+
+```{example}
+For $n=3$,
+
+This table lists all possible combinations of truth values for three atomic propositions: \( p \), \( q \), and \( r \).
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & q & r \\
+\hline
+T & T & T \\
+F & T & T \\
+T & F & T \\
+F & F & T \\
+T & T & F \\
+F & T & F \\
+T & F & F \\
+F & F & F \\
+\hline
+\end{array}
+\]
+
+
+```
+
+
+```{exercise}
+Construct truth tables for the following compound propositions
+
+a)  
+\[
+\neg (P \lor Q) \lor (\neg P)
+\]
+
+b)  
+\[
+\neg (P \Rightarrow Q)
+\]
+
+c)  
+\[
+P \lor (Q \Rightarrow R)
+\]
+```
+
+
+```{exercise}  
+Suppose the statement \(
+((P \land Q) \lor R) \Rightarrow (R \lor S)
+\) is **false**.  
+Find the truth values of \( P \), \( Q \), \( R \), and \( S \) without constructing a full truth table.
+```
+
+
+
+## Tautologies and Contradictions
+
+```{definition}
+
+- A **tautology** is a compound proposition that is always true, regardless of the truth values of its components.
+- A **contradiction** is a compound proposition that is always false.
+- A **contingency** is a compound proposition that is neither a tautology nor a contradiction.
+```
+
+
+```{example}
+
+Let \( p \): “This course is easy.”
+
+(i) Contradiction:  
+“This course is easy **and** this course is not easy”  
+Expression: \( p \land \neg p \)
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+F & T & F \\
+\hline
+\end{array}
+\]
+
+(ii) Tautology:  
+“This course is easy **or** this course is not easy”  
+Expression: \( p \lor \neg p \)
+
+\[
+\begin{array}{|c|c|}
+\hline
+p & p \lor \neg p \\
+\hline
+T & T \\
+F & T \\
+\hline
+\end{array}
+\]
+```
+
+
+## Logical Equivalence
+
+```{definition}
+
+Two compound propositions \( p \) and \( q \) are **logically equivalent** if they yield the same truth values for all combinations of truth values of their components. Denoted as:
+
+\[
+p \equiv q
+\]
+```
+
+```{remark}
+
+- \( p \equiv q \) means that \( p \iff q \) is a tautology.
+- The symbol \( \equiv \) is not a logical connective; it asserts that the biconditional \( p \iff q \) is always true.
+```
+
+
+### Useful Logical Equivalences
+
+These equivalences are foundational in propositional logic and are often used to simplify or transform logical expressions.
+
+
+1. **Double Negation**  
+   \[
+   \neg(\neg p) \equiv p
+   \]
+
+2. **De Morgan’s Law (Conjunction)**  
+   \[
+   \neg(p \land q) \equiv \neg p \lor \neg q
+   \]
+
+3. **De Morgan’s Law (Disjunction)**  
+   \[
+   \neg(p \lor q) \equiv \neg p \land \neg q
+   \]
+
+4. **Implication**  
+   \[
+   p \Rightarrow q \equiv \neg p \lor q
+   \]
+
+5. **Negation of Implication**  
+   \[
+   \neg(p \Rightarrow q) \equiv p \land \neg q
+   \]
+
+
+## The Algebra of Propositions
+
+
+
+## The Algebra of Propositions
+
+### Logical Laws and Their Equivalences
+
+| Law Name              | Disjunction-related Expression(s)                          | Conjunction-related Expression(s)                          |
+|-----------------------|------------------------------------------------------------|------------------------------------------------------------|
+| **Idempotent Laws**   | \( p \lor p \equiv p \)                                    | \( p \land p \equiv p \)                                   |
+| **Associative Laws**  | \( (p \lor q) \lor r \equiv p \lor (q \lor r) \)           | \( (p \land q) \land r \equiv p \land (q \land r) \)       |
+| **Commutative Laws**  | \( p \lor q \equiv q \lor p \)                             | \( p \land q \equiv q \land p \)                           |
+| **Distributive Laws** | \( p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \)| \( p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \)|
+| **Identity Laws**     | \( p \lor F \equiv p \), \( p \lor T \equiv T \)           | \( p \land F \equiv F \), \( p \land T \equiv p \)         |
+| **Involution Law**    | —                                                          | \( \neg \neg p \equiv p \)                                 |
+| **Complement Laws**   | \( \neg p \lor p \equiv T \)                               | \( \neg p \land p \equiv F \)                              |
+| **De Morgan’s Laws**  | \( \neg (p \land q) \equiv \neg p \lor \neg q \)           | \( \neg (p \lor q) \equiv \neg p \land \neg q \)           |
+| **Conditional Identities** | \( p \Rightarrow q \equiv \neg p \lor q \)            | \( p \Leftrightarrow q \equiv (p \Rightarrow q) \land (q \Rightarrow p) \) |
+
+
+```{example}
+
+1. Show that:  
+   \[
+   p \land \neg (q \Rightarrow \neg r) \equiv p \land (q \land r)
+   \]
+
+2. Show that:  
+   \[
+   p \Leftrightarrow q \equiv \neg q \Leftrightarrow \neg p
+   \]
+
+3. Using logically equivalent statements (without truth tables), show:  
+   \[
+   \neg (\neg p \land q) \land (p \lor q) \equiv p
+   \]
+```
+
+
+
+## Predicate Logic and Quantifiers
+
+Consider the following statements:
+
+\[
+x > 3, \quad x = y + 3, \quad x + y = z
+\]
+
+The truth value of these statements has no meaning without specifying the values of \( x, y, z \).
+
+However, we can make propositions out of such statements.
+
+A **predicate** is a property that is true or false about the subject (in logic, we say "variable") of a statement.
+
+For example:
+
+\[
+\text{``} \quad \underbrace{x}_{\text{subject}} \quad \underbrace{\text{is greater than 3"}}_{\text{predicate}} 
+\]
+
+
+
+
+### Predicates
+
+A **predicate** is a declarative sentence whose truth value depends on one or more variables.
+
+The statement:
+\[
+x \text{ is greater than } 3
+\]
+
+has two parts:
+
+- The **predicate**: "is greater than 3"
+- The **variable**: \( x \)
+
+We denote this statement by \( P(x) \), where:
+
+- \( P \) is the predicate "is greater than 3"
+- \( x \) is the variable
+
+By assigning a value to \( x \), \( P(x) \) becomes a **proposition** with a definite truth value:
+
+- \( P(5) \): "5 is greater than 3" → **True**
+- \( P(2) \): "2 is greater than 3" → **False**
+
+**Note**:
+
+- A **predicate** is neither true nor false on its own.
+- A predicate becomes a **proposition** when its variables are substituted with specific values.
+- The **domain** (also called the universe or universe of discourse) of a predicate variable is the set of all values that may be substituted for the variable.
+
+```{definition}
+
+Let \( A \) be a nonempty set. An expression \( P(x) \) defined on \( A \) is called a **predicate** if:
+
+\[
+P(a) \text{ is either true or false for each } a \in A
+\]
+
+That is, \( P(a) \) becomes a **statement** (i.e., a proposition with a definite truth value) whenever any element \( a \in A \) is substituted for the variable \( x \).
+```
+
+```{example}
+
+**(i)** Let \( P(x): x^2 > 6 \), where \( x \in \mathbb{N} \)
+
+- \( P(1) \): \( 1^2 = 1 \not> 6 \) → False  
+- \( P(2) \): \( 2^2 = 4 \not> 6 \) → False  
+- For \( x \in \mathbb{N} \) and \( x \ne 1, x \ne 2 \), \( P(x) \) is true.
+
+**(ii)** Let \( P(x, y): x^2 + y^2 = 4 \), where \( x, y \in \mathbb{R} \)
+
+- \( P(0, 2) \): \( 0^2 + 2^2 = 4 \) → True  
+- \( P(1, 1) \): \( 1^2 + 1^2 = 2 \) → False
+```
+
+
+### Converting Predicates to Propositions
+
+There are two standard methods:
+
+1. **Assign specific values to variables**  
+   Example: \( P(3) \), \( P(0, 2) \)
+
+2. **Add quantifiers**  
+   - Universal: \( \forall x \in \mathbb{N},\; P(x) \)  
+   - Existential: \( \exists x \in \mathbb{R},\; P(x) \)
+
+
+
+
+
+
+
+
+
+

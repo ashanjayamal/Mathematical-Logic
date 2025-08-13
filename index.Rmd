@@ -1,0 +1,19 @@
+--- 
+title: "Mathematical Logic"
+author: "Ashan De Silva"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This book introduces foundational concepts in mathematical logic.
+  It uses the HTML output format `bookdown::gitbook`, 
+  as specified in `_output.yml`.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Introduction
+

@@ -1,0 +1,1555 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Mathematical Logic},
+  pdfauthor={Ashan De Silva},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Mathematical Logic}
+\author{Ashan De Silva}
+\date{2025-08-13}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Introduction}\label{introduction}
+
+\chapter{Mathematical logic}\label{mathematical-logic}
+
+Mathematical logic is the branch of mathematics that studies the principles and methods of formal reasoning. It is based on symbolic languages that can express statements and arguments in a precise and unambiguous way.
+
+\section{Propositional logic \& Logical operators}\label{propositional-logic-logical-operators}
+
+Propositional logic is a branch of mathematical logic that studies the logical relationships between propositions, which are statements that can be either true or false.
+
+\begin{definition}[Proposition (Statement)]
+\protect\hypertarget{def:unnamed-chunk-1}{}\label{def:unnamed-chunk-1}roposition (Statement) is a declarative sentence that is either true (T) or false (F), but not both.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-2}{}\label{exm:unnamed-chunk-2}\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  A square has all its sides equal.
+\item
+  Every Odd number is not divisible by 2.
+\item
+  \(2 < 3\).
+\item
+  \(\sqrt{2}\not\in \mathbb{Q}\).
+\item
+  \(\mathbb{Z}\subseteq \mathbb{Q}\).
+\item
+  The set \(\{10, 20, 30\}\) has three elements.
+\end{enumerate}
+
+They are all true.
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-3}{}\label{exm:unnamed-chunk-3}\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  Every rectangle is a square.
+\item
+  \((2 +4)^2 = 2^2 4^2\).
+\item
+  \(\sqrt{2}\not\in\mathbb{R}\).
+\item
+  \(\mathbb{R} \subseteq \mathbb{Q}\).
+\item
+  \(\{10, 11, 12\} \cap \mathbb{N}=\emptyset\)
+\end{enumerate}
+
+They are all false.
+
+\end{example}
+
+\begin{remark}
+
+No sentence can be called a statement if
+
+\begin{itemize}
+\tightlist
+\item
+  It is a question.
+\item
+  It is an order or request.
+\end{itemize}
+
+\end{remark}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-5}{}\label{exm:unnamed-chunk-5}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  ``How old are you?'' cannot be assigned true or false (In fact, it is a
+  question). So, it is not a statement.
+\item
+  ``Close the door'' cannot be assigned u-ue or false (Infect, it is a
+  command). So, it cannot be called a statement.
+\item
+  ``x is a natural number'' depends on the value of x. So, it is not
+  considered as a statement. However, often it's referred to as an
+  open statement.
+\end{itemize}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-6}{}\label{exm:unnamed-chunk-6}\leavevmode
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4245}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5755}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{NOT a statement}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Statement}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Add \(5\) to both sides. & Adding \(5\) to both sides of \(x − 5 = 37\) gives \(x = 42\). \\
+\(\mathbb{Z}\) & \(42 \in \mathbb{Z}\) \\
+\(42\) & 42 is not a number. \\
+What is the solution of 2x = 84? & The solution of 2x = 84 is 42. \\
+\end{longtable}
+
+\end{example}
+
+\section{Statements and Truth Values}\label{statements-and-truth-values}
+
+\textbf{Note:} The \textbf{truth (T)} or \textbf{falsity (F)} of a statement is called its \textbf{truth value}.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-7}{}\label{def:unnamed-chunk-7}A statement is called \textbf{simple} (or \emph{atomic}) if it cannot be broken down into two or more statements.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-8}{}\label{exm:unnamed-chunk-8}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  \(2\) is an even number.
+\item
+  A square has all its sides equal.
+\item
+  \(7\) is an odd number.
+\end{itemize}
+
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-9}{}\label{def:unnamed-chunk-9}A \textbf{compound statement} is one which is made up of two or more simple statements.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-10}{}\label{exm:unnamed-chunk-10}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  ``\(7\) is both an odd and prime number'' can be broken into two statements:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``\(7\) is an odd number.''
+  \item
+    ``\(7\) is a prime number.''\\
+  \end{itemize}
+\item
+  So it is a compound statement.
+\end{itemize}
+
+\end{example}
+
+\textbf{Note:} The simple statements which constitute a compound statement are called \textbf{component statements}.
+
+\section{More About Propositions}\label{more-about-propositions}
+
+\begin{itemize}
+\tightlist
+\item
+  We use letters to denote propositions, such as \(p, q, r, s\).
+\item
+  The \textbf{truth value} of a proposition is denoted as:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(T\) for \textbf{true}
+  \item
+    \(F\) for \textbf{false}
+  \end{itemize}
+\end{itemize}
+
+Using these notations, we can form new (compound) propositions from known propositions.\\
+This area of logic is known as \textbf{propositional calculus} or \textbf{propositional logic}.
+
+\begin{quote}
+\emph{Note:} Calculus here refers to the manipulation or computation with symbols.
+\end{quote}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-11}{}\label{exm:unnamed-chunk-11}Let:
+- \(p\): 7 is an odd number.
+- \(q\): 7 is a prime number.
+- \(r\): \(5 > 11\)
+\end{example}
+
+\section{Logical Operators / Connectives}\label{logical-operators-connectives}
+
+\begin{itemize}
+\tightlist
+\item
+  A \textbf{logical operator} is a rule defined by a \textbf{truth table}.
+\end{itemize}
+
+\subsection{Truth Table}\label{truth-table}
+
+A truth table shows the relationship between the truth values of propositions.\\
+It is useful for:
+- Visually displaying how a logical operator works.
+- Determining the truth value of a compound proposition based on its component propositions.
+
+\section{Logical Operators}\label{logical-operators}
+
+Here are some important logical operators:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+\textbf{Operator} & \textbf{Handle} & \textbf{Notation} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Negation & not & \(\sim ,\neg\) \\
+Conjunction & and & \(\land\) \\
+Disjunction & or & \(\lor\) \\
+Exclusive-or & xor & \(\oplus\) \\
+Implication & implies & \(\rightarrow\) \\
+Biconditional & if and only if (iff) & \(\leftrightarrow\) \\
+\end{longtable}
+
+\subsection{\texorpdfstring{The Negation Operator (\(\sim,\neg\))}{The Negation Operator (\textbackslash sim,\textbackslash neg)}}\label{the-negation-operator-simneg}
+
+Given any proposition \(p\), we can form a new proposition:\\
+\textbf{``It is not true that \(p\)''}, which is called the \textbf{negation} of \(p\).
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-12}{}\label{exm:unnamed-chunk-12}Let \(p\): ``The number 2 is even.''\\
+This statement is \textbf{true}.
+
+Negation:\\
+\(\sim p\): ``It is not true that the number 2 is even.''\\
+This new statement is \textbf{false}.
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-13}{}\label{def:unnamed-chunk-13}Let \(p\) be a proposition.\\
+The statement ``\(p\) is not the case'' is another proposition called the \textbf{negation} of \(p\).\\
+It is denoted \(\sim p\) and read as ``not \(p\)''.
+\end{definition}
+
+\subsubsection{Truth Table for Negation}\label{truth-table-for-negation}
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule\noalign{}
+\(p\) & \(\neg p\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & F \\
+F & T \\
+\end{longtable}
+
+\subsubsection{Alternate Expressions for Negation}\label{alternate-expressions-for-negation}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-14}{}\label{exm:unnamed-chunk-14}
+
+Let \(P\): ``The number 2 is even.''
+
+Then \(\sim P\) can be expressed as:
+
+\begin{itemize}
+\tightlist
+\item
+  ``It's not true that the number 2 is even.''
+\item
+  ``It is false that the number 2 is even.''
+\item
+  ``The number 2 is not even.''
+\end{itemize}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-15}{}\label{exm:unnamed-chunk-15}
+
+Let:
+- \(p\): ``This book is interesting.''
+
+Then the negation \(\lnot p\) (also written as \(\sim p\)) can be read as:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``This book is not interesting.''
+\item
+  ``This book is uninteresting.''
+\item
+  ``It is not the case that this book is interesting.''
+\end{enumerate}
+
+\end{example}
+
+\textbf{Note}:
+The symbol \(\lnot\) is called the \textbf{negation operator}.\\
+It operates on a single logical proposition by \textbf{complementing its truth value}.\\
+For this reason, it is also called the \textbf{logical complement}.
+
+We now introduce logical operators that take \textbf{two existing propositions} and form a \textbf{new compound proposition}.
+
+These operators are known as \textbf{logical connectives}.
+
+\subsection{The Conjunction Operator --- ``and''}\label{the-conjunction-operator-and}
+
+The word \textbf{``and''} can be used to combine two statements to form a new statement.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-16}{}\label{exm:unnamed-chunk-16}
+
+Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P\): The number 2 is even.
+\item
+  \(Q\): The number 3 is odd.
+\end{itemize}
+
+Then:
+
+\begin{itemize}
+\tightlist
+\item
+  \(R_1\): ``The number 2 is even and the number 3 is odd.''\\
+  This is a \textbf{true} statement because both \(P\) and \(Q\) are true.
+\end{itemize}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-17}{}\label{exm:unnamed-chunk-17}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  \(R_2\): ``The number 1 is even and the number 3 is odd.'' → \textbf{False}
+\item
+  \(R_3\): ``The number 2 is even and the number 4 is odd.'' → \textbf{False}
+\item
+  \(R_4\): ``The number 3 is even and the number 2 is odd.'' → \textbf{False}
+\end{itemize}
+
+\end{example}
+
+\subsubsection{Symbolic Notation:}\label{symbolic-notation}
+
+We use the symbol \(\land\) to represent ``and''.\\
+So, if \(P\) and \(Q\) are propositions, then \(P \land Q\) means ``\(P\) and \(Q\)''.
+
+\begin{itemize}
+\tightlist
+\item
+  \(P \land Q\) is \textbf{true} only if both \(P\) and \(Q\) are true.
+\item
+  Otherwise, \(P \land Q\) is \textbf{false}.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Truth Table for Conjunction}\label{truth-table-for-conjunction}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+\(P\) & \(Q\) & \(P \land Q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & F \\
+\end{longtable}
+
+\begin{quote}
+In this table, \(T\) stands for ``True'' and \(F\) stands for ``False''.\\
+These are called \textbf{truth values}.
+\end{quote}
+
+\subsection{The Disjunction Operator --- ``or''}\label{the-disjunction-operator-or}
+
+Let \(p\) and \(q\) be propositions.\\
+The proposition ``\(p\) or \(q\)'' is called the \textbf{disjunction} of \(p\) and \(q\), denoted by \(p \lor q\).
+
+\begin{itemize}
+\tightlist
+\item
+  \(p \lor q\) is \textbf{false} only when both \(p\) and \(q\) are false.
+\item
+  It is \textbf{true} otherwise.
+\end{itemize}
+
+\subsubsection{Truth Table for Disjunction}\label{truth-table-for-disjunction}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(p\) & \(q\) & \(p \lor q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & T \\
+T & F & T \\
+F & T & T \\
+F & F & F \\
+\end{longtable}
+
+\begin{quote}
+This is an \textbf{inclusive or}: true if either or both are true.
+\end{quote}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-18}{}\label{exm:unnamed-chunk-18}Let:
+- \(S_1\): ``The number 2 is even or the number 3 is odd.'' → \textbf{True}
+- \(S_2\): ``The number 1 is even or the number 3 is odd.'' → \textbf{True}
+- \(S_3\): ``The number 2 is even or the number 4 is odd.'' → \textbf{True}
+- \(S_4\): ``The number 3 is even or the number 2 is odd.'' → \textbf{False}
+\end{example}
+
+\subsection{The Exclusive OR Operator --- ``either or''}\label{the-exclusive-or-operator-either-or}
+
+Let \(p\) and \(q\) be propositions.\\
+The \textbf{exclusive or} of \(p\) and \(q\), denoted \(p \oplus q\), is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{True} when exactly one of \(p\) or \(q\) is true.
+\item
+  \textbf{False} when both are true or both are false.
+\end{itemize}
+
+\subsubsection{Truth Table for Exclusive OR}\label{truth-table-for-exclusive-or}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+\(p\) & \(q\) & \(p \oplus q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & F \\
+\end{longtable}
+
+\begin{quote}
+``Either \(p\) or \(q\) is true, but not both.''
+\end{quote}
+
+Let \(p\) and \(q\) be propositions.\\
+The \textbf{exclusive or} of \(p\) and \(q\), denoted \(p \oplus q\), is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{True} when exactly one of \(p\) or \(q\) is true.
+\item
+  \textbf{False} when both are true or both are false.
+\end{itemize}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-19}{}\label{exm:unnamed-chunk-19}Let:
+- \(p\): This book is interesting.
+- \(q\): I am staying at home.
+
+Then:
+- \(p \oplus q\): ``Either this book is interesting, or I am staying at home, but not both.''
+\end{example}
+
+\subsubsection{Truth Table for Exclusive OR}\label{truth-table-for-exclusive-or-1}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+\(p\) & \(q\) & \(p \oplus q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & F \\
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\): \(3 > 1\) → T\\
+\item
+  \(q\): \(0 = 1\) → F\\
+\item
+  \(r\): \(2 = 1\) → F
+\end{itemize}
+
+Then:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p \oplus q\): T\\
+\item
+  \(p \oplus r\): T ⊕ F = T
+\end{itemize}
+
+\subsection{Implication Operator --- ``implies''}\label{implication-operator-implies}
+
+Let \(P\) and \(Q\) be propositions.\\
+The implication ``If \(P\), then \(Q\)'' is written as \(P \Rightarrow Q\).
+
+\begin{itemize}
+\tightlist
+\item
+  This is called a \textbf{conditional statement}.
+\item
+  It is \textbf{false} only when \(P\) is true and \(Q\) is false.
+\item
+  Otherwise, it is \textbf{true}.
+\end{itemize}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-20}{}\label{exm:unnamed-chunk-20}Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P\): The integer \(a\) is a multiple of 6.
+\item
+  \(Q\): The integer \(a\) is divisible by 2.
+\end{itemize}
+
+Then:
+
+\begin{itemize}
+\tightlist
+\item
+  \(R\): ``If \(a\) is a multiple of 6, then \(a\) is divisible by 2.''\\
+  This is a \textbf{true} statement.
+\end{itemize}
+
+In general, given any two statements \(P\) and \(Q\) whatsoever, we can form the new statement \emph{``If \( P \), then \( Q \).''} This is written symbolically as \(P \rightarrow Q\), which we read as \emph{``If \( P \), then \( Q \),''} or \emph{``\( P \) implies \( Q \).''}
+
+Like the symbols \(\land\) (and) and \(\lor\) (or), the symbol \(\rightarrow\) has a very specific meaning. When we assert that the statement \(P \rightarrow Q\) is true, we mean that if \(P\) is true, then \(Q\) must also be true. In other words, the condition of \(P\) being true forces \(Q\) to be true.
+
+A statement of the form \(P \rightarrow Q\) is called a \emph{conditional statement} because it means \(Q\) will be true under the condition that \(P\) is true.
+\end{example}
+
+Think of \(p \rightarrow q\) as a promise: whenever \(p\) is true, \(q\) will be true also.\\
+There is only one way this promise can be broken---namely, if \(p\) is true but \(q\) is false.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-21}{}\label{def:unnamed-chunk-21}Let \(p\) and \(q\) be propositions. The implication \(p \rightarrow q\) is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{False} when \(p\) is true and \(q\) is false\\
+\item
+  \textbf{True} otherwise
+\end{itemize}
+
+In this implication:
+- \(p\) is called the \textbf{hypothesis} (or antecedent or premise)
+- \(q\) is called the \textbf{conclusion} (or consequence)
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-22}{}\label{exm:unnamed-chunk-22}If \(\underbrace{\text{a polygon is a triangle,}}_\text{hypothesis,p}
+ then
+\underbrace{ \text{ the sum of its angle measures is 180°.}}_\text{conclusion,q}\)
+\end{example}
+
+\subsubsection{Ways to express an implication}\label{ways-to-express-an-implication}
+
+\begin{itemize}
+\tightlist
+\item
+  \(p \implies q\)
+\item
+  ``If \(p\), then \(q\)''
+\item
+  ``If \(p\), \(q\)''
+\item
+  ``\(p\) is sufficient for \(q\)''
+\item
+  ``\(q\) if \(p\)''
+\item
+  ``\(q\) when \(p\)''
+\item
+  ``\(p\) implies \(q\)''
+\item
+  ``\(p\) only if \(q\)''
+\item
+  ``\(q\) is necessary for \(p\)''
+\item
+  ``\(q\) follows from \(p\)''
+\end{itemize}
+
+\subsubsection{\texorpdfstring{Truth Table for \(p \implies q\)}{Truth Table for p \textbackslash implies q}}\label{truth-table-for-p-implies-q}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2174}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2174}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.5652}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\(p\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(p \implies q\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & T \\
+T & F & \textbf{F} \\
+{F} & {T} & {T} \\
+F & F & T \\
+\end{longtable}
+
+\begin{remark}
+\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  \(p \rightarrow q\) is \textbf{{ false} only when} \(p\) is true and \(q\) is false.
+\item
+  \(p \rightarrow q\) can be \textbf{true even if} \(p\) is false.
+\item
+  The truth of \(p \rightarrow q\) does \textbf{not require} that either \(p\) or \(q\) is true.
+\end{itemize}
+
+\end{remark}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-24}{}\label{exm:unnamed-chunk-24}
+
+Consider the statement:\\
+\textbf{``Employee pays taxes only if his income is more than 3 million.''}
+
+Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\): Employee pays taxes\\
+\item
+  \(q\): His income is more than 3 million
+\end{itemize}
+
+Symbolically:
+
+\[
+p \implies q
+\]
+
+In other words:
+
+\begin{itemize}
+\tightlist
+\item
+  If employee pays taxes, then his income is more than 3 million.
+\item
+  Employee's income is more than 3 million, if he pays taxes.
+\end{itemize}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-25}{}\label{exm:unnamed-chunk-25}Consider the statement:\\
+\emph{``If \(n^2\) is even, then \(n\) is even.''}
+
+Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\): \(n^2\) is even\\
+\item
+  \(q\): \(n\) is even
+\end{itemize}
+
+Symbolically:
+
+\[
+p \implies q
+\]
+\end{example}
+
+\subsection{\texorpdfstring{Biconditional Logic: \(p \iff q\)}{Biconditional Logic: p \textbackslash iff q}}\label{biconditional-logic-p-iff-q}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-26}{}\label{def:unnamed-chunk-26}
+
+Let \(p\) and \(q\) be propositions. The biconditional \(p \iff q\) is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{True} when \(p\) and \(q\) have the same truth value\\
+\item
+  \textbf{False} otherwise
+\end{itemize}
+
+\end{definition}
+
+\begin{remark}
+
+The statement \(p \iff q\) is true precisely when both \(p \Rightarrow q\) and \(q \Rightarrow p\) are true.\\
+This is why we say:
+
+\begin{itemize}
+\tightlist
+\item
+  ``\(p\) if and only if \(q\)''\\
+\item
+  \(p \iff q \equiv (p \Rightarrow q) \land (q \Rightarrow p)\)
+\end{itemize}
+
+\end{remark}
+
+\subsubsection{Alternate phrasing}\label{alternate-phrasing}
+
+Not surprisingly, there are many ways of saying \(P \iff Q\) in English. The
+following constructions all mean \(P \iff Q\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(P\) if and only if \(Q\).
+\item
+  \(P\) is necessary and sufficient for \(Q\).
+\item
+  For \(P\) it is necessary and suffcient that \(Q\).
+\item
+  \(P\) is equivalent to \(Q\).
+\item
+  If \(P\), then \(Q\), and conversely.
+\end{itemize}
+
+The first three of these just combine constructions from the previous section
+to express that\(P \implies Q\) and \(Q\implies  P\). In the last one, the words ``\emph{\ldots and conversely}'' mean that in addition to ``\emph{If \(P\), then \(Q\)}'' being true, the converse statement ``*If \(Q\), then \(P\)'' is also true.
+
+\subsubsection{\texorpdfstring{Truth Table for \(p \iff q\)}{Truth Table for p \textbackslash iff q}}\label{truth-table-for-p-iff-q}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+\(p\) & \(q\) & \(p \iff q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0826}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0826}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2149}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2149}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4050}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\(p\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(p \Rightarrow q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(q \Rightarrow p\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\((p \Rightarrow q) \land (q \Rightarrow p)\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & T & T & T \\
+T & F & F & T & F \\
+F & T & T & F & F \\
+F & F & T & T & T \\
+\end{longtable}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-28}{}\label{exm:unnamed-chunk-28}\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``A number is divisible by 2 if and only if it is even.''
+\item
+  ``A number being even is a necessary and sufficient condition for it to be divisible by 2.''
+\end{enumerate}
+
+\end{example}
+
+\subsection{Terminology}\label{terminology}
+
+Let the compound statement be:
+
+**``If** \(p\), \textbf{then} \(q\)'' --- symbolically written as \(p \rightarrow q\)
+
+Components
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\): \textbf{Premise}, \textbf{Hypothesis}, or \textbf{Antecedent}
+\item
+  \(q\): \textbf{Conclusion} or \textbf{Consequent}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1680}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2080}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.6240}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Transformation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Symbolic Form
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verbal Form
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Converse} & \(q \rightarrow p\) & If \(q\), then \(p\) \\
+\textbf{Inverse} & \(\neg p \rightarrow \neg q\) & If not \(p\), then not \(q\) \\
+\textbf{Contrapositive} & \(\neg q \rightarrow \neg p\) & If not \(q\), then not \(p\) \\
+\textbf{Negation} & \(p \land \neg q\) & \(p\) is true and \(q\) is false (i.e., the conditional fails) \\
+\end{longtable}
+
+\section{Truth Tables for Compound Propositions}\label{truth-tables-for-compound-propositions}
+
+To analyze compound propositions:
+
+\begin{itemize}
+\tightlist
+\item
+  Use separate columns for each sub-expression.
+\item
+  Evaluate truth values for all combinations of truth values of the atomic propositions.
+\item
+  The final column shows the truth value of the entire compound proposition.
+\end{itemize}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-29}{}\label{exm:unnamed-chunk-29}\leavevmode
+
+\begin{quote}
+\textbf{If a polygon is a triangle, then the sum of its angle measures is 180°}
+\end{quote}
+
+Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\): A polygon is a triangle\\
+\item
+  \(q\): The sum of the angle measures of a polygon is \(180^\circ\)
+\end{itemize}
+
+Then the compound statement is:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p \implies q\)
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Converse}
+\end{enumerate}
+
+\begin{quote}
+The converse of a conditional statement \(p \implies q\) is \(q \implies p\)
+\end{quote}
+
+\textbf{Statement}:\\
+\textbf{If} the sum of the angle measures of a polygon is \(180^\circ\), \textbf{then} the polygon is a triangle.\\
+\textbf{Symbolically}: \(q \implies p\)
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Inverse}
+\end{enumerate}
+
+\begin{quote}
+The inverse of a conditional statement \(p \implies q\) is \(\neg p \implies \neg q\)
+\end{quote}
+
+\textbf{Statement}:\\
+\textbf{If} a polygon is \textbf{not} a triangle, \textbf{then} the sum of its angle measures is \textbf{not} \(180^\circ\).\\
+\textbf{Symbolically}:\\
+\(\neg p \rightarrow \neg q\)
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Contrapositive}
+\end{enumerate}
+
+\begin{quote}
+The contrapositive of a conditional statement \(p \implies q\) is \(\neg q \implies \neg p\)
+\end{quote}
+
+\textbf{Statement}:\\
+\textbf{If} the sum of the angle measures of a polygon is \textbf{not} \(180^\circ\), \textbf{then} the polygon is \textbf{not} a triangle.\\
+\textbf{Symbolically}: \(\neg q \implies \neg p\)
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  \textbf{Negation}
+\end{enumerate}
+
+\begin{quote}
+The negation of a conditional statement \(p \implies q\) is \(p \land \neg q\)
+\end{quote}
+
+\textbf{Statement}:\\
+A polygon \textbf{is} a triangle \textbf{and} the sum of its angle measures is \textbf{not} \(180^\circ\).\\
+\textbf{Symbolically}: \(p \land \neg q\)
+
+\end{example}
+
+\section{Precedence of Logical Operations}\label{precedence-of-logical-operations}
+
+To reduce parentheses in logical expressions, follow this precedence order:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+Operation & Symbol & Precedence \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Negation & \(\neg\) & 1 \\
+Conjunction & \(\land\) & 2 \\
+Disjunction & \(\lor\) & 3 \\
+Implication & \(\Rightarrow\) & 4 \\
+Biconditional & \(\Leftrightarrow\) & 5 \\
+\end{longtable}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-30}{}\label{exm:unnamed-chunk-30}\leavevmode
+
+\begin{itemize}
+\item
+  \(p \lor q \land r\) means:\(p \lor (q \land r)\)
+\item
+  \((p \lor q) \land r\) requires parentheses to override precedence.
+\item
+  \(p \lor q \Rightarrow \neg r\) means: \((p \lor q) \Rightarrow (\neg r)\)
+\item
+  \(p \lor (q \Rightarrow \neg r)\) requires parentheses to clarify grouping.
+\end{itemize}
+
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-31}{}\label{exm:unnamed-chunk-31}
+
+Parse the statement\\
+\((\neg p) \Rightarrow (p \lor (q \land p))\)
+
+This uses:
+
+\begin{itemize}
+\tightlist
+\item
+  Negation on \(p\)
+\item
+  Conjunction \(q \land p\)
+\item
+  Disjunction \(p \lor (q \land p)\)
+\item
+  Implication from \(\neg p\) to the disjunction
+\end{itemize}
+
+\end{example}
+
+\section{Truth Tables and Logical Analysis}\label{truth-tables-and-logical-analysis}
+
+\subsection{Constructing a Truth Table}\label{constructing-a-truth-table}
+
+To analyze a compound proposition:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Determine the number of atomic propositions}:\\
+  If there are \(n\) propositions, the truth table will have \(2^n\) rows.
+\item
+  \textbf{List all combinations of truth values}:\\
+  Fill the first \(n\) columns with all possible combinations of truth values for each proposition.
+\item
+  \textbf{Evaluate each sub-expression}:\\
+  Add columns for intermediate steps and compute their truth values row by row.
+\end{enumerate}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-32}{}\label{exm:unnamed-chunk-32}
+
+Construct a truth table for the compound proposition:\\
+\[
+(p \lor \neg q) \Rightarrow (p \land q)
+\]
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0775}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0775}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1240}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1860}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1550}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3798}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\(p\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\neg q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(p \lor \neg q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(p \land q\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\((p \lor \neg q) \Rightarrow (p \land q)\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+T & T & F & T & T & T \\
+T & F & T & T & F & F \\
+F & T & F & F & F & T \\
+F & F & T & T & F & F \\
+\end{longtable}
+
+\end{example}
+
+\begin{remark}
+To construct the truth table for a given proposition:
+1 . Create a table with \(2^n\) rows if a compound proposition involves \(n\).
+propsitions.
+2. Fill in the first \(n\) columns with all possible cobinations.
+3. Determine and enter the truth value for each combination.
+\end{remark}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-34}{}\label{exm:unnamed-chunk-34}For \(n=3\),
+
+This table lists all possible combinations of truth values for three atomic propositions: \(p\), \(q\), and \(r\).
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & q & r \\
+\hline
+T & T & T \\
+F & T & T \\
+T & F & T \\
+F & F & T \\
+T & T & F \\
+F & T & F \\
+T & F & F \\
+F & F & F \\
+\hline
+\end{array}
+\]
+\end{example}
+
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-35}{}\label{exr:unnamed-chunk-35}
+
+Construct truth tables for the following compound propositions
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \[
+  \neg (P \lor Q) \lor (\neg P)
+  \]
+\item
+  \[
+  \neg (P \Rightarrow Q)
+  \]
+\item
+  \[
+  P \lor (Q \Rightarrow R)
+  \]
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-36}{}\label{exr:unnamed-chunk-36}Suppose the statement \(((P \land Q) \lor R) \Rightarrow (R \lor S)\) is \textbf{false}.\\
+Find the truth values of \(P\), \(Q\), \(R\), and \(S\) without constructing a full truth table.
+\end{exercise}
+
+\section{Tautologies and Contradictions}\label{tautologies-and-contradictions}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-37}{}\label{def:unnamed-chunk-37}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  A \textbf{tautology} is a compound proposition that is always true, regardless of the truth values of its components.
+\item
+  A \textbf{contradiction} is a compound proposition that is always false.
+\item
+  A \textbf{contingency} is a compound proposition that is neither a tautology nor a contradiction.
+\end{itemize}
+
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-38}{}\label{exm:unnamed-chunk-38}Let \(p\): ``This course is easy.''
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  Contradiction:\\
+  ``This course is easy \textbf{and} this course is not easy''\\
+  Expression: \(p \land \neg p\)
+\end{enumerate}
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+F & T & F \\
+\hline
+\end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Tautology:\\
+  ``This course is easy \textbf{or} this course is not easy''\\
+  Expression: \(p \lor \neg p\)
+\end{enumerate}
+
+\[
+\begin{array}{|c|c|}
+\hline
+p & p \lor \neg p \\
+\hline
+T & T \\
+F & T \\
+\hline
+\end{array}
+\]
+\end{example}
+
+\section{Logical Equivalence}\label{logical-equivalence}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-39}{}\label{def:unnamed-chunk-39}Two compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if they yield the same truth values for all combinations of truth values of their components. Denoted as:
+
+\[
+p \equiv q
+\]
+\end{definition}
+
+\begin{remark}
+\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  \(p \equiv q\) means that \(p \iff q\) is a tautology.
+\item
+  The symbol \(\equiv\) is not a logical connective; it asserts that the biconditional \(p \iff q\) is always true.
+\end{itemize}
+
+\end{remark}
+
+\subsection{Useful Logical Equivalences}\label{useful-logical-equivalences}
+
+These equivalences are foundational in propositional logic and are often used to simplify or transform logical expressions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Double Negation}\\
+  \[
+  \neg(\neg p) \equiv p
+  \]
+\item
+  \textbf{De Morgan's Law (Conjunction)}\\
+  \[
+  \neg(p \land q) \equiv \neg p \lor \neg q
+  \]
+\item
+  \textbf{De Morgan's Law (Disjunction)}\\
+  \[
+  \neg(p \lor q) \equiv \neg p \land \neg q
+  \]
+\item
+  \textbf{Implication}\\
+  \[
+  p \Rightarrow q \equiv \neg p \lor q
+  \]
+\item
+  \textbf{Negation of Implication}\\
+  \[
+  \neg(p \Rightarrow q) \equiv p \land \neg q
+  \]
+\end{enumerate}
+
+\section{The Algebra of Propositions}\label{the-algebra-of-propositions}
+
+\section{The Algebra of Propositions}\label{the-algebra-of-propositions-1}
+
+\subsection{Logical Laws and Their Equivalences}\label{logical-laws-and-their-equivalences}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1608}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4196}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4196}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Law Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Disjunction-related Expression(s)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Conjunction-related Expression(s)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Idempotent Laws} & \(p \lor p \equiv p\) & \(p \land p \equiv p\) \\
+\textbf{Associative Laws} & \((p \lor q) \lor r \equiv p \lor (q \lor r)\) & \((p \land q) \land r \equiv p \land (q \land r)\) \\
+\textbf{Commutative Laws} & \(p \lor q \equiv q \lor p\) & \(p \land q \equiv q \land p\) \\
+\textbf{Distributive Laws} & \(p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)\) & \(p \land (q \lor r) \equiv (p \land q) \lor (p \land r)\) \\
+\textbf{Identity Laws} & \(p \lor F \equiv p\), \(p \lor T \equiv T\) & \(p \land F \equiv F\), \(p \land T \equiv p\) \\
+\textbf{Involution Law} & --- & \(\neg \neg p \equiv p\) \\
+\textbf{Complement Laws} & \(\neg p \lor p \equiv T\) & \(\neg p \land p \equiv F\) \\
+\textbf{De Morgan's Laws} & \(\neg (p \land q) \equiv \neg p \lor \neg q\) & \(\neg (p \lor q) \equiv \neg p \land \neg q\) \\
+\textbf{Conditional Identities} & \(p \Rightarrow q \equiv \neg p \lor q\) & \(p \Leftrightarrow q \equiv (p \Rightarrow q) \land (q \Rightarrow p)\) \\
+\end{longtable}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-41}{}\label{exm:unnamed-chunk-41}\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Show that:\\
+  \[
+  p \land \neg (q \Rightarrow \neg r) \equiv p \land (q \land r)
+  \]
+\item
+  Show that:\\
+  \[
+  p \Leftrightarrow q \equiv \neg q \Leftrightarrow \neg p
+  \]
+\item
+  Using logically equivalent statements (without truth tables), show:\\
+  \[
+  \neg (\neg p \land q) \land (p \lor q) \equiv p
+  \]
+\end{enumerate}
+
+\end{example}
+
+\section{Predicate Logic and Quantifiers}\label{predicate-logic-and-quantifiers}
+
+Consider the following statements:
+
+\[
+x > 3, \quad x = y + 3, \quad x + y = z
+\]
+
+The truth value of these statements has no meaning without specifying the values of \(x, y, z\).
+
+However, we can make propositions out of such statements.
+
+A \textbf{predicate} is a property that is true or false about the subject (in logic, we say ``variable'') of a statement.
+
+For example:
+
+\[
+\text{``} \quad \underbrace{x}_{\text{subject}} \quad \underbrace{\text{is greater than 3"}}_{\text{predicate}} 
+\]
+
+\subsection{Predicates}\label{predicates}
+
+A \textbf{predicate} is a declarative sentence whose truth value depends on one or more variables.
+
+The statement:
+\[
+x \text{ is greater than } 3
+\]
+
+has two parts:
+
+\begin{itemize}
+\tightlist
+\item
+  The \textbf{predicate}: ``is greater than 3''
+\item
+  The \textbf{variable}: \(x\)
+\end{itemize}
+
+We denote this statement by \(P(x)\), where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P\) is the predicate ``is greater than 3''
+\item
+  \(x\) is the variable
+\end{itemize}
+
+By assigning a value to \(x\), \(P(x)\) becomes a \textbf{proposition} with a definite truth value:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(5)\): ``5 is greater than 3'' → \textbf{True}
+\item
+  \(P(2)\): ``2 is greater than 3'' → \textbf{False}
+\end{itemize}
+
+\textbf{Note}:
+
+\begin{itemize}
+\tightlist
+\item
+  A \textbf{predicate} is neither true nor false on its own.
+\item
+  A predicate becomes a \textbf{proposition} when its variables are substituted with specific values.
+\item
+  The \textbf{domain} (also called the universe or universe of discourse) of a predicate variable is the set of all values that may be substituted for the variable.
+\end{itemize}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-42}{}\label{def:unnamed-chunk-42}Let \(A\) be a nonempty set. An expression \(P(x)\) defined on \(A\) is called a \textbf{predicate} if:
+
+\[
+P(a) \text{ is either true or false for each } a \in A
+\]
+
+That is, \(P(a)\) becomes a \textbf{statement} (i.e., a proposition with a definite truth value) whenever any element \(a \in A\) is substituted for the variable \(x\).
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-43}{}\label{exm:unnamed-chunk-43}
+
+\textbf{(i)} Let \(P(x): x^2 > 6\), where \(x \in \mathbb{N}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(1)\): \(1^2 = 1 \not> 6\) → False\\
+\item
+  \(P(2)\): \(2^2 = 4 \not> 6\) → False\\
+\item
+  For \(x \in \mathbb{N}\) and \(x \ne 1, x \ne 2\), \(P(x)\) is true.
+\end{itemize}
+
+\textbf{(ii)} Let \(P(x, y): x^2 + y^2 = 4\), where \(x, y \in \mathbb{R}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(0, 2)\): \(0^2 + 2^2 = 4\) → True\\
+\item
+  \(P(1, 1)\): \(1^2 + 1^2 = 2\) → False
+\end{itemize}
+
+\end{example}
+
+\subsection{Converting Predicates to Propositions}\label{converting-predicates-to-propositions}
+
+There are two standard methods:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Assign specific values to variables}\\
+  Example: \(P(3)\), \(P(0, 2)\)
+\item
+  \textbf{Add quantifiers}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Universal: \(\forall x \in \mathbb{N},\; P(x)\)\\
+  \item
+    Existential: \(\exists x \in \mathbb{R},\; P(x)\)
+  \end{itemize}
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
