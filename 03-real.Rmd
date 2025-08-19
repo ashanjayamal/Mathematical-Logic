@@ -57,7 +57,7 @@ For every \( a \in \mathbb{R} \) with \( a \ne 0 \), there exists an element \( 
 For all \( a, b, c \in \mathbb{R} \),\(a \cdot (b + c) = a \cdot b + a \cdot c
 \)
 
-Thank you, Ashan. Based on your image, here's a formal Markdown rendering of the **Basic Properties of Equality** and **Some Algebraic Properties of Real Numbers**, using LaTeX for clarity and textbook precision:
+
 
 
 ## Basic Properties of Equality
@@ -225,10 +225,6 @@ Let \( a, b, c \in \mathbb{R} \). Then:
    If \( c < 0 \) and \( a < b \), then \( a \cdot c > b \cdot c \).  
    *(Note: This reverses the inequality.)*
 ```
-
-Thanks, Ashan. Here's a formal transcription of the image content, formatted for textbook inclusion:
-
----
 
 ## Absolute Value
 
@@ -464,9 +460,6 @@ Since:
 \]
 ```
 
-Thank you for sharing the image. Here's a formal Markdown transcription using LaTeX notation, suitable for textbook inclusion:
-
----
 
 ## Archimedean Property
 
