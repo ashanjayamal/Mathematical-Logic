@@ -5,11 +5,10 @@ Mathematical logic is the branch of mathematics that studies the principles and 
 Propositional logic is a branch of mathematical logic that studies the logical relationships between propositions, which are statements that can be either true or false.
 
 ```{definition,name='Proposition (Statement)'}
-roposition (Statement) is a declarative sentence that is either true (T) or false (F), but not both.
+Proposition (Statement) is a declarative sentence that is either true (T) or false (F), but not both.
 ```
 
 ```{example}
-
 (i) A square has all its sides equal.
 (ii) Every Odd number is not divisible by 2.
 (iii) $2 < 3$.
@@ -394,6 +393,10 @@ If  $\underbrace{\text{a polygon is a triangle,}}_\text{hypothesis,p}
 - "\( p \) only if \( q \)"
 - "\( q \) is necessary for \( p \)"
 - "\( q \) follows from \( p \)"
+
+<center>
+![Source: Facebook](fig/fig10.jpg){width=80%}
+</center>
 
 ####  Truth Table for \( p \implies q \)
 
@@ -950,12 +953,472 @@ There are two standard methods:
    - Universal: \( \forall x \in \mathbb{N},\; P(x) \)  
    - Existential: \( \exists x \in \mathbb{R},\; P(x) \)
 
+<center>
+![](fig/fig1.png)
+</center>
+
+
+## Quantifiers
+
+A predicate becomes a proposition when we assign it fixed values. However, another way to convert a predicate into a proposition is by **quantifying** it.
+
+Quantification expresses whether a predicate is true for:
+
+- **All** values in the universe of discourse
+- **Some** values in the universe of discourse
+
+```{definition}
+
+**Quantifiers** are words that refer to quantities such as “all” or “some.” They indicate how many elements in the domain satisfy a given predicate.
+```
+
+Two Types of Quantifiers
+
+1. **Universal Quantifier**  
+   Symbol: \( \forall \)  
+   Meaning: "For all" or "For every, " or "For each, "
+   Example:  
+
+> For every \( n \in \mathbb{Z} \), \( 2n \) is even.
+
+This can be expressed symbolically as:
+
+\[
+\forall n \in \mathbb{Z},\; 2n \text{ is even}
+\]
+
+
+2. **Existential Quantifier**  
+   Symbol: \( \exists \)  
+   Meaning: "There exists a" or "There is a."  
+   Example:  
+
+> There exists an integer \( n \in \mathbb{Z} \) such that \( n^2 = 2 \).
+
+This can be expressed symbolically as:
+
+\[
+\exists n \in \mathbb{Z},\; n^2 = 2
+\]
+
+
+### Universal Quantifier \( \forall \)
+
+Let \( p(x) \) be a predicate, where \( x \in D \).
+
+Suppose the statement  
+> “For any \( x \) in a non-empty subset \( S \subseteq D \), \( p(x) \) is true”  
+is valid.
+
+Then the expression  
+\[
+\forall x \in S,\; p(x)
+\]  
+is a **proposition**.
+
+This means:  
+> “For every \( x \) in the subset \( S \), the predicate \( p(x) \) holds.”
+
+
+
+```{example}
+
+Let \( p(x) \): “\( x \) is even”  
+Let \( D = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} \)  
+Let \( S = \{2, 4, 6, 8, 10\} \subseteq D \)
+
+Then:
+\[
+\forall x \in S,\; p(x)
+\]
+is true, since all elements of \( S \) are even.
+```
+
+#### Notation
+
+- \( \forall x\; P(x) \): Read as “for all \( x \), \( P(x) \)” or “for every \( x \), \( P(x) \)”
+- \( \forall \): Universal quantifier
+
+```{definition}
+An element \(x\) for which \(P(x)\) is false is called a counterexample of \(\forall x P(x)\).
+```
+
+
+#### Other ways to say \(\forall\)
+
+- All of...
+- For each...
+- Given any...
+- For any...
+- For arbitrary...
+
+```{example}
+Let \( P(x): x^2 > x \), where \( x \) is a real number.
+
+Then "\( \forall x\, P(x) \)" in English means "for all \( x \), \( x^2 > x \)", or we can say "for any \( x \), \( x^2 > x \)", or in other words "given any \( x \), \( x^2 > x \)".
+
+An element \( x = \frac{1}{2} \), since \( \left(\frac{1}{2}\right)^2 = \frac{1}{4} < \frac{1}{2} \), is false. That is, \( P\left(\frac{1}{2}\right) \) is false.
+
+So, \( x = \frac{1}{2} \) is a counterexample to the statement "for all \( x \), \( x^2 > x \)", where \( x \) is a real number.
+```
+
+
+```{example}
+Consider the predicate \( |x| \geq 0 \), where \( x \in \mathbb{R} \).
+
+Let \( P(x): |x| \geq 0 \).
+
+Then, \( \forall x \in \mathbb{R},\, P(x) \) is true.
+
+i.e., \( \forall x \in \mathbb{R},\, |x| \geq 0 \).
+
+```
+
+```{example}
+Consider the predicate \( x > \frac{1}{2} \), where \( x \in \mathbb{R} \).
+
+Let \( P(x): x > \frac{1}{2} \).
+
+Then \( \forall x \in \mathbb{R},\, P(x) \) is false, since for instance \( 0 \in \mathbb{R} \), but \( P(0) \) is false.
+
+i.e., \( \neg (\forall x \in \mathbb{R},\, P(x)) \).
+
+However, \( \forall x \in \mathbb{N},\, P(x) \) is true.
+
+i.e., \( \forall x \in \mathbb{N},\, P(x) \).
+
+```
+
+### The Existential Quantifier "\( \exists \)"
+
+
+
+
+Let \( p(x) \) be a predicate, where \( x \in D \).
+
+Suppose:  
+"There is \( x_0 \in S \subseteq D \), such that \( p(x_0) \)" is true.
+
+Then:  
+"There is \( x_0 \in S \subseteq D \), such that \( p(x_0) \)" is a proposition.
+
+We write this proposition as:  
+
+
+\[ \exists x_0 \in S,\ p(x_0) \]
+
+
+
+Which means:  
+"There exists \( x_0 \in S \) such that \( p(x_0) \)" is true.
+
+i.e.,  
+
+
+\[ \exists x_0 \in S,\ p(x_0) \]
+
+
+
+#### Notation
+
+\( \exists x\, P(x) \), where \( \exists \) is called the existential quantifier.
+
+#### Other ways to read \( \exists \):
+
+- "There is an \( x \) such that \( P(x) \)."
+- "There is at least one \( x \) such that \( P(x) \)."
+- "For some \( x \), \( P(x) \)."
+
+
+```{example}
+
+Consider the predicate \( 2x > 7 \), where \( x \in \mathbb{N} \).
+
+Let \( P(x): 2x > 7 \).
+
+When \( x \in \mathbb{N} \) and \( 2x > 7 \) is true (since \( 10 > 7 \)),
+
+i.e., when \( x = 5 \), \( x \in \mathbb{N} \) and \( P(5) \) is true.
+
+Therefore,  
+
+
+\[ \exists x \in \mathbb{N},\ P(x) \text{ is true} \]
+
+
+
+i.e.,  
+
+
+\[ \exists x \in \mathbb{N},\ 2x > 7 \]
+
+
+```
+
+
+```{example}
+
+Consider the predicate \( x^2 > 1 \), where \( x \in \mathbb{R} \).
+
+Let \( A = \{0, 1, -1\} \) and define \( P(x): x^2 > 1 \).
+
+Then:
+- \( P(0) \) is false,
+- \( P(1) \) is false,
+- \( P(-1) \) is false.
+
+Therefore,  
+
+
+\[ \exists x \in A,\ P(x) \]
+
+ is false,
+
+i.e.,  
+
+
+\[ \neg (\exists x \in A,\ P(x)) \]
+
+.
+
+However,  
+
+
+\[ \exists x \in \mathbb{N},\ P(x) \]
+
+ is true,  
+since when \( x = 2 \), \( x \in \mathbb{N} \) and \( P(2) \) is true.
+
+i.e.,  
+
+
+\[ \exists x \in \mathbb{N},\ x^2 > 1. \]
+```
+
+<!--## Existential Quantifier \( \exists \)-->
+
+Let \( p(x) \) be a predicate and \( D \) be the domain of \( x \).
+
+An existential statement is a statement of the form:  
+
+
+\[ \exists x \in D,\ p(x) \]
+
+
+
+- Forms:
+    - "There exists an \( x \) such that \( p(x) \)"
+    - "For some \( x \), \( p(x) \)"
+    - "We can find an \( x \) such that \( p(x) \)"
+    - "There is some \( x \) such that \( p(x) \)"
+    - "There is at least one \( x \) such that \( p(x) \)"
+- The statement is **true** if \( p(x) \) is true for **at least one** \( x \in D \).
+- The statement is **false** if \( p(x) \) is false for **all** \( x \in D \).
+- A **Counterproof** to disprove an existential statement, one must show that \( p(x) \) is false for **every** \( x \in D \).
+
+### Quantifiers and Negation
+
+Suppose \( A \) is a non-empty set, \( P(x) \) is a predicate where \( x \in A \), and \( B \subseteq A \) is a non-empty subset.
+
+We consider the negations of quantified statements:
+
+1. Negation of a Universal Statement
+
+
+
+\[
+\neg (\forall x \in B,\ P(x))
+\]
+
+
+
+This means:  
+It is not the case that for every \( x \in B \), \( P(x) \) holds.  
+So, there exists some \( x \in B \) such that \( P(x) \) does not hold:
+
+
+
+\[
+\exists x \in B,\ \neg P(x)
+\]
+
+
+
+2. Negation of an Existential Statement
+
+
+
+\[
+\neg (\exists x \in B,\ P(x))
+\]
+
+
+
+This means:  
+It is not the case that there exists some \( x \in B \) such that \( P(x) \) holds.  
+So, for every \( x \in B \), \( P(x) \) does not hold:
+
+
+
+\[
+\forall x \in B,\ \neg P(x)
+\]
+
+
+
+
+The following equivalences hold:
+
+\[ \neg (\forall x \in B,\ P(x)) \equiv \exists x \in B,\ \neg P(x) \]
+\[ \neg (\exists x \in B,\ P(x)) \equiv \forall x \in B,\ \neg P(x) \]
 
 
 
 
 
 
+- \( \neg (\forall x \in D,\ p(x)) \equiv \exists x \in D,\ \neg p(x) \)
+- \( \neg (\exists x \in D,\ p(x)) \equiv \forall x \in D,\ \neg p(x) \)
+
+- The negation of a universal statement ("all are") is logically equivalent to an existential statement ("there is at least one that is not").
+- The negation of an existential statement ("some are") is logically equivalent to a universal statement ("all are not").
+
+
+```{example}
+- \( \forall \) primes \( p \), \( p \) is odd  
+  **Negation:** \( \exists \) prime \( p \), \( p \) is even
+
+- \( \exists \) triangle \( T \), the sum of angles of \( T \) equals \( 200^\circ \)  
+  **Negation:** \( \forall \) triangles \( T \), the sum of angles of \( T \) does not equal \( 200^\circ \)
+```
 
 
 
+#### Truth Value of Quantified Statements
+
+| Statement           | When True                                 | When False                                  |
+|---------------------|-------------------------------------------|---------------------------------------------|
+| \( \forall x \in D,\ P(x) \) | \( P(x) \) is true for every \( x \in D \)     | There exists at least one \( x \in D \) such that \( P(x) \) is false |
+| \( \exists x \in D,\ P(x) \) | There exists at least one \( x \in D \) such that \( P(x) \) is true | \( P(x) \) is false for every \( x \in D \) |
+
+
+```{example}
+We are given the logical equivalence:
+\[
+\neg (\exists x\ \forall y\ \exists z\ P(x, y, z)) \equiv \forall x\ \exists y\ \forall z\ \neg P(x, y, z)
+\]
+
+<center>
+  ![](fig/fig2.png)
+</center>
+```
+
+**Note**:
+Logical operations from propositional logic — such as \( \neg \), \( \land \), \( \lor \), \( \Rightarrow \), \( \Leftrightarrow \) —  
+can also be applied to quantified statements.
+
+Here is a clean transcription of the image content, showing only the questions and definitions without any answers or reformulations:
+
+---
+
+### Negation of Quantification
+
+Given a quantified statement of the form:
+
+\[
+\neg(\forall x \in D,\, P(x) \land Q(x))
+\]
+
+Apply logical transformations to express its equivalent forms.
+
+
+
+#### Conditional Quantification
+
+Consider the conditional quantification:
+
+\[
+\forall x \in D,\, P(x) \Rightarrow Q(x)
+\]
+
+Define the following related forms:
+
+- **Converse**: \(\forall x \in D,\, Q(x) \Rightarrow P(x)\)
+
+- **Contrapositive**: \(\forall x \in D,\, \neg Q(x) \Rightarrow \neg P(x)\)
+
+- **Inverse**:\(\forall x \in D,\, \neg P(x) \Rightarrow \neg Q(x)\)
+
+**Note**: : A conditional proposition is logically equivalnce  to its contrapositive.
+
+\[
+\forall x \in D, P(x) \implies Q(x)\equiv \forall x\in D, \neg Q(x) \implies \neg P(x)
+\]
+
+### Negation of Conditional Quantification
+
+
+\begin{align}
+\neg (\forall x \in D, P(x) \implies Q(x)) &\equiv \exists x_0 \in D \neg (P(x_0) \implies Q(x_0))\\
+& \equiv \exists x_0 \in D P(x_0) \land  \neg Q(x_0)
+\end{align}
+
+
+```{example}
+Let \( x \in \mathbb{R} \).
+
+- \( x = 1 \) is a sufficient condition for \( x^2 = 1 \)  
+  i.e., \( \forall x \in \mathbb{R},\ x = 1 \Rightarrow x^2 = 1 \)
+
+- \( x^2 = 1 \) is a necessary condition for \( x = 1 \)  
+  i.e., \( \forall x \in \mathbb{R},\ x^2 \neq 1 \Rightarrow x \neq 1 \)
+
+- \( x = 1 \) only if \( x^2 = 1 \)  
+  i.e., \( \forall x \in \mathbb{R},\ x^2 \neq 1 \Rightarrow x \neq 1 \)
+
+```
+
+```{example}
+Let \( x \in \mathbb{R} \).
+
+Statement: \( \forall x,\ x > 10 \Rightarrow x^2 > 100 \)
+
+Negation: \( \exists x \in \mathbb{R} \) such that \( x > 10 \) and \( x^2 \leq 100 \)
+
+```
+```{example}
+Let \( x \in \mathbb{R} \).
+
+Statement:  
+If \( x > 1 \), then \( x^2 > 1 \)
+
+Define:  
+\( P(x): x > 1 \)  
+\( Q(x): x^2 > 1 \)
+
+Symbolic form:  
+
+
+\[
+\forall x \in \mathbb{R},\ P(x) \Rightarrow Q(x)
+\]
+
+
+
+Negation:  
+
+
+\[
+\exists x_0 \in \mathbb{R},\ P(x_0) \land \neg Q(x_0)
+\]
+
+
+i.e.,  
+
+
+\[
+x_0 > 1 \quad \text{and} \quad x_0^2 \leq 1
+\]
+
+
+```

@@ -1,0 +1,173 @@
+# Exercises
+
+```{exercise}
+Without changing their meanings, convert each of the following sentences into a
+sentence having the form "P if and only if Q."
+
+1. A series converges whenever it converges absolutely.  
+2. For a function to be continuous, it is sufficient that it is differentiable.
+3. For a function to be continuous, it is necessary that it is integrable.  
+4. A function is rational if it is a polynomial.  
+5. An integer is divisible by 8 only if it is divisible by 4.
+6. For matrix \( A \) to be invertible, it is necessary and sufficient that \( \det(A) \neq 0 \).  
+7. If a function has a constant derivative then it is linear, and conversely.  
+8. If \( xy = 0 \) then \( x = 0 \) or \( y = 0 \), and conversely.  
+9. If \( a \in \mathbb{Q} \) then \( 5a \in \mathbb{Q} \), and if \( 5a \in \mathbb{Q} \) then \( a \in \mathbb{Q} \).
+```
+
+```{exercise}
+
+Write truth tables for the following:
+
+(i) \( p \lor (q \Rightarrow r) \)  
+(ii) \( (q \lor r) \Leftrightarrow (r \lor q) \)  
+(iii) \( \sim(\sim p \lor q) \)  
+(iv) \( \sim(p \lor q) \lor (\sim p) \)  
+(v) \( p \lor (q \land \sim r) \)
+
+```
+
+```{exercise}
+
+Suppose \( p \) is false and  
+\( (r \Rightarrow s) \Leftrightarrow (p \land q) \) is true.  
+Find the truth values of \( r \) and \( s \).
+
+```
+
+```{exercise}
+
+Decide whether the following pairs are logically equivalent:
+
+(i) \( p \land q \) and \( \sim(\sim p \lor \sim q) \)  
+(ii) \( (p \Rightarrow q) \lor r \) and \( \sim((p \land \sim q) \land \sim r) \)  
+(iii) \( p \land (q \lor \sim q) \) and \( (\sim p) \Rightarrow (q \land \sim q) \)  
+(iv) \( \sim(p \Rightarrow q) \) and \( p \land \sim q \)  
+(v) \( (p \Rightarrow q) \lor r \) and \( \sim((p \land \sim q) \land \sim r) \)
+```
+
+
+```{exercise}
+Write down the negation of the following statements.
+
+(i) It's not true that the number 2 is even.  
+(ii) The number 2 is even or the number 3 is odd.  
+(iii) The discriminant is negative only if the quadratic equation has no real solutions.  
+(iv) If a function has a constant derivative then it is linear, and conversely.  
+(v) Either you pay your tuition or you will be withdrawn from the institute.
+```
+
+
+```{exercise}
+
+Let \( p, q \) and \( r \) be propositions. Let \( T \) denote a tautology.
+
+(i) Prove the following equivalences:
+
+- \( p \land q \equiv q \land p \)
+- \( \neg p \land q \equiv \neg (q \land \neg p) \)
+- \( p \land T \equiv T \)
+- \( p \lor \neg p \equiv T \)
+- \( p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \)
+
+(ii) Using results in part (i), show that:
+
+\[
+[(\neg r) \land p \land q] \lor [(\neg r) \land (\neg p) \land q] \equiv \neg (q \Rightarrow r)
+\]
+```
+
+```{exercise}
+
+Consider the statement:  
+“For all integers \( n \), if \( n \) is a multiple of 6 then \( n \) is even.”
+
+Let:  
+  
+- \( P(n) \): \( n \) is a multiple of 6  
+- \( Q(n) \): \( n \) is even  
+- \( \mathbb{Z} \): the set of all integers
+
+(i) Express the statement in symbolic form.  
+(ii) Write the converse, inverse, and contrapositive in English.  
+(iii) Express the statement using a necessary condition.  
+(iv) Express the statement using a sufficient condition.  
+(v) Express the statement using “only if”.
+```
+
+```{exercise}
+
+(i) What is the English interpretation of the contrapositive of:
+
+\[
+\forall \epsilon > 0 \, \forall x \in D(f) \, \exists \delta > 0, \quad |f(x) - l| < \epsilon \Rightarrow |x - a| \geq \delta
+\]
+
+(ii) What is the English interpretation of the negation of:
+
+\[
+\exists \delta > 0 \, \forall x \in S, \quad S \cap N^c(a, \delta) = \emptyset
+\]
+
+```
+
+```{exercise}
+
+Consider the following argument for an integer \( n \):
+
+- \( n \) is odd.  
+- If \( n \) is not odd, then \( n^2 \) is not odd.  
+- Therefore, \( n^2 \) is even.
+
+Let:  
+  
+- \( p \): \( n \) is odd  
+- \( q \): \( n^2 \) is odd
+
+(i) Express the argument symbolically.  
+(ii) Determine whether the argument is valid.
+
+```
+
+
+```{exercise}
+Prove each of the following statements:
+
+- (a) For all integers \( a \), \( b \), and \( c \) with \( a \neq 0 \), if \( a \mid b \) and \( a \mid c \), then \( a \mid (b - c) \).
+- (b) For each \( n \in \mathbb{Z} \), if \( n \) is an odd integer, then \( n^3 \) is an odd integer.
+- (c) For each integer \( a \), if \( 4 \mid (a - 1) \), then \( 4 \mid (a^2 - 1) \).
+```
+
+```{exercise}
+
+Let \( n \) be an integer. Prove each of the following:
+
+- (a) If \( n \) is even, then \( n^3 \) is even.
+- (b) If \( n^3 \) is even, then \( n \) is even.
+- (c) The integer \( n \) is even if and only if \( n^3 \) is even.
+- (d) The integer \( n \) is odd if and only if \( n^3 \) is odd.
+```
+
+```{exercise}
+- (a) Write the contrapositive of the following statement:  
+  *For all positive real numbers \( a \) and \( b \), if \( \sqrt{ab} \neq \frac{a + b}{2} \), then \( a \neq b \).*
+
+- (b) Is this statement true or false?  
+  Prove the statement if it is true or provide a counterexample if it is false.
+```
+
+```{exercise}
+Is the following proposition true or false?
+
+> For all integers \( a \) and \( b \), if \( ab \) is even, then \( a \) is even or \( b \) is even.
+
+Justify your conclusion by writing a proof if the proposition is true or by providing a counterexample if it is false.
+```
+
+```{exercise}
+Are the following propositions true or false? Justify your conclusion.
+
+- (a) There exist integers \( x \) and \( y \) such that \( 4x + 6y = 2 \).
+- (b) There exist integers \( x \) and \( y \) such that \( 6x + 15y = 2 \).
+- (c) There exist integers \( x \) and \( y \) such that \( 6x + 15y = 9 \).
+```

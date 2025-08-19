@@ -5,15 +5,44 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
+url: https://ashanjayamal.github.io/Mathematical-Logic/
 description: |
   This book introduces foundational concepts in mathematical logic.
-  It uses the HTML output format `bookdown::gitbook`, 
-  as specified in `_output.yml`.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: https://github.com/ashanjayamal/Mathematical-Logic.git
+
 ---
 
 # Introduction
+
+Mathematical logic is the discipline that formalizes reasoning. It provides a rigorous framework for analyzing statements, constructing arguments, and establishing truth. This textbook is designed to guide students through the foundational principles of logic, beginning with propositional logic and progressing toward predicate logic, proof techniques, and the structure of the real number system.
+
+The study of logic is essential for all areas of mathematics. It enables us to distinguish valid reasoning from fallacy, to express mathematical ideas with precision, and to construct proofs that are both sound and complete. Logic also serves as a bridge between mathematics and computer science, philosophy, and linguistics, where formal reasoning plays a central role.
+
+This book is structured to support both conceptual understanding and technical mastery. Each chapter introduces key definitions, examples, and formal notation, followed by exercises that reinforce the material. The progression is cumulative: later chapters build upon the logical foundations established early on.
+
+---
+
+## Chapter Overview
+
+- **Chapter 2: Mathematical Logic**  
+  Introduces propositional and predicate logic, truth tables, logical equivalence, and the algebra of propositions.
+
+- **Chapter 3: Introduction to Proofs**  
+  Covers terminology, argument structure, validity, and various proof techniques including indirect proofs and proof by cases.
+
+- **Chapter 4: The Real Number System ℝ**  
+  Presents the axioms of real numbers, properties of equality, order, completeness, and the concept of infinity.
+
+- **Chapter 5: Set Theory**  
+  Introduces the language of sets, operations, and foundational concepts used throughout mathematics.
+
+- **Chapter 6: Exercises**  
+  Provides practice problems to reinforce the concepts and techniques introduced in earlier chapters.
+
+---
+
+This textbook reflects a commitment to clarity, rigor, and accessibility. It is intended for undergraduate students beginning their study of mathematical logic, and for anyone seeking a structured and principled approach to formal reasoning.
+
+
 

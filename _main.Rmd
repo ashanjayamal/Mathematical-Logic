@@ -1,0 +1,3263 @@
+--- 
+title: "Mathematical Logic"
+author: "Ashan De Silva"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+url: https://ashanjayamal.github.io/Mathematical-Logic/
+description: |
+  This book introduces foundational concepts in mathematical logic.
+link-citations: yes
+github-repo: https://github.com/ashanjayamal/Mathematical-Logic.git
+
+---
+
+# Introduction
+
+Mathematical logic is the discipline that formalizes reasoning. It provides a rigorous framework for analyzing statements, constructing arguments, and establishing truth. This textbook is designed to guide students through the foundational principles of logic, beginning with propositional logic and progressing toward predicate logic, proof techniques, and the structure of the real number system.
+
+The study of logic is essential for all areas of mathematics. It enables us to distinguish valid reasoning from fallacy, to express mathematical ideas with precision, and to construct proofs that are both sound and complete. Logic also serves as a bridge between mathematics and computer science, philosophy, and linguistics, where formal reasoning plays a central role.
+
+This book is structured to support both conceptual understanding and technical mastery. Each chapter introduces key definitions, examples, and formal notation, followed by exercises that reinforce the material. The progression is cumulative: later chapters build upon the logical foundations established early on.
+
+---
+
+## Chapter Overview
+
+- **Chapter 2: Mathematical Logic**  
+  Introduces propositional and predicate logic, truth tables, logical equivalence, and the algebra of propositions.
+
+- **Chapter 3: Introduction to Proofs**  
+  Covers terminology, argument structure, validity, and various proof techniques including indirect proofs and proof by cases.
+
+- **Chapter 4: The Real Number System ℝ**  
+  Presents the axioms of real numbers, properties of equality, order, completeness, and the concept of infinity.
+
+- **Chapter 5: Set Theory**  
+  Introduces the language of sets, operations, and foundational concepts used throughout mathematics.
+
+- **Chapter 6: Exercises**  
+  Provides practice problems to reinforce the concepts and techniques introduced in earlier chapters.
+
+---
+
+This textbook reflects a commitment to clarity, rigor, and accessibility. It is intended for undergraduate students beginning their study of mathematical logic, and for anyone seeking a structured and principled approach to formal reasoning.
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Mathematical logic
+Mathematical logic is the branch of mathematics that studies the principles and methods of formal reasoning. It is based on symbolic languages that can express statements and arguments in a precise and unambiguous way.
+
+## Propositional logic & Logical operators
+Propositional logic is a branch of mathematical logic that studies the logical relationships between propositions, which are statements that can be either true or false.
+
+```{definition,name='Proposition (Statement)'}
+Proposition (Statement) is a declarative sentence that is either true (T) or false (F), but not both.
+```
+
+```{example}
+(i) A square has all its sides equal.
+(ii) Every Odd number is not divisible by 2.
+(iii) $2 < 3$.
+(iv) $\sqrt{2}\not\in \mathbb{Q}$.
+(v) $\mathbb{Z}\subseteq \mathbb{Q}$.
+(vi) The set $\{10, 20, 30\}$ has three elements.
+
+They are all true.
+```
+
+```{example}
+(i) Every rectangle is a square.
+(ii) $(2 +4)^2 = 2^2 4^2$.
+(iii) $\sqrt{2}\not\in\mathbb{R}$.
+(iv) $\mathbb{R} \subseteq \mathbb{Q}$.
+(v) $\{10, 11, 12\} \cap \mathbb{N}=\emptyset$
+  
+They are all false.
+```
+
+```{remark}
+No sentence can be called a statement if
+
+- It is a question.
+- It is an order or request.
+```
+
+```{example}
+- "How old are you?" cannot be assigned true or false (In fact, it is a
+question). So, it is not a statement.
+- "Close the door" cannot be assigned u-ue or false (Infect, it is a
+command). So, it cannot be called a statement.
+- "x is a natural number" depends on the value of x. So, it is not
+considered as a statement. However, often it's referred to as an
+open statement.
+```
+
+```{example}
+| **NOT a statement**                          | **Statement**                                               |
+|---------------------------------------------|-------------------------------------------------------------|
+| Add $5$ to both sides.| Adding $5$ to both sides of $x − 5 = 37$ gives $x = 42$.|
+| $\mathbb{Z}$| $42 \in \mathbb{Z}$                                                      |
+| $42$| 42 is not a number.  |
+| What is the solution of 2x = 84?| The solution of 2x = 84 is 42.|
+```
+
+
+
+## Statements and Truth Values
+
+**Note:** The **truth (T)** or **falsity (F)** of a statement is called its **truth value**.
+
+```{definition}
+A statement is called **simple** (or *atomic*) if it cannot be broken down into two or more statements.
+```
+
+```{example}
+- \( 2 \) is an even number.
+- A square has all its sides equal.
+- \( 7 \) is an odd number.
+```
+
+```{definition}
+A **compound statement** is one which is made up of two or more simple statements.
+```
+
+```{example}
+- “\( 7 \) is both an odd and prime number” can be broken into two statements:
+    - "\( 7 \) is an odd number."
+    - "\( 7 \) is a prime number."  
+- So it is a compound statement.
+```
+
+**Note:** The simple statements which constitute a compound statement are called **component statements**.
+
+
+## More About Propositions
+
+- We use letters to denote propositions, such as \( p, q, r, s \).
+- The **truth value** of a proposition is denoted as:
+  - \( T \) for **true**
+  - \( F \) for **false**
+
+Using these notations, we can form new (compound) propositions from known propositions.  
+This area of logic is known as **propositional calculus** or **propositional logic**.
+
+> *Note:* Calculus here refers to the manipulation or computation with symbols.
+
+
+```{example}
+
+Let:
+- \( p \): 7 is an odd number.
+- \( q \): 7 is a prime number.
+- \( r \): \( 5 > 11 \)
+```
+
+
+## Logical Operators / Connectives
+
+- A **logical operator** is a rule defined by a **truth table**.
+
+### Truth Table
+
+A truth table shows the relationship between the truth values of propositions.  
+It is useful for:
+- Visually displaying how a logical operator works.
+- Determining the truth value of a compound proposition based on its component propositions.
+
+## Logical Operators
+
+Here are some important logical operators:
+
+| **Operator**      | **Handle**             | **Notation** |
+|:-----------------:|:----------------------:|:------------:|
+| Negation          | not                    | \( \sim ,\neg\)   |
+| Conjunction       | and                    | \( \land \)  |
+| Disjunction       | or                     | \( \lor \)   |
+| Exclusive-or      | xor                    | \( \oplus \) |
+| Implication       | implies                | \( \rightarrow \) |
+| Biconditional     | if and only if (iff)   | \( \leftrightarrow \) |
+
+
+### The Negation Operator (\( \sim,\neg \))
+
+Given any proposition \( p \), we can form a new proposition:  
+**“It is not true that \( p \)”**, which is called the **negation** of \( p \).
+
+```{example}
+Let \( p \): “The number 2 is even.”  
+This statement is **true**.
+
+Negation:  
+\( \sim p \): “It is not true that the number 2 is even.”  
+This new statement is **false**.
+```
+
+```{definition}
+Let \( p \) be a proposition.  
+The statement “\( p \) is not the case” is another proposition called the **negation** of \( p \).  
+It is denoted \( \sim p \) and read as “not \( p \)”.
+```
+
+#### Truth Table for Negation
+
+| \( p \) | \( \neg p \) |
+|:------:|:-------------:|
+| T      | F            |
+| F      | T            |
+
+
+
+#### Alternate Expressions for Negation
+
+```{example}
+Let \( P \): “The number 2 is even.”
+
+Then \( \sim P \) can be expressed as:
+  
+- “It’s not true that the number 2 is even.”
+- “It is false that the number 2 is even.”
+- “The number 2 is not even.”
+```
+
+
+```{example}
+Let:
+- \( p \): “This book is interesting.”
+
+Then the negation \( \lnot p \) (also written as \( \sim p \)) can be read as:
+  
+1. “This book is not interesting.”
+2. “This book is uninteresting.”
+3. “It is not the case that this book is interesting.”
+```
+
+
+**Note**:
+The symbol \( \lnot \) is called the **negation operator**.  
+It operates on a single logical proposition by **complementing its truth value**.  
+For this reason, it is also called the **logical complement**.
+
+
+
+We now introduce logical operators that take **two existing propositions** and form a **new compound proposition**.  
+
+These operators are known as **logical connectives**.
+
+### The Conjunction Operator — "and"
+
+The word **“and”** can be used to combine two statements to form a new statement.
+
+```{example}
+Let:
+  
+- \( P \): The number 2 is even.
+- \( Q \): The number 3 is odd.
+
+Then:
+  
+- \( R_1 \): “The number 2 is even and the number 3 is odd.”  
+  This is a **true** statement because both \( P \) and \( Q \) are true.
+```
+
+
+```{example}
+- \( R_2 \): “The number 1 is even and the number 3 is odd.” → **False**
+- \( R_3 \): “The number 2 is even and the number 4 is odd.” → **False**
+- \( R_4 \): “The number 3 is even and the number 2 is odd.” → **False**
+```
+
+
+#### Symbolic Notation:
+
+We use the symbol \( \land \) to represent “and”.  
+So, if \( P \) and \( Q \) are propositions, then \( P \land Q \) means “\( P \) and \( Q \)”.
+
+- \( P \land Q \) is **true** only if both \( P \) and \( Q \) are true.
+- Otherwise, \( P \land Q \) is **false**.
+
+---
+
+#### Truth Table for Conjunction
+
+| \( P \) | \( Q \) | \( P \land Q \) |
+|:--------:|:--------:|:-----------------:|
+| T      | T      | T               |
+| T      | F      | F               |
+| F      | T      | F               |
+| F      | F      | F               |
+
+> In this table, \( T \) stands for “True” and \( F \) stands for “False”.  
+> These are called **truth values**.
+
+### The Disjunction Operator — "or"
+
+Let \( p \) and \( q \) be propositions.  
+The proposition “\( p \) or \( q \)” is called the **disjunction** of \( p \) and \( q \), denoted by \( p \lor q \).
+
+- \( p \lor q \) is **false** only when both \( p \) and \( q \) are false.
+- It is **true** otherwise.
+
+#### Truth Table for Disjunction
+
+| \( p \) | \( q \) | \( p \lor q \) |
+|--------|--------|----------------|
+| T      | T      | T              |
+| T      | F      | T              |
+| F      | T      | T              |
+| F      | F      | F              |
+
+> This is an **inclusive or**: true if either or both are true.
+
+
+```{example}
+
+Let:
+- \( S_1 \): “The number 2 is even or the number 3 is odd.” → **True**
+- \( S_2 \): “The number 1 is even or the number 3 is odd.” → **True**
+- \( S_3 \): “The number 2 is even or the number 4 is odd.” → **True**
+- \( S_4 \): “The number 3 is even or the number 2 is odd.” → **False**
+
+```
+
+### The Exclusive OR Operator — "either or"
+
+Let \( p \) and \( q \) be propositions.  
+The **exclusive or** of \( p \) and \( q \), denoted \( p \oplus q \), is:
+
+- **True** when exactly one of \( p \) or \( q \) is true.
+- **False** when both are true or both are false.
+
+#### Truth Table for Exclusive OR
+
+| \( p \) | \( q \) | \( p \oplus q \) |
+|:--------:|:--------:|:------------------:|
+| T      | T      | F                |
+| T      | F      | T                |
+| F      | T      | T                |
+| F      | F      | F                |
+
+> “Either \( p \) or \( q \) is true, but not both.”
+
+
+
+
+Let \( p \) and \( q \) be propositions.  
+The **exclusive or** of \( p \) and \( q \), denoted \( p \oplus q \), is:
+
+- **True** when exactly one of \( p \) or \( q \) is true.
+- **False** when both are true or both are false.
+
+```{example}
+
+Let:
+- \( p \): This book is interesting.
+- \( q \): I am staying at home.
+
+Then:
+- \( p \oplus q \): “Either this book is interesting, or I am staying at home, but not both.”
+```
+
+#### Truth Table for Exclusive OR
+
+| \( p \) | \( q \) | \( p \oplus q \) |
+|:--------:|:--------:|:------------------:|
+| T      | T      | F                |
+| T      | F      | T                |
+| F      | T      | T                |
+| F      | F      | F                |
+
+
+
+- \( p \): \( 3 > 1 \) → T  
+- \( q \): \( 0 = 1 \) → F  
+- \( r \): \( 2 = 1 \) → F  
+
+Then:
+
+- \( p \oplus q \): T  
+- \( p \oplus r \): T ⊕ F = T
+
+
+
+### Implication Operator — "implies"
+
+Let \( P \) and \( Q \) be propositions.  
+The implication “If \( P \), then \( Q \)” is written as \( P \Rightarrow Q \).
+
+- This is called a **conditional statement**.
+- It is **false** only when \( P \) is true and \( Q \) is false.
+- Otherwise, it is **true**.
+
+```{example}
+Let:
+  
+- \( P \): The integer \( a \) is a multiple of 6.
+- \( Q \): The integer \( a \) is divisible by 2.
+
+Then:
+  
+- \( R \): “If \( a \) is a multiple of 6, then \( a \) is divisible by 2.”  
+  This is a **true** statement.
+
+In general, given any two statements \( P \) and \( Q \) whatsoever, we can form the new statement \emph{``If \( P \), then \( Q \).''} This is written symbolically as \( P \rightarrow Q \), which we read as \emph{``If \( P \), then \( Q \),''} or \emph{``\( P \) implies \( Q \).''} 
+
+Like the symbols \( \land \) (and) and \( \lor \) (or), the symbol \( \rightarrow \) has a very specific meaning. When we assert that the statement \( P \rightarrow Q \) is true, we mean that if \( P \) is true, then \( Q \) must also be true. In other words, the condition of \( P \) being true forces \( Q \) to be true.
+
+A statement of the form \( P \rightarrow Q \) is called a \emph{conditional statement} because it means \( Q \) will be true under the condition that \( P \) is true.
+```
+
+
+
+Think of \( p \rightarrow q \) as a promise: whenever \( p \) is true, \( q \) will be true also.  
+There is only one way this promise can be broken—namely, if \( p \) is true but \( q \) is false.
+
+```{definition}
+Let \( p \) and \( q \) be propositions. The implication \( p \rightarrow q \) is:
+  
+- **False** when \( p \) is true and \( q \) is false  
+- **True** otherwise
+
+In this implication:
+- \( p \) is called the **hypothesis** (or antecedent or premise)
+- \( q \) is called the **conclusion** (or consequence)
+```
+
+```{example}
+If  $\underbrace{\text{a polygon is a triangle,}}_\text{hypothesis,p}
+ then 
+\underbrace{ \text{ the sum of its angle measures is 180°.}}_\text{conclusion,q}$
+```
+
+#### Ways to express an implication
+- $p \implies q$
+- "If \( p \), then \( q \)"
+- "If \( p \), \( q \)"
+- "\( p \) is sufficient for \( q \)"
+- "\( q \) if \( p \)"
+- "\( q \) when \( p \)"
+- "\( p \) implies \( q \)"
+- "\( p \) only if \( q \)"
+- "\( q \) is necessary for \( p \)"
+- "\( q \) follows from \( p \)"
+
+<center>
+![Source: Facebook](fig/fig10.jpg){width=80%}
+</center>
+
+####  Truth Table for \( p \implies q \)
+
+| \( p \) | \( q \) | \( p \implies q \) |
+|:--------:|:--------:|:------------------------:|
+| T      | T      | T                      |
+| T      | F      | **F**                  |
+| <span style="color:red">F</span>| <span style="color:red">T</span>|<span style="color:red">T</span> |
+| F      | F      | T                      |
+
+```{remark}
+- \( p \rightarrow q \) is **<span style="color:red"> false</span> only when** \( p \) is true and \( q \) is false.
+- \( p \rightarrow q \) can be **true even if** \( p \) is false.
+- The truth of \( p \rightarrow q \) does **not require** that either \( p \) or \( q \) is true.
+```
+
+```{example}
+
+Consider the statement:  
+**"Employee pays taxes only if his income is more than 3 million."**
+
+Let:  
+
+- \( p \): Employee pays taxes  
+- \( q \): His income is more than 3 million
+
+Symbolically:  
+
+
+\[
+p \implies q
+\]
+
+
+
+In other words:  
+
+- If employee pays taxes, then his income is more than 3 million.
+- Employee's income is more than 3 million, if he pays taxes.
+```
+
+```{example}
+Consider the statement:  
+*"If \( n^2 \) is even, then \( n \) is even."*
+
+Let: 
+  
+- \( p \): \( n^2 \) is even  
+- \( q \): \( n \) is even
+
+Symbolically:  
+
+
+\[
+p \implies q
+\]
+```
+
+### Biconditional Logic: \( p \iff q \)
+
+```{definition}
+Let \( p \) and \( q \) be propositions. The biconditional \( p \iff q \) is:
+  
+- **True** when \( p \) and \( q \) have the same truth value  
+- **False** otherwise
+```
+
+```{remark}
+The statement \( p \iff q \) is true precisely when both \( p \Rightarrow q \) and \( q \Rightarrow p \) are true.  
+This is why we say:  
+  
+- “\( p \) if and only if \( q \)”  
+- \( p \iff q \equiv (p \Rightarrow q) \land (q \Rightarrow p) \)
+```
+
+#### Alternate phrasing
+Not surprisingly, there are many ways of saying \(P \iff Q\) in English. The
+following constructions all mean \(P \iff Q\):
+
+- \(P\) if and only if \(Q\).
+- \( P \) is necessary and sufficient for \( Q \).
+- For \(P\) it is necessary and suffcient that \(Q\).
+- \(P\) is equivalent to \(Q\).
+- If \(P\), then \(Q\), and conversely.
+
+
+The first three of these just combine constructions from the previous section
+to express that\(P \implies Q\) and \(Q\implies  P\). In the last one, the words "*...and conversely*" mean that in addition to "*If \(P\), then \(Q\)*" being true, the converse statement "*If \(Q\), then \(P\)" is also true.
+
+#### Truth Table for \( p \iff q \)
+
+| \( p \) | \( q \) | \( p \iff q \) |
+|:--------:|:--------:|:----------------:|
+| T      | T      | T              |
+| T      | F      | F              |
+| F      | T      | F              |
+| F      | F      | T              |
+
+
+
+
+
+| \( p \) | \( q \) | \( p \Rightarrow q \) | \( q \Rightarrow p \) | \( (p \Rightarrow q) \land (q \Rightarrow p) \) |
+|:--------:|:--------:|:------------------------:|:------------------------:|:-----------------------------------------------:|
+|T|T|T|T|T|
+|T|F|F|T|F|
+|F|T|T|F|F|
+|F|F|T|T|T|
+
+```{example}
+1. "A number is divisible by 2 if and only if it is even."
+2. "A number being even is a necessary and sufficient condition for it to be divisible by 2."
+```
+
+### Terminology 
+
+Let the compound statement be:
+
+**"If** \( p \), **then** \( q \)" — symbolically written as \( p \rightarrow q \)
+
+Components
+
+- \( p \): **Premise**, **Hypothesis**, or **Antecedent**
+- \( q \): **Conclusion** or **Consequent**
+
+---
+
+
+
+| Transformation      | Symbolic Form            | Verbal Form                                                                 |
+|---------------------|--------------------------|------------------------------------------------------------------------------|
+| **Converse**        | \( q \rightarrow p \)     | If \( q \), then \( p \)                                                    |
+| **Inverse**         | \( \neg p \rightarrow \neg q \) | If not \( p \), then not \( q \)                                      |
+| **Contrapositive**  | \( \neg q \rightarrow \neg p \) | If not \( q \), then not \( p \)                                      |
+| **Negation**        | \( p \land \neg q \)      | \( p \) is true and \( q \) is false (i.e., the conditional fails)          |
+
+
+
+
+
+
+
+## Truth Tables for Compound Propositions
+
+To analyze compound propositions:
+
+- Use separate columns for each sub-expression.
+- Evaluate truth values for all combinations of truth values of the atomic propositions.
+- The final column shows the truth value of the entire compound proposition.
+
+
+
+```{example}
+> **If a polygon is a triangle, then the sum of its angle measures is 180°**
+
+Let:
+  
+- \( p \): A polygon is a triangle  
+- \( q \): The sum of the angle measures of a polygon is \(180^\circ\)
+
+Then the compound statement is:
+  
+- \( p \implies q \)
+
+(ii) **Converse**
+  
+> The converse of a conditional statement \( p \implies q \) is \( q \implies p \)
+
+**Statement**:  
+**If** the sum of the angle measures of a polygon is \(180^\circ\), **then** the polygon is a triangle.  
+**Symbolically**:  \( q \implies p \)
+
+(iii) **Inverse**
+  
+> The inverse of a conditional statement \( p \implies q \) is \( \neg p \implies \neg q \)
+
+**Statement**:  
+**If** a polygon is **not** a triangle, **then** the sum of its angle measures is **not** \(180^\circ\).  
+**Symbolically**:  
+\( \neg p \rightarrow \neg q \)
+
+(iv) **Contrapositive**
+  
+> The contrapositive of a conditional statement \( p \implies q \) is \( \neg q \implies \neg p \)
+
+**Statement**:  
+**If** the sum of the angle measures of a polygon is **not** \(180^\circ\), **then** the polygon is **not** a triangle.  
+**Symbolically**: \( \neg q \implies \neg p \)
+
+(v) **Negation**
+  
+> The negation of a conditional statement \( p \implies q \) is \( p \land \neg q \)
+
+**Statement**:  
+A polygon **is** a triangle **and** the sum of its angle measures is **not** \(180^\circ\).  
+**Symbolically**: \( p \land \neg q \)
+
+```
+
+
+## Precedence of Logical Operations
+
+To reduce parentheses in logical expressions, follow this precedence order:
+
+| Operation         | Symbol              | Precedence |
+|:-----------------:|:-------------------:|:------------:|
+| Negation         | \( \neg \)            | 1  |
+| Conjunction      | \( \land \)           | 2  |
+| Disjunction      | \( \lor \)            | 3  |
+| Implication      | \( \Rightarrow \)     | 4  |
+| Biconditional    | \( \Leftrightarrow \) | 5  |
+
+```{example}
+
+- \( p \lor q \land r \) means:\( p \lor (q \land r) \)
+
+- \( (p \lor q) \land r \) requires parentheses to override precedence.
+
+- \( p \lor q \Rightarrow \neg r \) means: \( (p \lor q) \Rightarrow (\neg r) \)
+
+- \( p \lor (q \Rightarrow \neg r) \) requires parentheses to clarify grouping.
+```
+
+```{example} 
+Parse the statement  
+\( (\neg p) \Rightarrow (p \lor (q \land p)) \)
+
+This uses:
+
+- Negation on \( p \)
+- Conjunction \( q \land p \)
+- Disjunction \( p \lor (q \land p) \)
+- Implication from \( \neg p \) to the disjunction
+```
+
+
+
+## Truth Tables and Logical Analysis
+
+### Constructing a Truth Table
+
+To analyze a compound proposition:
+
+1. **Determine the number of atomic propositions**:  
+   If there are \( n \) propositions, the truth table will have \( 2^n \) rows.
+
+2. **List all combinations of truth values**:  
+   Fill the first \( n \) columns with all possible combinations of truth values for each proposition.
+
+3. **Evaluate each sub-expression**:  
+   Add columns for intermediate steps and compute their truth values row by row.
+
+```{example}  
+Construct a truth table for the compound proposition:  
+\[
+(p \lor \neg q) \Rightarrow (p \land q)
+\]
+
+| \( p \) | \( q \) | \( \neg q \) | \( p \lor \neg q \) | \( p \land q \) | \( (p \lor \neg q) \Rightarrow (p \land q) \) |
+|:--------:|:--------:|:--------------:|:----------------------:|:------------------:|:-----------------------------------------------:|
+| T| T|F|T|T| T|
+| T| F|T|T|F| F|
+| F| T|F|F|F| T|
+| F| F|T|T|F| F|
+```
+
+```{remark}
+To construct the truth table for a given proposition:
+1 . Create a table with \(2^n\) rows if a compound proposition involves \(n\).
+propsitions.
+2. Fill in the first \(n\) columns with all possible cobinations.
+3. Determine and enter the truth value for each combination.
+```
+
+
+```{example}
+For $n=3$,
+
+This table lists all possible combinations of truth values for three atomic propositions: \( p \), \( q \), and \( r \).
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & q & r \\
+\hline
+T & T & T \\
+F & T & T \\
+T & F & T \\
+F & F & T \\
+T & T & F \\
+F & T & F \\
+T & F & F \\
+F & F & F \\
+\hline
+\end{array}
+\]
+
+
+```
+
+
+```{exercise}
+Construct truth tables for the following compound propositions
+
+a)  
+\[
+\neg (P \lor Q) \lor (\neg P)
+\]
+
+b)  
+\[
+\neg (P \Rightarrow Q)
+\]
+
+c)  
+\[
+P \lor (Q \Rightarrow R)
+\]
+```
+
+
+```{exercise}  
+Suppose the statement \(
+((P \land Q) \lor R) \Rightarrow (R \lor S)
+\) is **false**.  
+Find the truth values of \( P \), \( Q \), \( R \), and \( S \) without constructing a full truth table.
+```
+
+
+
+## Tautologies and Contradictions
+
+```{definition}
+
+- A **tautology** is a compound proposition that is always true, regardless of the truth values of its components.
+- A **contradiction** is a compound proposition that is always false.
+- A **contingency** is a compound proposition that is neither a tautology nor a contradiction.
+```
+
+
+```{example}
+
+Let \( p \): “This course is easy.”
+
+(i) Contradiction:  
+“This course is easy **and** this course is not easy”  
+Expression: \( p \land \neg p \)
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+F & T & F \\
+\hline
+\end{array}
+\]
+
+(ii) Tautology:  
+“This course is easy **or** this course is not easy”  
+Expression: \( p \lor \neg p \)
+
+\[
+\begin{array}{|c|c|}
+\hline
+p & p \lor \neg p \\
+\hline
+T & T \\
+F & T \\
+\hline
+\end{array}
+\]
+```
+
+
+## Logical Equivalence
+
+```{definition}
+
+Two compound propositions \( p \) and \( q \) are **logically equivalent** if they yield the same truth values for all combinations of truth values of their components. Denoted as:
+
+\[
+p \equiv q
+\]
+```
+
+```{remark}
+
+- \( p \equiv q \) means that \( p \iff q \) is a tautology.
+- The symbol \( \equiv \) is not a logical connective; it asserts that the biconditional \( p \iff q \) is always true.
+```
+
+
+### Useful Logical Equivalences
+
+These equivalences are foundational in propositional logic and are often used to simplify or transform logical expressions.
+
+
+1. **Double Negation**  
+   \[
+   \neg(\neg p) \equiv p
+   \]
+
+2. **De Morgan’s Law (Conjunction)**  
+   \[
+   \neg(p \land q) \equiv \neg p \lor \neg q
+   \]
+
+3. **De Morgan’s Law (Disjunction)**  
+   \[
+   \neg(p \lor q) \equiv \neg p \land \neg q
+   \]
+
+4. **Implication**  
+   \[
+   p \Rightarrow q \equiv \neg p \lor q
+   \]
+
+5. **Negation of Implication**  
+   \[
+   \neg(p \Rightarrow q) \equiv p \land \neg q
+   \]
+
+
+## The Algebra of Propositions
+
+
+
+## The Algebra of Propositions
+
+### Logical Laws and Their Equivalences
+
+| Law Name              | Disjunction-related Expression(s)                          | Conjunction-related Expression(s)                          |
+|-----------------------|------------------------------------------------------------|------------------------------------------------------------|
+| **Idempotent Laws**   | \( p \lor p \equiv p \)                                    | \( p \land p \equiv p \)                                   |
+| **Associative Laws**  | \( (p \lor q) \lor r \equiv p \lor (q \lor r) \)           | \( (p \land q) \land r \equiv p \land (q \land r) \)       |
+| **Commutative Laws**  | \( p \lor q \equiv q \lor p \)                             | \( p \land q \equiv q \land p \)                           |
+| **Distributive Laws** | \( p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \)| \( p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \)|
+| **Identity Laws**     | \( p \lor F \equiv p \), \( p \lor T \equiv T \)           | \( p \land F \equiv F \), \( p \land T \equiv p \)         |
+| **Involution Law**    | —                                                          | \( \neg \neg p \equiv p \)                                 |
+| **Complement Laws**   | \( \neg p \lor p \equiv T \)                               | \( \neg p \land p \equiv F \)                              |
+| **De Morgan’s Laws**  | \( \neg (p \land q) \equiv \neg p \lor \neg q \)           | \( \neg (p \lor q) \equiv \neg p \land \neg q \)           |
+| **Conditional Identities** | \( p \Rightarrow q \equiv \neg p \lor q \)            | \( p \Leftrightarrow q \equiv (p \Rightarrow q) \land (q \Rightarrow p) \) |
+
+
+```{example}
+
+1. Show that:  
+   \[
+   p \land \neg (q \Rightarrow \neg r) \equiv p \land (q \land r)
+   \]
+
+2. Show that:  
+   \[
+   p \Leftrightarrow q \equiv \neg q \Leftrightarrow \neg p
+   \]
+
+3. Using logically equivalent statements (without truth tables), show:  
+   \[
+   \neg (\neg p \land q) \land (p \lor q) \equiv p
+   \]
+```
+
+
+
+## Predicate Logic and Quantifiers
+
+Consider the following statements:
+
+\[
+x > 3, \quad x = y + 3, \quad x + y = z
+\]
+
+The truth value of these statements has no meaning without specifying the values of \( x, y, z \).
+
+However, we can make propositions out of such statements.
+
+A **predicate** is a property that is true or false about the subject (in logic, we say "variable") of a statement.
+
+For example:
+
+\[
+\text{``} \quad \underbrace{x}_{\text{subject}} \quad \underbrace{\text{is greater than 3"}}_{\text{predicate}} 
+\]
+
+
+
+
+### Predicates
+
+A **predicate** is a declarative sentence whose truth value depends on one or more variables.
+
+The statement:
+\[
+x \text{ is greater than } 3
+\]
+
+has two parts:
+
+- The **predicate**: "is greater than 3"
+- The **variable**: \( x \)
+
+We denote this statement by \( P(x) \), where:
+
+- \( P \) is the predicate "is greater than 3"
+- \( x \) is the variable
+
+By assigning a value to \( x \), \( P(x) \) becomes a **proposition** with a definite truth value:
+
+- \( P(5) \): "5 is greater than 3" → **True**
+- \( P(2) \): "2 is greater than 3" → **False**
+
+**Note**:
+
+- A **predicate** is neither true nor false on its own.
+- A predicate becomes a **proposition** when its variables are substituted with specific values.
+- The **domain** (also called the universe or universe of discourse) of a predicate variable is the set of all values that may be substituted for the variable.
+
+```{definition}
+
+Let \( A \) be a nonempty set. An expression \( P(x) \) defined on \( A \) is called a **predicate** if:
+
+\[
+P(a) \text{ is either true or false for each } a \in A
+\]
+
+That is, \( P(a) \) becomes a **statement** (i.e., a proposition with a definite truth value) whenever any element \( a \in A \) is substituted for the variable \( x \).
+```
+
+```{example}
+
+**(i)** Let \( P(x): x^2 > 6 \), where \( x \in \mathbb{N} \)
+
+- \( P(1) \): \( 1^2 = 1 \not> 6 \) → False  
+- \( P(2) \): \( 2^2 = 4 \not> 6 \) → False  
+- For \( x \in \mathbb{N} \) and \( x \ne 1, x \ne 2 \), \( P(x) \) is true.
+
+**(ii)** Let \( P(x, y): x^2 + y^2 = 4 \), where \( x, y \in \mathbb{R} \)
+
+- \( P(0, 2) \): \( 0^2 + 2^2 = 4 \) → True  
+- \( P(1, 1) \): \( 1^2 + 1^2 = 2 \) → False
+```
+
+
+### Converting Predicates to Propositions
+
+There are two standard methods:
+
+1. **Assign specific values to variables**  
+   Example: \( P(3) \), \( P(0, 2) \)
+
+2. **Add quantifiers**  
+   - Universal: \( \forall x \in \mathbb{N},\; P(x) \)  
+   - Existential: \( \exists x \in \mathbb{R},\; P(x) \)
+
+<center>
+![](fig/fig1.png)
+</center>
+
+
+## Quantifiers
+
+A predicate becomes a proposition when we assign it fixed values. However, another way to convert a predicate into a proposition is by **quantifying** it.
+
+Quantification expresses whether a predicate is true for:
+
+- **All** values in the universe of discourse
+- **Some** values in the universe of discourse
+
+```{definition}
+
+**Quantifiers** are words that refer to quantities such as “all” or “some.” They indicate how many elements in the domain satisfy a given predicate.
+```
+
+Two Types of Quantifiers
+
+1. **Universal Quantifier**  
+   Symbol: \( \forall \)  
+   Meaning: "For all" or "For every, " or "For each, "
+   Example:  
+
+> For every \( n \in \mathbb{Z} \), \( 2n \) is even.
+
+This can be expressed symbolically as:
+
+\[
+\forall n \in \mathbb{Z},\; 2n \text{ is even}
+\]
+
+
+2. **Existential Quantifier**  
+   Symbol: \( \exists \)  
+   Meaning: "There exists a" or "There is a."  
+   Example:  
+
+> There exists an integer \( n \in \mathbb{Z} \) such that \( n^2 = 2 \).
+
+This can be expressed symbolically as:
+
+\[
+\exists n \in \mathbb{Z},\; n^2 = 2
+\]
+
+
+### Universal Quantifier \( \forall \)
+
+Let \( p(x) \) be a predicate, where \( x \in D \).
+
+Suppose the statement  
+> “For any \( x \) in a non-empty subset \( S \subseteq D \), \( p(x) \) is true”  
+is valid.
+
+Then the expression  
+\[
+\forall x \in S,\; p(x)
+\]  
+is a **proposition**.
+
+This means:  
+> “For every \( x \) in the subset \( S \), the predicate \( p(x) \) holds.”
+
+
+
+```{example}
+
+Let \( p(x) \): “\( x \) is even”  
+Let \( D = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} \)  
+Let \( S = \{2, 4, 6, 8, 10\} \subseteq D \)
+
+Then:
+\[
+\forall x \in S,\; p(x)
+\]
+is true, since all elements of \( S \) are even.
+```
+
+#### Notation
+
+- \( \forall x\; P(x) \): Read as “for all \( x \), \( P(x) \)” or “for every \( x \), \( P(x) \)”
+- \( \forall \): Universal quantifier
+
+```{definition}
+An element \(x\) for which \(P(x)\) is false is called a counterexample of \(\forall x P(x)\).
+```
+
+
+#### Other ways to say \(\forall\)
+
+- All of...
+- For each...
+- Given any...
+- For any...
+- For arbitrary...
+
+```{example}
+Let \( P(x): x^2 > x \), where \( x \) is a real number.
+
+Then "\( \forall x\, P(x) \)" in English means "for all \( x \), \( x^2 > x \)", or we can say "for any \( x \), \( x^2 > x \)", or in other words "given any \( x \), \( x^2 > x \)".
+
+An element \( x = \frac{1}{2} \), since \( \left(\frac{1}{2}\right)^2 = \frac{1}{4} < \frac{1}{2} \), is false. That is, \( P\left(\frac{1}{2}\right) \) is false.
+
+So, \( x = \frac{1}{2} \) is a counterexample to the statement "for all \( x \), \( x^2 > x \)", where \( x \) is a real number.
+```
+
+
+```{example}
+Consider the predicate \( |x| \geq 0 \), where \( x \in \mathbb{R} \).
+
+Let \( P(x): |x| \geq 0 \).
+
+Then, \( \forall x \in \mathbb{R},\, P(x) \) is true.
+
+i.e., \( \forall x \in \mathbb{R},\, |x| \geq 0 \).
+
+```
+
+```{example}
+Consider the predicate \( x > \frac{1}{2} \), where \( x \in \mathbb{R} \).
+
+Let \( P(x): x > \frac{1}{2} \).
+
+Then \( \forall x \in \mathbb{R},\, P(x) \) is false, since for instance \( 0 \in \mathbb{R} \), but \( P(0) \) is false.
+
+i.e., \( \neg (\forall x \in \mathbb{R},\, P(x)) \).
+
+However, \( \forall x \in \mathbb{N},\, P(x) \) is true.
+
+i.e., \( \forall x \in \mathbb{N},\, P(x) \).
+
+```
+
+### The Existential Quantifier "\( \exists \)"
+
+
+
+
+Let \( p(x) \) be a predicate, where \( x \in D \).
+
+Suppose:  
+"There is \( x_0 \in S \subseteq D \), such that \( p(x_0) \)" is true.
+
+Then:  
+"There is \( x_0 \in S \subseteq D \), such that \( p(x_0) \)" is a proposition.
+
+We write this proposition as:  
+
+
+\[ \exists x_0 \in S,\ p(x_0) \]
+
+
+
+Which means:  
+"There exists \( x_0 \in S \) such that \( p(x_0) \)" is true.
+
+i.e.,  
+
+
+\[ \exists x_0 \in S,\ p(x_0) \]
+
+
+
+#### Notation
+
+\( \exists x\, P(x) \), where \( \exists \) is called the existential quantifier.
+
+#### Other ways to read \( \exists \):
+
+- "There is an \( x \) such that \( P(x) \)."
+- "There is at least one \( x \) such that \( P(x) \)."
+- "For some \( x \), \( P(x) \)."
+
+
+```{example}
+
+Consider the predicate \( 2x > 7 \), where \( x \in \mathbb{N} \).
+
+Let \( P(x): 2x > 7 \).
+
+When \( x \in \mathbb{N} \) and \( 2x > 7 \) is true (since \( 10 > 7 \)),
+
+i.e., when \( x = 5 \), \( x \in \mathbb{N} \) and \( P(5) \) is true.
+
+Therefore,  
+
+
+\[ \exists x \in \mathbb{N},\ P(x) \text{ is true} \]
+
+
+
+i.e.,  
+
+
+\[ \exists x \in \mathbb{N},\ 2x > 7 \]
+
+
+```
+
+
+```{example}
+
+Consider the predicate \( x^2 > 1 \), where \( x \in \mathbb{R} \).
+
+Let \( A = \{0, 1, -1\} \) and define \( P(x): x^2 > 1 \).
+
+Then:
+- \( P(0) \) is false,
+- \( P(1) \) is false,
+- \( P(-1) \) is false.
+
+Therefore,  
+
+
+\[ \exists x \in A,\ P(x) \]
+
+ is false,
+
+i.e.,  
+
+
+\[ \neg (\exists x \in A,\ P(x)) \]
+
+.
+
+However,  
+
+
+\[ \exists x \in \mathbb{N},\ P(x) \]
+
+ is true,  
+since when \( x = 2 \), \( x \in \mathbb{N} \) and \( P(2) \) is true.
+
+i.e.,  
+
+
+\[ \exists x \in \mathbb{N},\ x^2 > 1. \]
+```
+
+<!--## Existential Quantifier \( \exists \)-->
+
+Let \( p(x) \) be a predicate and \( D \) be the domain of \( x \).
+
+An existential statement is a statement of the form:  
+
+
+\[ \exists x \in D,\ p(x) \]
+
+
+
+- Forms:
+    - "There exists an \( x \) such that \( p(x) \)"
+    - "For some \( x \), \( p(x) \)"
+    - "We can find an \( x \) such that \( p(x) \)"
+    - "There is some \( x \) such that \( p(x) \)"
+    - "There is at least one \( x \) such that \( p(x) \)"
+- The statement is **true** if \( p(x) \) is true for **at least one** \( x \in D \).
+- The statement is **false** if \( p(x) \) is false for **all** \( x \in D \).
+- A **Counterproof** to disprove an existential statement, one must show that \( p(x) \) is false for **every** \( x \in D \).
+
+### Quantifiers and Negation
+
+Suppose \( A \) is a non-empty set, \( P(x) \) is a predicate where \( x \in A \), and \( B \subseteq A \) is a non-empty subset.
+
+We consider the negations of quantified statements:
+
+1. Negation of a Universal Statement
+
+
+
+\[
+\neg (\forall x \in B,\ P(x))
+\]
+
+
+
+This means:  
+It is not the case that for every \( x \in B \), \( P(x) \) holds.  
+So, there exists some \( x \in B \) such that \( P(x) \) does not hold:
+
+
+
+\[
+\exists x \in B,\ \neg P(x)
+\]
+
+
+
+2. Negation of an Existential Statement
+
+
+
+\[
+\neg (\exists x \in B,\ P(x))
+\]
+
+
+
+This means:  
+It is not the case that there exists some \( x \in B \) such that \( P(x) \) holds.  
+So, for every \( x \in B \), \( P(x) \) does not hold:
+
+
+
+\[
+\forall x \in B,\ \neg P(x)
+\]
+
+
+
+
+The following equivalences hold:
+
+\[ \neg (\forall x \in B,\ P(x)) \equiv \exists x \in B,\ \neg P(x) \]
+\[ \neg (\exists x \in B,\ P(x)) \equiv \forall x \in B,\ \neg P(x) \]
+
+
+
+
+
+
+- \( \neg (\forall x \in D,\ p(x)) \equiv \exists x \in D,\ \neg p(x) \)
+- \( \neg (\exists x \in D,\ p(x)) \equiv \forall x \in D,\ \neg p(x) \)
+
+- The negation of a universal statement ("all are") is logically equivalent to an existential statement ("there is at least one that is not").
+- The negation of an existential statement ("some are") is logically equivalent to a universal statement ("all are not").
+
+
+```{example}
+- \( \forall \) primes \( p \), \( p \) is odd  
+  **Negation:** \( \exists \) prime \( p \), \( p \) is even
+
+- \( \exists \) triangle \( T \), the sum of angles of \( T \) equals \( 200^\circ \)  
+  **Negation:** \( \forall \) triangles \( T \), the sum of angles of \( T \) does not equal \( 200^\circ \)
+```
+
+
+
+#### Truth Value of Quantified Statements
+
+| Statement           | When True                                 | When False                                  |
+|---------------------|-------------------------------------------|---------------------------------------------|
+| \( \forall x \in D,\ P(x) \) | \( P(x) \) is true for every \( x \in D \)     | There exists at least one \( x \in D \) such that \( P(x) \) is false |
+| \( \exists x \in D,\ P(x) \) | There exists at least one \( x \in D \) such that \( P(x) \) is true | \( P(x) \) is false for every \( x \in D \) |
+
+
+```{example}
+We are given the logical equivalence:
+\[
+\neg (\exists x\ \forall y\ \exists z\ P(x, y, z)) \equiv \forall x\ \exists y\ \forall z\ \neg P(x, y, z)
+\]
+
+<center>
+  ![](fig/fig2.png)
+</center>
+```
+
+**Note**:
+Logical operations from propositional logic — such as \( \neg \), \( \land \), \( \lor \), \( \Rightarrow \), \( \Leftrightarrow \) —  
+can also be applied to quantified statements.
+
+Here is a clean transcription of the image content, showing only the questions and definitions without any answers or reformulations:
+
+---
+
+### Negation of Quantification
+
+Given a quantified statement of the form:
+
+\[
+\neg(\forall x \in D,\, P(x) \land Q(x))
+\]
+
+Apply logical transformations to express its equivalent forms.
+
+
+
+#### Conditional Quantification
+
+Consider the conditional quantification:
+
+\[
+\forall x \in D,\, P(x) \Rightarrow Q(x)
+\]
+
+Define the following related forms:
+
+- **Converse**: \(\forall x \in D,\, Q(x) \Rightarrow P(x)\)
+
+- **Contrapositive**: \(\forall x \in D,\, \neg Q(x) \Rightarrow \neg P(x)\)
+
+- **Inverse**:\(\forall x \in D,\, \neg P(x) \Rightarrow \neg Q(x)\)
+
+**Note**: : A conditional proposition is logically equivalnce  to its contrapositive.
+
+\[
+\forall x \in D, P(x) \implies Q(x)\equiv \forall x\in D, \neg Q(x) \implies \neg P(x)
+\]
+
+### Negation of Conditional Quantification
+
+
+\begin{align}
+\neg (\forall x \in D, P(x) \implies Q(x)) &\equiv \exists x_0 \in D \neg (P(x_0) \implies Q(x_0))\\
+& \equiv \exists x_0 \in D P(x_0) \land  \neg Q(x_0)
+\end{align}
+
+
+```{example}
+Let \( x \in \mathbb{R} \).
+
+- \( x = 1 \) is a sufficient condition for \( x^2 = 1 \)  
+  i.e., \( \forall x \in \mathbb{R},\ x = 1 \Rightarrow x^2 = 1 \)
+
+- \( x^2 = 1 \) is a necessary condition for \( x = 1 \)  
+  i.e., \( \forall x \in \mathbb{R},\ x^2 \neq 1 \Rightarrow x \neq 1 \)
+
+- \( x = 1 \) only if \( x^2 = 1 \)  
+  i.e., \( \forall x \in \mathbb{R},\ x^2 \neq 1 \Rightarrow x \neq 1 \)
+
+```
+
+```{example}
+Let \( x \in \mathbb{R} \).
+
+Statement: \( \forall x,\ x > 10 \Rightarrow x^2 > 100 \)
+
+Negation: \( \exists x \in \mathbb{R} \) such that \( x > 10 \) and \( x^2 \leq 100 \)
+
+```
+```{example}
+Let \( x \in \mathbb{R} \).
+
+Statement:  
+If \( x > 1 \), then \( x^2 > 1 \)
+
+Define:  
+\( P(x): x > 1 \)  
+\( Q(x): x^2 > 1 \)
+
+Symbolic form:  
+
+
+\[
+\forall x \in \mathbb{R},\ P(x) \Rightarrow Q(x)
+\]
+
+
+
+Negation:  
+
+
+\[
+\exists x_0 \in \mathbb{R},\ P(x_0) \land \neg Q(x_0)
+\]
+
+
+i.e.,  
+
+
+\[
+x_0 > 1 \quad \text{and} \quad x_0^2 \leq 1
+\]
+
+
+```
+
+<!--chapter:end:01-logic.Rmd-->
+
+# Introduction to Proofs
+
+### Terminology
+
+- **Theorem**: A statement that can be shown to be true (i.e., a fact or result).
+- **Proposition**: A smaller or less important theorem.
+- **Axiom / Postulate**: A statement assumed to be true.
+- **Lemma**: A less important theorem used in the proof of another theorem.
+- **Corollary**: A less important theorem that follows from a larger theorem.
+- **Conjecture**: A statement proposed as true but not yet proven.
+
+
+**Note**: A **proof** is a valid argument that establishes the truth of a theorem (or any statement that can be true or false).  
+Axioms and postulates do not require proof—they serve as foundational assumptions, akin to basic words in a dictionary that help define others.
+
+## Arguments
+
+- An **argument** is an assertion that a given set of propositions \( p_1, p_2, \ldots, p_n \), called **premises**, yields another proposition \( q \), called the **conclusion**.
+
+- This is denoted symbolically as:
+  \[
+  p_1, p_2, \ldots, p_n \vdash q
+  \]
+
+- The argument is said to be **valid** if \( q \) is true whenever all the premises \( p_1, p_2, \ldots, p_n \) are true.
+- An argument that is not valid is called a **fallacy**.
+- The argument \( p_1, p_2, \ldots, p_n \vdash q \) is **valid** if and only if the compound proposition:
+  \[
+  (p_1 \land p_2 \land \ldots \land p_n) \Rightarrow q
+  \]
+  is a **tautology**.
+
+
+```{example}
+Let \( n \in \mathbb{N} \). Consider the following argument:
+
+1. \( (-1)^n \) is positive or \( (-1)^n \) is negative.  
+2. If \( (-1)^n \) is positive, then \( (-1)^{2n} > 0 \).  
+3. If \( (-1)^n \) is negative, then \( (-1)^{2n} > 0 \).  
+
+Therefore, \( (-1)^{2n} > 0 \).
+
+Let:
+- \( p \): \( (-1)^n \) is positive  
+- \( q \): \( (-1)^n \) is negative  
+- \( r \): \( (-1)^{2n} > 0 \)
+
+
+
+We examine the validity of the argument:
+\[
+\underbrace{(p \lor q)}_{Premise},\ \underbrace{(p \Rightarrow r)}_{Premise},\ \underbrace{(q \Rightarrow r)}_{Premise} \vdash \underbrace{r}_{Conclusion}
+\]
+
+This corresponds to the compound proposition:
+\[
+((p \lor q) \land (p \Rightarrow r) \land (q \Rightarrow r)) \Rightarrow r
+\]
+
+
+
+| \( p \) | \( q \) | \( r \) | \( p \lor q \) | \( p \Rightarrow r \) | \( q \Rightarrow r \) | \( (p \lor q) \land (p \Rightarrow r) \land (q \Rightarrow r) \) | \( ((p \lor q) \land (p \Rightarrow r) \land (q \Rightarrow r)) \Rightarrow r \) |
+|:------:|:------:|:------:|:--------------:|:---------------------:|:---------------------:|:---------------------------------------------------------------:|:--------------------------------------------------------------------------------:|
+| T      | T      | T      | T              | T                     | T                     | T                                                               | T                                                                                |
+| F      | T      | T      | T              | T                     | T                     | T                                                               | T                                                                                |
+| T      | F      | T      | T              | T                     | T                     | T                                                               | T                                                                                |
+| F      | F      | T      | F              | T                     | T                     | F                                                               | T                                                                                |
+| T      | T      | F      | T              | F                     | F                     | F                                                               | F                                                                                |
+| T      | F      | F      | T              | F                     | T                     | F                                                               | F                                                                                |
+| F      | T      | F      | T              | T                     | F                     | F                                                               | F                                                                                |
+| F      | F      | F      | F              | T                     | T                     | F                                                               | T                                                                                |
+
+
+
+This table confirms that the compound proposition is **not** a tautology, hence the argument is **not valid** in all cases. However, in the specific example from Section 8.3, the premises are true and the conclusion follows, so the argument is valid **in that instance**, though not universally.
+
+
+```
+
+
+
+## Valid Argument
+
+
+By definition, a argument is **valid** if:
+> If the premises are true, then the conclusion is true.
+
+This corresponds to the tautology:
+\[
+((p \Rightarrow q) \land p) \Rightarrow q
+\]
+
+
+
+```{example}
+Premises:
+1. \( p \Rightarrow q \)
+2. \( p \)
+
+Conclusion:
+∴ \( q \)
+```
+
+
+```{example}
+Is the following argument valid?
+
+Premises:
+1. If the door is open, then I must close it.
+2. The door is open.
+
+Conclusion:
+∴ I must close it.
+
+Let:
+- \( p \): The door is open  
+- \( q \): I must close it
+
+This matches the form:
+\[
+(p \Rightarrow q),\ p \vdash q
+\]
+
+Since the compound proposition \(((p \Rightarrow q) \land p) \Rightarrow q\) is a tautology, the argument is valid.
+```
+
+
+
+
+We consider the argument:
+
+\[
+[(p \Rightarrow q) \land p] \Rightarrow q
+\]
+
+This structure represents a **valid argument**, often referred to as a **rule of inference**.
+
+
+
+#### Method 1: Truth Table
+
+| \( p \) | \( q \) | \( [(p \Rightarrow q) \land p] \Rightarrow q \) |
+|:-------:|:-------:|:----------------------------------------------:|
+| T       | T       | T                                              |
+| T       | F       | T                                              |
+| F       | T       | T                                              |
+| F       | F       | T                                              |
+
+This confirms that the compound proposition is **not always true**, but when both premises are true, the conclusion follows — hence the argument is valid in that case.
+
+---
+
+#### Method 2: Direct Reasoning
+
+If:
+
+- \( p \) is true, and
+- \( p \Rightarrow q \) is true,
+
+Then:
+
+- \( q \) must be true.
+
+
+```{remark}
+A **logical rule of inference** is defined to be any valid argument — that is, one where the conclusion necessarily follows from the premises.
+```
+
+(i) Modus Ponens
+This rule affirms the consequent based on a conditional and its antecedent:
+\[
+\begin{array}{ll}
+p \Rightarrow q & \text{(premise 1)} \\
+p & \text{(premise 2)} \\
+\hline
+q & \text{(conclusion)}
+\end{array}
+\]
+If "p implies q" and "p" is true, then "q" must also be true.
+
+```{example}
+**Claim:**\(\sqrt{2} < \sqrt{3}\)
+
+\begin{align}
+  2<3 & \implies 2-3<0\\
+  & \implies  (\sqrt{2} - \sqrt{3})(\sqrt{2} + \sqrt{3})<0\\
+  &\implies (\sqrt{2} - \sqrt{3})<0\\
+  & \implies \sqrt{2}  < \sqrt{3}                                     \end{align}
+```
+
+(ii) Modus Tollens
+This rule denies the antecedent based on a conditional and the negation of its consequent:
+\[
+\begin{array}{ll}
+p \Rightarrow q & \text{(premise 1)} \\
+\neg q & \text{(premise 2)} \\
+\hline
+\neg p & \text{(conclusion)}
+\end{array}
+\]
+If "p implies q" and "q" is false, then "p" must also be false.
+
+```{example}
+**Claim:** \(\sqrt{2}+\sqrt{3}<\sqrt{11}\)
+
+
+
+\begin{align} 
+\sqrt{2}+\sqrt{3}\geq \sqrt{11} & \implies (\sqrt{2}+\sqrt{3})^2<(\sqrt{11}) \text{Since }\sqrt{2}+\sqrt{3}\geq 11>0\\
+& \implies 2+2\sqrt{6}+3\geq 11\\
+& \implies 5+2\sqrt{6}\geq 11\\
+& \implies 2\sqrt{6}\geq 6\\
+& \implies 4\times 6 \geq 36 \text{ Since } 4\times 6 \geq 36>0\\
+\underbrace{\sqrt{2}+\sqrt{3}\geq \sqrt{11}}_p& \implies \underbrace{24 \geq 36}_q \text{ is true}  (\#eq:eq1)\\\\
+\text{But } 24 < 36 &\text{ is true}\\
+\therefore 24 \geq 36 &\text{ is false}\\
+\therefore \underbrace{\neg(24 \geq 36)}_{\neg q} &\text{ is true}(\#eq:eq2)\\
+\therefore \neg p &\\
+\text{ i.e. } \sqrt{2}+\sqrt{3}<\sqrt{11}&
+\end{align}
+
+
+
+
+
+```
+
+## Mathematical proofs
+
+There are several standard techniques used to establish mathematical theorems. Below are five commonly used methods:
+
+1. Direct proofs
+2. Proof by Contradiction
+3. Indirect proofs
+4. proof by cases
+5. Proof by Principle of Mathematical Induction
+
+### Direct proofs
+Direct proof is probably the easiest approach to establish the theorems, as it does not require knowledge of any special techniques. The argument is constructed using a series of simple statements, where each one should follow directly from the previous one. It is important not to miss out any steps as this may lead to a gap in reasoning. To prove the hypothesis, one may use axioms, as well as the previously established statements of different theorems.
+
+
+#### Proving Conditional Statements: \(p\implies q\)
+
+- If $p$ is **false**, then the **implication** is always
+Thus, show that if $p$ is true, then $q$ is true.
+
+- *Direct Proof*: Assume that $p$ is true. Use rules of inference, axioms, and logical equivalences to show that $q$ must also be true.
+
+Proof of "$p \Rightarrow q$":
+<center>
+![](fig/fig3.png){width=60%}
+</center>
+
+Before we begin exploring example proofs, it's essential to clearly define the foundational terms we'll be using. Based on your notes and the image provided, here are the formal definitions:
+
+```{definition,name='Even and Odd Integers'}
+- An integer \( n \) is **even** if there exists an integer \( k \in \mathbb{Z} \) such that:
+  \[
+  n = 2k
+  \]
+- An integer \( n \) is **odd** if there exists an integer \( k \in \mathbb{Z} \) such that:
+  \[
+  n = 2k + 1
+  \]
+- Every integer is either even or odd, and no integer is both.
+```
+
+```{example}
+$5$ is odd integer and $10$ is even integer.
+
+- Since $5=2\times 2 +1$
+- Since $10=2\times 5$
+```
+```{definition,name='Divisibility'}
+A integer $b \neq 0 $  **\( b \) divides another integer \( a \)**  if:
+  \(
+  \exists k \in \mathbb{Z} \text{ such that } a = k \cdot b
+  \)
+** Notation**: $b\neq 0$ divides $a$ , written \( b \mid a \))
+
+In this case, \( b \) is called a **factor** or **divisor** of \( a \).
+```
+
+
+```{example}
+- \( 3 \mid 12 \) because \( 12 = 4 \cdot 3 \)
+- \( 5 \nmid 12 \) because there is no integer \( k \) such that \( 12 = 5k \)
+```
+
+```{example}
+Give a direct proof of the theorem "If $n$ is an odd integer, then $n^2$ is odd."
+```
+
+```{proof}
+Let \( n \in \mathbb{Z} \) be an odd integer.  
+By definition of oddness, there exists an integer \( k \in \mathbb{Z} \) such that:
+\[
+n = 2k + 1
+\]
+
+Now compute \( n^2 \):
+\[
+n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1
+\]
+
+Let \( m = 2k^2 + 2k \in \mathbb{Z} \). Then:
+\[
+n^2 = 2m + 1
+\]
+
+Thus, \( n^2 \) is of the form \( 2m + 1 \), which is odd.
+
+
+```
+
+
+```{theorem}
+Let $n$ and $m$ be integers. Then
+
+i. if $n$ and $m$ are both even, then $n + m$ is even,
+ii. if $n$ and $m$ are both odd, then $n + m$ is even,
+iii. if one of $n$ and $m$ is even and the other is odd, then $n + m$ is odd.
+```
+
+**Claim 1:** If \( n \) and \( m \) are both even, then \( n + m \) is even.
+
+```{proof}  
+If \( n \) and \( m \) are even, then there exist integers \( a, b \in \mathbb{Z} \) such that:
+\[
+n = 2a,\quad m = 2b
+\]
+Then:
+\[
+n + m = 2a + 2b = 2(a + b)
+\]
+Since \( a + b \in \mathbb{Z} \), \( n + m \) is divisible by 2, hence even.
+
+```
+
+**Claim 2:** If \( n \) and \( m \) are both odd, then \( n + m \) is even.
+
+```{proof}
+If \( n \) and \( m \) are odd, then there exist integers \( a, b \in \mathbb{Z} \) such that:
+\[
+n = 2a + 1,\quad m = 2b + 1
+\]
+Then:
+\[
+n + m = (2a + 1) + (2b + 1) = 2a + 2b + 2 = 2(a + b + 1)
+\]
+Since \( a + b + 1 \in \mathbb{Z} \), \( n + m \) is even.
+
+```
+
+**Claim 3:** If one of \( n \) and \( m \) is even and the other is odd, then \( n + m \) is odd.
+
+```{proof}  
+Assume without loss of generality that \( n \) is even and \( m \) is odd.  
+Then there exist integers \( a, b \in \mathbb{Z} \) such that:
+\[
+n = 2a,\quad m = 2b + 1
+\]
+Then:
+\[
+n + m = 2a + (2b + 1) = 2(a + b) + 1
+\]
+Since \( a + b \in \mathbb{Z} \), \( n + m \) is of the form \( 2k + 1 \), hence odd.
+```
+
+Consider the following definitions
+
+- A integer\( a \in \mathbb{Z} \).  said to be Type 0: if there exist integr $n$ such that \( a = 3n \).
+- A integer\( a \in \mathbb{Z} \).  said to be Type 1: if there exist integr $n$ such that \( a = 3n+1 \).
+- A integer\( a \in \mathbb{Z} \).  said to be Type 2: if there exist integr $n$ such that \( a = 3n+2 \).
+
+
+
+(i) If \( a \) and \( b \) are both type 1 integers, then \( a + b \) is a type 2 integer.
+
+```{proof} 
+Let \( a = 3m + 1 \) and \( b = 3n + 1 \) for some \( m, n \in \mathbb{Z} \).  
+Then:
+\[
+a + b = (3m + 1) + (3n + 1) = 3(m + n) + 2
+\]
+So \( a + b \) is of the form \( 3k + 2 \), hence type 2.
+
+```
+(ii) If \( a \) and \( b \) are both type 2 integers, then \( a + b \) is a type 1 integer.
+
+```{proof}
+Let \( a = 3m + 2 \) and \( b = 3n + 2 \) for some \( m, n \in \mathbb{Z} \).  
+Then:
+\[
+a + b = (3m + 2) + (3n + 2) = 3(m + n) + 4 = 3(m + n + 1) + 1
+\]
+So \( a + b \) is of the form \( 3k + 1 \), hence type 1.
+
+```
+
+(iii) If \( a \) is type 1 and \( b \) is type 2, then \( ab \) is type 2.
+
+```{proof} 
+Let \( a = 3m + 1 \), \( b = 3n + 2 \) for some \( m, n \in \mathbb{Z} \).  
+Then:
+\[
+ab = (3m + 1)(3n + 2) = 9mn + 6m + 3n + 2 = 3(3mn + 2m + n) + 2
+\]
+So \( ab \) is of the form \( 3k + 2 \), hence type 2.
+
+```
+
+**NOte**:  
+- Many logical theorems take the form:  
+  \[
+  \forall x (P(x) \Rightarrow Q(x))
+  \]
+
+
+1. **Choose an Arbitrary Element**:  
+   Let \( c \) be an arbitrary element from the domain.
+
+2. **Prove the Implication for \( c \)**:  
+   Show that \( P(c) \Rightarrow Q(c) \) holds.
+
+3. **Apply Universal Generalization**:  
+   Since \( c \) was arbitrary, we conclude:  
+   \[
+   \forall x (P(x) \Rightarrow Q(x))
+   \]
+
+4. **Focus of the Proof**:  
+   The core task is to prove a statement of the form:  
+   \[
+   p \Rightarrow q
+   \]
+
+![](fig/fig4.png){width=60%}
+```{example}
+Prove that for all $n \in \mathbb{N} , if $n$ is even, then $n^2$ is even.\
+i.e. Prove that " $\forall n \in  \mathbb{N}, n$ is even is even."
+```
+
+```{proof}
+Let \( n \in \mathbb{N} \).\
+Suppose \( n \) is even.  
+By definition of evenness, there exists an integer \( k \in \mathbb{N} \) such that:\(n = 2k\)
+
+Now,
+\[
+n^2 = (2k)^2 = 4k^2 = 2(2k^2)
+\]
+
+Since \( 2k^2 \in \mathbb{N} \), it follows that \( n^2 \) is divisible by 2, hence even.
+```
+
+
+![](fig/fig5.png){width=60%}
+
+
+```{example}
+Prove that $x^2 + 6x + 10 > 0$, where $x$ is a real number.\
+We need to proove that  : $\forall x \in \mathbb{R},x^2 + 6x + 10 > 0$
+```
+
+```{proof}
+Let $x\in \mathbb{R}$.\
+First note that $x^2 + 6x + 10 = (x + 3)^2 + 1$
+\[
+\begin{align}
+(x+3)^2 & \geq 0\\
+(x+3)^2+1 & \geq 1>0
+\end{align}
+\]
+
+Threfore, $\forall x \in \mathbb{R},x^2 + 6x + 10 > 0$
+```
+
+### Proof by Contradiction
+
+Given a statement $p$, assume it is false.\
+Assume$\neg p$.\
+Prove that $\neg p$ leads to false.\
+A contradiction exists.\
+
+
+- Given a statement of the form $p \implies q$.
+To assume it's false, you only have to consider the case where $p$ is true and $q$ is false.
+
+![](fig/fig6.png)
+
+**Claim:** If $n^2$ is even, then $n$ is even.
+
+<center>
+![](fig/fig7.png)
+</center>
+
+```{example}
+Prove: \(\forall  x \in \mathbb{R}, x^2 + 6x + 10 > 0 \)
+```
+
+```{proof}
+Suppose that 
+begin{equation}
+\forall  x \in \mathbb{R}, x^2 + 6x + 10 > 0 (\#eq:eq5)
+\end{equation}
+Assume that statement \@ref(eq:eq5) is false. \ 
+\(x_0^2 + 6x_0 + 10 \leq 0\) for some \(x_0 \in \mathbb{R})\).\
+Now \(x_0^2 + 6x_0 + 10 =(x_0+3)^2+1\geq 1\).\
+Hence, \(0<1\leq 0\). This is a contradiction.\
+$\therefore$  \@ref(eq:eq5) is false.\
+\(\forall  x \in \mathbb{R}, x^2 + 6x + 10 > 0\)
+```
+
+```{exercise}
+**Claim:** If \( n = ab \), then \( a \leq \sqrt{n} \) or \( b \leq \sqrt{n} \), where \( a, b \in \mathbb{Z}^+ \).\
+\(\exists x_0 \in \mathbb{R}\) such that \(x_0^2 + 6x_0 + 10 \leq 0\).
+```
+
+```{exercise}
+**Claim:** \( \sqrt{2} \notin \mathbb{Q} \), where \(\mathbb{Q}=\left\{\frac{p}{q}:p,q \in \mathbb{Z}, q\neq 0\right\}\)
+```
+
+## Indirect Proofs
+
+Consider an implication:
+
+
+\[
+p \Rightarrow q
+\]
+
+
+
+Its contrapositive is:
+
+
+\[
+\neg q \Rightarrow \neg p
+\]
+
+
+
+This contrapositive is logically equivalent to the original implication.  
+Thus, to prove \( p \Rightarrow q \), we may instead prove \( \neg q \Rightarrow \neg p \).
+
+To perform an **indirect proof**, carry out a **direct proof** on the contrapositive.
+
+
+
+```{example}
+Prove that: If \( x^2 \) is even, then \( x \) is even.
+```
+
+```{example}
+Prove that:  If \( (x - 2)^2 \neq 1 \), then \( x \neq 3 \)
+```
+
+## Proof by Cases
+
+```{example}
+
+Let \( x \) be any integer. Then \( x^2 + x \) is even.
+```
+
+
+
+To prove: \(\exists x \in \mathbb{Z},\; P(x)\)
+
+We exhibit a member of the universal set for which \( P(x) \) is true.  
+One example suffices.
+
+
+```{example}
+
+
+Show that:
+
+
+\[
+\exists x \in \mathbb{Z} \text{ such that } x^2 = 4
+\]
+```
+
+```{proof}
+Let \( x_0 = -2 \). Then:
+- \( x_0 \in \mathbb{Z} \)
+- \( x_0^2 = (-2)^2 = 4 \)
+
+Thus, \(\exists x_0 \in \mathbb{Z},\quad x_0^2 = 4\)
+```
+
+## Proof by Principle of Mathematical Induction
+
+### Principle of Mathematical Induction
+
+Let \( P(n) \) be a statement defined for each positive integer \( n \in \mathbb{N} \).  
+To prove that \( P(n) \) is true for all \( n \in \mathbb{N} \), it suffices to show:
+
+1. **Base Case**:  
+   \( P(1) \) is true.
+
+2. **Inductive Step**:  
+   For every \( k \in \mathbb{N} \), if \( P(k) \) is true, then \( P(k+1) \) is also true.  
+   That is:
+\[   \forall k \in \mathbb{N},\; P(k) \Rightarrow P(k+1)\]
+
+3. **Conclusion**: If both the base case and the inductive step are established, then:
+\[
+\forall n \in \mathbb{N},\; P(n) \text{ is true}
+\]
+
+
+
+This is the foundation for proving propositions over the natural numbers.
+
+
+
+
+
+```{example}  
+Prove by induction that  
+\[
+1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}
+\quad \text{for all } n \in \mathbb{N}.
+\]
+```
+```{example}  
+Prove by induction that  
+\[
+n^3 + 2n \text{ is divisible by } 3
+\quad \text{for all } n \in \mathbb{N}.
+\]
+```
+
+## Exercises
+
+```{exercise}  
+Prove by induction that  
+\[
+2^{n+1} > n^2
+\quad \text{for all } n \in \mathbb{N}.
+\]
+```
+
+```{exercise} 
+Let the sequence \( (a_n) \) be defined recursively by  
+\[
+a_1 = \sqrt{2}, \quad a_{n+1} = \sqrt{2 + a_n}, \quad \text{for all } n \in \mathbb{N}.
+\]
+
+Prove the following properties:
+
+(a) \( a_n > 0 \) for all \( n \in \mathbb{N} \).  
+(b) \( a_n \leq 2 \) for all \( n \in \mathbb{N} \).  
+(c) \( a_{n+1} \geq a_n \) for all \( n \in \mathbb{N} \).
+
+```
+
+<!--chapter:end:02-proof.Rmd-->
+
+# The Real Number System \( \mathbb{R} \)
+
+### Topics Covered
+
+- Axioms of Real Numbers  
+- Order Axioms and Axiom of Bounds  
+- Supremum and Infimum of Subsets of \( \mathbb{R} \)  
+- Concept of Infinity and Intervals of \( \mathbb{R} \)
+
+
+
+### What Are the Real Numbers?
+
+The question "What are the real numbers?" is, for now, too deep to answer directly. Instead, we adopt a formal approach: we assume the existence of a set \( \mathbb{R} \), called the set of real numbers, and impose a collection of axioms that define its structure.
+
+All subsequent mathematical development will be based solely on these axioms.
+
+## Axioms of real numbers
+
+We assume that there are two binary operations on \(\mathbb{R}\), that is, "\(+\)" and "\(\cdot\)" the first called **addition**, and second **multiplication**, such that $a + b \in \mathbb{R}$ and $a\cdot b \in \mathbb{R}$  for all $a, b \in \mathbb{R}$, and the following properties are satisfied:
+
+
+
+
+**A1. Commutativity of Addition**  
+For all \( a, b \in \mathbb{R} \), .\(
+a + b = b + a
+\)
+
+**A2. Associativity of Addition**  
+For all \( a, b, c \in \mathbb{R} \), \(
+a + (b + c) = (a + b) + c
+\)
+
+**A3. Existence of Additive Identity**  
+There exists an element \( 0 \in \mathbb{R} \) such that for all \( a \in \mathbb{R} \),  \(
+a + 0 = a
+\)
+
+**A4. Existence of Additive Inverse**  
+For every \( a \in \mathbb{R} \), there exists an element \( -a \in \mathbb{R} \) such that:  \(a + (-a) = 0\)
+
+
+**A5. Commutativity of Multiplication**  
+For all \( a, b \in \mathbb{R} \),  \(a \cdot b = b \cdot a\)
+
+**A6. Associativity of Multiplication**  
+For all \( a, b, c \in \mathbb{R} \),  \(a \cdot (b \cdot c) = (a \cdot b) \cdot c\)
+
+**A7. Existence of Multiplicative Identity**  
+There exists an element \( 1 \in \mathbb{R} \) such that for all \( a \in \mathbb{R} \),  \(a \cdot 1 = a\)
+
+**A8. Existence of Multiplicative Inverse**  
+For every \( a \in \mathbb{R} \) with \( a \ne 0 \), there exists an element \( a^{-1} \in \mathbb{R} \) such that:  \(a \cdot a^{-1} = 1\)
+
+**A9. Distributivity of Multiplication over Addition**  
+For all \( a, b, c \in \mathbb{R} \),\(a \cdot (b + c) = a \cdot b + a \cdot c
+\)
+
+Thank you, Ashan. Based on your image, here's a formal Markdown rendering of the **Basic Properties of Equality** and **Some Algebraic Properties of Real Numbers**, using LaTeX for clarity and textbook precision:
+
+
+## Basic Properties of Equality
+
+Let \( x, y, z \in \mathbb{R} \). Then:
+
+1. **Reflexivity**:  
+   \[
+   x = x
+   \]
+
+2. **Symmetry**:  
+   If \( x = y \), then \( y = x \).
+
+3. **Transitivity**:  
+   If \( x = y \) and \( y = z \), then \( x = z \).
+
+
+
+## Some Algebraic Properties of Real Numbers
+
+Let \( a, b, c \in \mathbb{R} \). Then:
+
+i. **Cancellation Law for Addition**:  
+   If \( a + b = a + c \), then \( b = c \).
+
+ii. **Multiplication by Zero**:  
+   \[
+   a \cdot 0 = 0
+   \]
+
+iii. **Zero Product Property**:  
+   If \( a \cdot b = 0 \), then \( a = 0 \) or \( b = 0 \).
+
+```{proof}
+.\
+<center>
+![](fig/fig8.jpg){width=80%}
+</center>
+rest of them leave as an exercise
+```
+
+
+### Selected Theorems
+
+These theorems follow from the axioms of the real numbers. In all cases, \( a, b, c, d \in \mathbb{R} \), with additional nonzero conditions where specified.
+
+1. Properties of Zero
+
+    a. \( a - a = 0 \)
+    a. \( 0 = -a + a \)
+    a. \( 0 \cdot a = 0 \)
+    a. If \( ab = 0 \), then \( a = 0 \) or \( b = 0 \)
+
+2. Properties of Signs
+
+    a. \( -0 = 0 \)
+    a. \( -(-a) = a \)
+    a. \( (-a)b = -(ab) = a(-b) \)
+    a. \( (-a)(-b) = ab \)
+    a. \( -a = (-1)a \)
+
+3. Additional Distributive Properties
+
+    a. \( -(a + b) = -a - b \)
+    a. \( a - b = -(b - a) \)
+    a. \( -(a - b) = b - a \)
+    a. \( a + a = 2a \)
+    a. \( a(b - c) = ab - ac = (b - c)a \)
+    a. \( (a + b)(c + d) = ac + ad + bc + bd \)
+    a. \( (a + b)(c - d) = ac - ad + bc - bd = (c - d)(a + b) \)
+    a. \( (a - b)(c - d) = ac - ad - bc + bd \)
+
+4. Properties of Inverses (for \( a, b \ne 0 \))
+
+    a. If \( a \ne 0 \), then \( a^{-1} \ne 0 \)
+    a. \( 1^{-1} = 1 \)
+    a. \( (a^{-1})^{-1} = a \)
+    a. \( (-a)^{-1} = -(a^{-1}) \)
+    a. \( (ab)^{-1} = a^{-1}b^{-1} \)
+    a. \( \left( \frac{a}{b} \right)^{-1} = \frac{b}{a} \)
+
+
+5. Properties of Quotients (for nonzero denominators)
+
+    a. \( \frac{a}{1} = a \)
+    a. \( \frac{1}{a} = a^{-1} \)
+    a. \( \frac{a}{a} = 1 \)
+    a. \( \frac{a/b}{c/d} = \frac{ac}{bd} \)
+    a. \( \frac{a/b}{c/d} = \frac{ad}{bc} \)
+    a. \( \frac{ac}{bc} = \frac{a}{b} \)
+    a. \( \frac{a}{b/c} = \frac{ab}{c} \)
+    a. \( \frac{ab}{b} = a \)
+    a. \( \frac{-a}{b} = -\left( \frac{a}{b} \right) = \frac{a}{-b} \)
+    a. \( \frac{-a}{-b} = \frac{a}{b} \)
+    a. \( \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \)
+    a. \( \frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd} \)
+
+```{exercise}
+Proove theroms
+```
+
+
+## The Order Axioms and Axiom of Bounds
+
+We assume the existence of a subset \( P \subseteq \mathbb{R} \) with the following properties:
+
+
+**A10.** For any \( a \in \mathbb{R} \), exactly one of the following holds:
+\( a \in P \text{ or }  a = 0 \text{ or } -a \in P \)
+
+**A11.** If \( a, b \in P \), then \( a + b \in P\) and \(a \cdot b \in P \)
+
+```{definition}
+For any \( a, b \in \mathbb{R} \), we define:
+\[
+a > b \quad \text{if and only if} \quad a - b \in P
+\]
+
+Equivalently, \( b < a \).
+```
+
+
+**Note**: Axioms A10 and A11, together with Axioms A1–A9, endow the field \( (\mathbb{R}, +, \cdot) \) with an order structure.  
+Thus, \( \mathbb{R} \) becomes an **ordered field**.
+
+
+
+
+
+```{exercise}  
+Prove that for all \( a \in P \), we have \( a > 0 \).
+```
+
+```{exercise} 
+Prove that \( 1 \in P \), i.e., \( 1 > 0 \).
+```
+
+```{exercise}  
+Prove that if \( a > 0 \), then \( x_a > 0 \) for all \( a \in \mathbb{R} \).
+
+```
+
+```{theorem}
+For any two real numbers \( a, b \), exactly one of the following holds:
+- \( a < b \text{ or } b < a \text{ or } a = b \)
+```
+
+
+
+```{theorem,name='Order Properties of Real Numbers'}
+
+Let \( a, b, c \in \mathbb{R} \). Then:
+
+1. **Transitivity**  
+   If \( a < b \) and \( b < c \), then \( a < c \).
+
+2. **Addition Preservation**  
+   If \( a < b \), then \( a + c < b + c \).
+
+3. **Multiplication by Positive**  
+   If \( c > 0 \) and \( a < b \), then \( a \cdot c < b \cdot c \).
+
+4. **Multiplication by Negative**  
+   If \( c < 0 \) and \( a < b \), then \( a \cdot c > b \cdot c \).  
+   *(Note: This reverses the inequality.)*
+```
+
+Thanks, Ashan. Here's a formal transcription of the image content, formatted for textbook inclusion:
+
+---
+
+## Absolute Value
+
+```{definition}
+For any real number \( x \), the absolute value (or modulus) of \( x \) is defined as:
+\[
+|x| = 
+\begin{cases}
+x, & \text{if } x \geq 0 \\
+-x, & \text{if } x < 0
+\end{cases}
+\]
+
+```
+
+```{theorem,name='Properties of Absolute Value'} 
+Let \( a, b \in \mathbb{R} \). Then:
+
+1. \( |a| = 0 \iff a = 0 \)
+2. \( |a| \geq 0 \)
+3. \( |a| = |-a| \)
+4. \( -|a| \leq a \leq |a| \)
+5. If \( b > 0 \), then \( |a| \leq b \iff -b \leq a \leq b \)
+6. If \( b > 0 \), then \( |a| \geq b \iff a \geq b \) or \( a \leq -b \)
+7. \( |a + b| \leq |a| + |b| \)
+```
+
+*Proof*: Leave as a exercise
+
+
+```{example}
+
+1. If \( a < b \) and both \( a, b > 0 \), then \( a^{-1} > b^{-1} \).
+2. \( ab > 0 \iff a, b \) are both positive or both negative.
+3. \( ab < 0 \iff \) one of \( a, b \) is positive and the other is negative.
+
+```
+
+```{definition,name='Minimum and Maximum'}
+
+Let \( A \subseteq \mathbb{R} \) be a non-empty set.
+
+- An element \( m \in A \) is called the **minimum** of \( A \) if:\(
+  m \leq x \quad \text{for all } x \in A
+  \)
+
+- An element \( M \in A \) is called the **maximum** of \( A \) if:\(
+  M \geq x \quad \text{for all } x \in A
+  \)
+```
+**Note:** If a minimum or maximum exists, it is unique.
+
+
+
+```{example}
+
+Let \( A = \{2, -3, 8, 17, -5\} \)
+
+- **Minimum of \( A \)**:  
+\( \min A = -5 \). (Because \(
+  2 \geq -5,
+  -3\geq -5, 
+  8 \geq -5,
+  17\geq -5, 
+  -5 \geq -5\)).
+
+- **Maximum of \( A \)**:  
+\( \max A = 17 \). (Because \(
+  2 \leq 17,
+  -3\leq 17, 
+  8 \leq 17,
+  17\leq 17, 
+  -5 \leq 17\))
+```
+
+
+```{example}
+
+Let \( A = \{1 + \frac{2}{n} \mid n \in \mathbb{N} \} \)
+
+This is an infinite set of real numbers:
+\[
+A = \left\{1 + \frac{2}{1}, 1 + \frac{2}{2}, 1 + \frac{2}{3}, \dots \right\} = \left\{3, 2, \frac{5}{3}, \dots \right\}
+\]
+```
+
+<!--**Maximum of \( A \)**:  
+  The largest value occurs when \( n = 1 \):  
+  \[
+  1 + \frac{2}{1} = 3
+  \]  
+  But the question says “Show that maximum of \( A \) is 2.”  
+  This is incorrect unless the set is defined differently. If instead:
+  \[
+  A = \left\{1 + \frac{1}{n} \mid n \in \mathbb{N} \right\}
+  \]
+  then the maximum is \( 2 \) (when \( n = 1 \)). Please confirm the intended definition.
+
+- **Minimum of \( A \)**:  
+  As \( n \to \infty \), \( \frac{2}{n} \to 0 \), so:
+  \[
+  \inf A = 1
+  \]
+  But there is no \( n \in \mathbb{N} \) such that \( 1 + \frac{2}{n} = 1 \), so the minimum does **not** exist in \( A \).
+-->
+
+
+
+```{definition,name='Bounded Above'}
+
+A non-empty set \( A \subseteq \mathbb{R} \) is said to be **bounded above** if there exists a number \( k \in \mathbb{R} \) such that:\(
+\forall x \in A, \quad x \leq k\)
+
+The number \( k \) is called an **upper bound** of the set \( A \).
+```
+
+
+
+```{definition,name='Bounded Below'}
+
+A non-empty set \( A \subseteq \mathbb{R} \) is said to be **bounded below** if there exists a number \( k \in \mathbb{R} \) such that:
+
+\[
+\forall x \in A, \quad x \geq k
+\]
+
+The number \( k \) is called a **lower bound** of the set \( A \).
+```
+
+
+**Note:**
+Let \( M \subseteq d \) and \( A \subseteq \mathbb{R} \).
+
+- A set \( A \) is bounded above \(\underbrace{\iff}_{\text{Def}^\text{n}}
+\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \leq k
+\)
+
+- A set \( A \) is **not** bounded above \(\iff \neg (\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \leq k)\equiv\forall k \in \mathbb{R} \quad \exists x \in A, \quad x > k
+\)
+
+```{example}
+Let \( A = \{ x \in \mathbb{R} \mid x \geq -7 \} \) and \( B = \{ 2n + 3 \mid n \in \mathbb{N} \} \)
+```
+
+
+
+**Note:**
+Let \( M \subseteq d \) and \( A \subseteq \mathbb{R} \).
+
+- A set \( A \) is bounded below \(\underbrace{\iff}_{\text{Def}^\text{n}}
+\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \geq k
+\)
+
+- A set \( A \) is **not** bounded below \(\iff \neg (\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \geq k)\equiv\forall k \in \mathbb{R} \quad \exists x \in A, \quad x > k
+\)
+
+
+
+```{definition}
+Let \( A \subseteq \mathbb{R} \), with \( A \neq \emptyset \).
+
+- A set \( A \) is **bounded** if it is both bounded above and bounded below.
+- A set \( A \) is **unbounded** if it is not bounded.
+```
+
+```{definition,name='Least Upper Bound (Supremum)'}
+
+An element \( \lambda \in \mathbb{R} \) is called the **least upper bound** (or **supremum**) of \( A \) if:
+
+1. \( \lambda \) is an upper bound of \( A \), i.e.,
+   \[
+   \forall x \in A, \quad x \leq \lambda
+   \]
+2. No upper bound of \( A \) is less than \( \lambda \), i.e.,
+   \[
+   \forall u \in \mathbb{R}, \left( \forall x \in A, \ x \leq u \right) \Rightarrow \lambda \leq u
+   \]
+```
+
+```{definition,name='Greatest Lower Bound (Infimum)'}
+
+An element \( \mu \in \mathbb{R} \) is called the **greatest lower bound** (or **infimum**) of \( A \) if:
+
+1. \( \mu \) is a lower bound of \( A \), i.e.,
+   \[
+   \forall x \in A, \quad x \geq \mu
+   \]
+2. No lower bound of \( A \) is greater than \( \mu \), i.e.,
+   \[
+   \forall u \in \mathbb{R}, \left( \forall x \in A, \ x \geq u \right) \Rightarrow \mu \geq u
+   \]
+```
+
+
+## Axiom of Bound (Completeness Axiom)
+
+**A12. Least Upper Bound Axiom**
+
+If \( A \subseteq \mathbb{R} \) is non-empty and bounded above, then:
+
+\[
+\exists \sup A \in \mathbb{R}
+\]
+
+That is, every non-empty subset of \( \mathbb{R} \) that is bounded above has a **least upper bound** (supremum) in \( \mathbb{R} \).
+
+**A12′. Greatest Lower Bound Axiom**
+
+If \( A \subseteq \mathbb{R} \) is non-empty and bounded below, then:
+
+\[
+\exists \inf A \in \mathbb{R}
+\]
+
+That is, every non-empty subset of \( \mathbb{R} \) that is bounded below has a **greatest lower bound** (infimum) in \( \mathbb{R} \).
+
+```{example}
+
+Let \(A = \{ x \in \mathbb{R} \mid x^2 < 2 \} \)
+
+- This set is **bounded above**.
+- The least upper bound (supremum) of \( A \) is:
+
+  
+\[
+\sup A = \lambda
+\]
+
+Since:
+
+\[
+\sqrt{2}^2 = 2 \quad \text{and} \quad \sqrt{2} \in \mathbb{R}
+\]
+```
+
+Thank you for sharing the image. Here's a formal Markdown transcription using LaTeX notation, suitable for textbook inclusion:
+
+---
+
+## Archimedean Property
+
+```{theorem,name='Archimedean Property'}
+For all \( a \in \mathbb{R}^+ \) and \( b \in \mathbb{R} \), there exists \( n \in \mathbb{N} \) such that: \(na \geq b\)
+```
+
+```{proof}
+
+Suppose the Archimedean Property is false. 
+Then\(
+\exists a \in \mathbb{R}^+, \exists b \in \mathbb{R}, \forall n \in \mathbb{N}, \quad na \leq b\)
+
+Define the set \(
+S := \{ na \mid n \in \mathbb{N} \}\)
+
+Then \( b \) is an upper bound of \( S \). By the completeness axiom, the supremum \( s_0 := \sup S \) exists.
+
+Let \( n \in \mathbb{N} \). Then \( n + 1 \in \mathbb{N} \), and \(s_0 \geq (n + 1)a = na + a \Rightarrow s_0 - a \geq na\)
+
+So \( s_0 - a \) is an upper bound of \( S \), but \(
+s_0 - a < s_0 \)
+
+This contradicts the fact that \( s_0 \) is the least upper bound of \( S \). Hence, the Archimedean Property holds. 
+```
+
+```{corollary}
+For any \( x \in \mathbb{R} \) with \( x > 0 \), there exists \( n \in \mathbb{N} \) such that \(\frac{1}{n} < x\)
+
+```
+
+```{proof}
+
+Let \( a = x \), \( b = 1 \). Since \( a > 0 \), by the Archimedean Property, there exists \( n \in \mathbb{N} \) such that:
+
+\[
+na > 1 \Rightarrow x > \frac{1}{n}
+\]
+
+```
+
+
+## Concept of Infinity and Intervals of \( \mathbb{R} \)
+
+###  Concept of Infinity
+<center>
+![The infinity symbol is a mathematical symbol representing the concept of infinity. This symbol is also called a lemniscate,](fig/fig8.png){width=20%}
+</center>
+
+Infinity comes from the Latin *infinitas*, meaning “unboundedness.” It refers to several distinct concepts—usually linked to the idea of “without end.”
+
+- We encounter infinity for the first time in school, where we meet the set:
+
+\[
+\mathbb{N} = \{1, 2, 3, \dots\}
+\]
+
+- The concept of this set can be formulated as follows:
+
+For each natural number \( n \), there exists a larger natural number \( n + 1 \).  
+In other words, there does not exist a natural number that is larger than all natural numbers.  
+That is, there exists no largest natural number.
+
+
+• We are unable to write down the list of all natural
+numbers.
+• Hence, our writing is never- ending process,
+because of this we talk about infinity or
+unboundedness of natural numbers.
+• We realize that we have infinitely many natural
+numbers, but we are unable to perceive all natural
+numbers at once.
+• We have a similar situation with the idea (the notion)
+of a line in Geometry.
+• Length of any line is infinite or unbounded
+(infinitely large)
+• One can walk along a line for an arbitrarily long
+time and one never reaches the end.
+• We unable to see a whole infinite line at once.
+
+• The main problem with understanding the concept of
+infinity is that we are not capable of imagining object
+at once.
+• We are only able to see a finite fraction (part) of
+an infinite object.
+• The way out we use is to denote infinite objects
+by symbols.
+• We work with these symbols as a finite
+representation of the corresponding infinite
+objects.
+Infinity is not a number, but a concept that describes something unbounded or without limit.
+
+
+- Infinity is not a number, but a concept that describes something **unbounded** or **without limit**.
+
+- In mathematics, we denote infinity using the symbol:
+
+\[
+\infty
+\]
+
+
+### **Infinity in \( \mathbb{R} \)**
+
+Let \( S \subseteq \mathbb{R} \) be a non-empty subset.
+
+- \( S \) is **not bounded above** if it has no upper bound.
+- \( S \) is **not bounded below** if it has no lower bound.
+
+To facilitate mathematical reasoning, we adjoin two **fictitious points** to \( \mathbb{R} \):
+
+- \( +\infty \) (often written simply as \( \infty \))
+- \( -\infty \)
+
+These points are **not elements of** \( \mathbb{R} \), i.e.,
+
+\[
+\infty, -\infty \notin \mathbb{R}
+\]
+
+
+
+For any real number \( x \in \mathbb{R} \):
+
+\[
+-\infty < x < \infty
+\]
+
+
+
+If \( S \subseteq \mathbb{R} \) is non-empty and **not bounded above**, we write:
+
+\[
+\sup S = \infty
+\]
+
+This notation indicates that \( S \) has no finite supremum.
+
+
+### Intervals in \( \mathbb{R} \)
+
+```{definition}
+
+Let \( a, b \in \mathbb{R} \) with \( a < b \). We define the following intervals:
+
+- **Bounded Intervals**
+
+  - **Closed Interval**:
+      \[
+      [a, b] = \{ x \in \mathbb{R} \mid a \leq x \leq b \}
+      \]
+    
+  - **Open Interval**:
+      \[
+      (a, b) = \{ x \in \mathbb{R} \mid a < x < b \}
+      \]
+    
+  - **Half-Open Intervals**:
+      \[
+      (a, b] = \{ x \in \mathbb{R} \mid a < x \leq b \}, \quad [a, b) = \{ x \in \mathbb{R} \mid a \leq x < b \}
+      \]
+
+These are called **bounded intervals** because both endpoints \( a \) and \( b \) are real numbers.
+
+- **Unbounded Intervals**
+
+  - **Right-Unbounded**:
+      \[
+      [a, \infty) = \{ x \in \mathbb{R} \mid x \geq a \}, \quad (a, \infty) = \{ x \in \mathbb{R} \mid x > a \}
+      \]
+    
+  - **Left-Unbounded**:
+      \[
+      (-\infty, b] = \{ x \in \mathbb{R} \mid x \leq b \}, \quad (-\infty, b) = \{ x \in \mathbb{R} \mid x < b \}
+      \]
+    
+  - **Entire Real Line**:
+      \[
+      (-\infty, \infty) = \mathbb{R}
+      \]
+
+```
+
+- **Non-Emptiness of Open Intervals**
+
+    Any open interval \( (a, b) \) with \( a < b \) is nonempty. 
+    For example, it contains \( \frac{a + b}{2}\)
+
+<center>
+![](fig/fig9.png)
+</center>
+
+```{example}
+Write Down a Set
+
+
+1. Set \( A \) such that \( \sup A = \infty \), \( \inf A = 2 \):
+   \[
+   A = [2, \infty)
+   \]
+
+2. Set \( B \) such that \( \sup B = \infty \), \( \inf B = 1 \):
+   \[
+   B = [1, \infty)
+   \]
+
+3. Set \( C \) such that \( \sup C = 2 \), \( \inf C = -\infty \):
+   \[
+   C = (-\infty, 2]
+   \]
+
+4. Set \( D \) such that \( \sup D = \infty \), \( \inf D = -\infty \):
+   \[
+   D = (-\infty, \infty) = \mathbb{R}
+   \]
+
+```
+
+
+
+
+<!--chapter:end:03-real.Rmd-->
+
+# Set Theory
+
+
+## Introduction to Sets
+
+```{definition}
+A **set** is an unordered collection of “objects.” The objects in a set are called the **elements** or **members** of the set. A set contains its elements.
+
+- A set is usually denoted by a capital letter, say \( A \).
+- An element is usually denoted by a lowercase letter, say \( a \) or \( b \).
+- We write \( a \in A \) to mean “\( a \) is an element of \( A \).”
+- We write \( a \notin A \) to mean “\( a \) is not an element of \( A \),” i.e., \( \sim (a \in A) \).
+```
+
+```{example}
+
+- Consider the objects \( 0, 2, -3, 5 \).  
+  The collection \( \{0, 2, -3, 5\} \) is a set.  
+  The elements of this set are \( 0, 2, -3, 5 \).
+
+- Statement:  
+  \( -3 \)is a member of the set \(\{0, 2, -3, 5\} \)
+
+- Statement:  
+  \( 4 \) is not a member of the set \( \{0, 2, -3, 5\} \)
+```
+
+**Note**
+
+When we consider the collection of all integers, we obtain a set. Any integer is a member of this set. Any object that is not an integer is not a member of this set.
+
+It is not possible to write down all the integers explicitly. However, we can indicate this set using ellipsis notation:
+
+\[
+\{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}
+\]
+
+Here, the dots (\( \dots \)) represent the members that are not written down, and it is understood what they are.
+
+
+**Set-Builder Notation**
+
+- The set \( \left\{ \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right\} \) can be written as:  \(  \left\{ \frac{1}{n} \mid n \in \mathbb{N} \right\}\)
+  
+This reads: “The set whose members are \( \frac{1}{n} \), where \( n \) ranges over all natural numbers.”
+
+- The set \( \{x \mid x \in \mathbb{Z} \text{ and } x > -3\} \) is equal to \(  \{-2, -1, 0, 1, 2, 3, 4, \dots\}\)
+
+```{definition,name='Subset'}
+
+Let \( A \) and \( B \) be sets.  
+We say that \( A \) is a **subset** of \( B \), denoted \( A \subseteq B \), if and only if every element of \( A \) is also an element of \( B \).
+
+Formally: \(A \subseteq B \iff \forall x \, (x \in A \Rightarrow x \in B)\)
+```
+
+```{example}  
+Let \( A = \{1, 2, 4\} \) and \( B = \{1, 2, 3, 4\} \).  
+Then \( A \subseteq B \), but \( B \nsubseteq A \).
+```
+
+**Note**: 
+Let \( A \) be a set.  
+Then \(A = \{x \mid p(x)\} \), where \( p(x) \) is a predicate.  
+An element \( x \in A \) if and only if \( p(x) \) is true.
+
+
+
+
+```{definition,name='Proper Subset'}
+
+Let \( A \) and \( B \) be sets.  
+We say that \( A \) is a **proper subset** of \( B \), denoted \( A \subset B \), if and only if:
+
+1. \( A \subseteq B \), and  
+2. There exists an element \( x_0 \in B \) such that \( x_0 \notin A \).
+
+Formally:
+\[
+A \subset B \iff \left( \forall x \, (x \in A \Rightarrow x \in B) \right) \land \left( \exists x_0 \in B \, (x_0 \notin A) \right)
+\]
+```
+
+
+```{definition,name='Equality of Sets'}
+
+Two sets \( A \) and \( B \) are **equal**, denoted \( A = B \), if and only if:
+
+1. \( A \subseteq B \), and  
+2. \( B \subseteq A \)
+
+This is equivalent to:
+\[
+A = B \iff \forall x \, (x \in A \Leftrightarrow x \in B)
+\]
+or
+\[
+A = B \iff \left( \forall x \, (x \in A \Rightarrow x \in B) \right) \land \left( \forall x \, (x \in B \Rightarrow x \in A) \right)
+\]
+
+```
+
+```{definition ,name='Singleton Set'}
+
+A set containing exactly one element is called a **singleton set**.
+```
+
+```{definition,name='Empty Set'}
+
+The set with no elements is called the **empty set**, denoted by \( \emptyset \) or \( \{\} \).  
+Note: \( \{\emptyset\} \) is not the empty set—it is the set containing the empty set as an element.
+```
+
+
+```{example}
+
+- \( \{x \mid x \in \mathbb{Z} \text{ and } x^2 = 2\} = \emptyset \)
+- \( \{x \mid x \in \mathbb{R} \text{ and } x^2 < 0\} = \emptyset \)
+
+Observe:
+\[
+\{x \mid x \in \mathbb{Z} \text{ and } x^2 = 2\} = \{x \mid x \in \mathbb{R} \text{ and } x^2 < 0\}
+\]
+
+```
+
+```{definition,name='Power Set'}
+
+Let \( A \) be a set.  
+The **power set** of \( A \), denoted \( \mathcal{P}(A) \), is defined as:
+\[
+\mathcal{P}(A) = \{X \mid X \subseteq A\}
+\]
+That is, the set of all subsets of \( A \).
+```
+
+```{example}  
+Let \( A = \{0, 1\} \).  
+Then:
+\[
+\mathcal{P}(A) = \{\emptyset, \{0\}, \{1\}, \{0, 1\}\}
+\]
+```
+
+```{definition ,name='Universal Set'}
+
+A **universal set** is the largest set under consideration, relative to a given context. It contains all elements of the sets being discussed.
+
+- Denoted by \( U \) or \( E \)
+- Example: If we are considering subsets of \( \mathbb{R} \), then the universal set is \( \mathbb{R} \)
+```
+
+**Summary**:
+
+1. **Subset Definition**  
+   \[
+   A \subseteq B \iff \forall x \, (x \in A \Rightarrow x \in B)
+   \]
+
+2. **Non-subset**  
+   \[
+   A \nsubseteq B \iff \sim (A \subseteq B)
+   \]
+
+3. **Equality of Sets**  
+   \[
+   A = B \iff A \subseteq B \land B \subseteq A
+   \]
+
+4. **Singleton Set**  
+   Example: \(   A = \{2\}\)
+
+5. **Empty Set**  
+   \[   \emptyset,\{\}   \]
+
+6. **Power Set**  
+   \[
+   \mathcal{P}(A) = \{X \mid X \subseteq A\}
+   \]
+
+7. **Universal Set**  
+   Denoted \( E \) or \( U \)
+
+#### Set Opertaions
+
+
+##### Union
+
+Let \( A \) and \( B \) be sets.  
+The **union** of \( A \) and \( B \), denoted \( A \cup B \), is the set containing all elements that are in \( A \), in \( B \), or in both.
+
+\[
+A \cup B = \{ x \mid x \in A \lor x \in B \}
+\]
+
+**Note:**  
+\[
+x \in A \cup B \iff x \in A \lor x \in B
+\]
+
+---
+
+##### Intersection
+
+Let \( A \) and \( B \) be sets.  
+The **intersection** of \( A \) and \( B \), denoted \( A \cap B \), is the set containing all elements that are in both \( A \) and \( B \).
+
+\[
+A \cap B = \{ x \mid x \in A \land x \in B \}
+\]
+
+**Note:**  
+\[
+x \in A \cap B \iff x \in A \land x \in B
+\]
+
+---
+
+##### Complement
+
+Let \( A \subseteq E \), where \( E \) is a universal set.  
+The **complement** of \( A \), denoted \( A^c \), is the set of all elements in \( E \) that are not in \( A \).
+
+\[
+A^c = \{ x \mid x \in E \land x \notin A \}
+\]
+
+**Note:**  
+\[
+x \in A^c \iff x \in E \land x \notin A
+\]
+
+---
+
+##### **Difference**
+
+Let \( A \) and \( B \) be sets.  
+The **difference** of \( A \) and \( B \), denoted \( A \setminus B \), is the set of elements that are in \( A \) but not in \( B \).
+
+\[
+A \setminus B = \{ x \mid x \in A \land x \notin B \}
+\]
+
+**Note:**  
+\[
+x \in A \setminus B \iff x \in A \land x \notin B
+\]
+
+Also called: 
+
+- The **complement of \( B \) in \( A \)**
+- The **relative complement of \( B \) with respect to \( A \)**
+
+
+<!--chapter:end:04-sets.Rmd-->
+
+# Exercises
+
+```{exercise}
+Without changing their meanings, convert each of the following sentences into a
+sentence having the form "P if and only if Q."
+
+1. A series converges whenever it converges absolutely.  
+2. For a function to be continuous, it is sufficient that it is differentiable.
+3. For a function to be continuous, it is necessary that it is integrable.  
+4. A function is rational if it is a polynomial.  
+5. An integer is divisible by 8 only if it is divisible by 4.
+6. For matrix \( A \) to be invertible, it is necessary and sufficient that \( \det(A) \neq 0 \).  
+7. If a function has a constant derivative then it is linear, and conversely.  
+8. If \( xy = 0 \) then \( x = 0 \) or \( y = 0 \), and conversely.  
+9. If \( a \in \mathbb{Q} \) then \( 5a \in \mathbb{Q} \), and if \( 5a \in \mathbb{Q} \) then \( a \in \mathbb{Q} \).
+```
+
+```{exercise}
+
+Write truth tables for the following:
+
+(i) \( p \lor (q \Rightarrow r) \)  
+(ii) \( (q \lor r) \Leftrightarrow (r \lor q) \)  
+(iii) \( \sim(\sim p \lor q) \)  
+(iv) \( \sim(p \lor q) \lor (\sim p) \)  
+(v) \( p \lor (q \land \sim r) \)
+
+```
+
+```{exercise}
+
+Suppose \( p \) is false and  
+\( (r \Rightarrow s) \Leftrightarrow (p \land q) \) is true.  
+Find the truth values of \( r \) and \( s \).
+
+```
+
+```{exercise}
+
+Decide whether the following pairs are logically equivalent:
+
+(i) \( p \land q \) and \( \sim(\sim p \lor \sim q) \)  
+(ii) \( (p \Rightarrow q) \lor r \) and \( \sim((p \land \sim q) \land \sim r) \)  
+(iii) \( p \land (q \lor \sim q) \) and \( (\sim p) \Rightarrow (q \land \sim q) \)  
+(iv) \( \sim(p \Rightarrow q) \) and \( p \land \sim q \)  
+(v) \( (p \Rightarrow q) \lor r \) and \( \sim((p \land \sim q) \land \sim r) \)
+```
+
+
+```{exercise}
+Write down the negation of the following statements.
+
+(i) It's not true that the number 2 is even.  
+(ii) The number 2 is even or the number 3 is odd.  
+(iii) The discriminant is negative only if the quadratic equation has no real solutions.  
+(iv) If a function has a constant derivative then it is linear, and conversely.  
+(v) Either you pay your tuition or you will be withdrawn from the institute.
+```
+
+
+```{exercise}
+
+Let \( p, q \) and \( r \) be propositions. Let \( T \) denote a tautology.
+
+(i) Prove the following equivalences:
+
+- \( p \land q \equiv q \land p \)
+- \( \neg p \land q \equiv \neg (q \land \neg p) \)
+- \( p \land T \equiv T \)
+- \( p \lor \neg p \equiv T \)
+- \( p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \)
+
+(ii) Using results in part (i), show that:
+
+\[
+[(\neg r) \land p \land q] \lor [(\neg r) \land (\neg p) \land q] \equiv \neg (q \Rightarrow r)
+\]
+```
+
+```{exercise}
+
+Consider the statement:  
+“For all integers \( n \), if \( n \) is a multiple of 6 then \( n \) is even.”
+
+Let:  
+  
+- \( P(n) \): \( n \) is a multiple of 6  
+- \( Q(n) \): \( n \) is even  
+- \( \mathbb{Z} \): the set of all integers
+
+(i) Express the statement in symbolic form.  
+(ii) Write the converse, inverse, and contrapositive in English.  
+(iii) Express the statement using a necessary condition.  
+(iv) Express the statement using a sufficient condition.  
+(v) Express the statement using “only if”.
+```
+
+```{exercise}
+
+(i) What is the English interpretation of the contrapositive of:
+
+\[
+\forall \epsilon > 0 \, \forall x \in D(f) \, \exists \delta > 0, \quad |f(x) - l| < \epsilon \Rightarrow |x - a| \geq \delta
+\]
+
+(ii) What is the English interpretation of the negation of:
+
+\[
+\exists \delta > 0 \, \forall x \in S, \quad S \cap N^c(a, \delta) = \emptyset
+\]
+
+```
+
+```{exercise}
+
+Consider the following argument for an integer \( n \):
+
+- \( n \) is odd.  
+- If \( n \) is not odd, then \( n^2 \) is not odd.  
+- Therefore, \( n^2 \) is even.
+
+Let:  
+  
+- \( p \): \( n \) is odd  
+- \( q \): \( n^2 \) is odd
+
+(i) Express the argument symbolically.  
+(ii) Determine whether the argument is valid.
+
+```
+
+
+```{exercise}
+Prove each of the following statements:
+
+- (a) For all integers \( a \), \( b \), and \( c \) with \( a \neq 0 \), if \( a \mid b \) and \( a \mid c \), then \( a \mid (b - c) \).
+- (b) For each \( n \in \mathbb{Z} \), if \( n \) is an odd integer, then \( n^3 \) is an odd integer.
+- (c) For each integer \( a \), if \( 4 \mid (a - 1) \), then \( 4 \mid (a^2 - 1) \).
+```
+
+```{exercise}
+
+Let \( n \) be an integer. Prove each of the following:
+
+- (a) If \( n \) is even, then \( n^3 \) is even.
+- (b) If \( n^3 \) is even, then \( n \) is even.
+- (c) The integer \( n \) is even if and only if \( n^3 \) is even.
+- (d) The integer \( n \) is odd if and only if \( n^3 \) is odd.
+```
+
+```{exercise}
+- (a) Write the contrapositive of the following statement:  
+  *For all positive real numbers \( a \) and \( b \), if \( \sqrt{ab} \neq \frac{a + b}{2} \), then \( a \neq b \).*
+
+- (b) Is this statement true or false?  
+  Prove the statement if it is true or provide a counterexample if it is false.
+```
+
+```{exercise}
+Is the following proposition true or false?
+
+> For all integers \( a \) and \( b \), if \( ab \) is even, then \( a \) is even or \( b \) is even.
+
+Justify your conclusion by writing a proof if the proposition is true or by providing a counterexample if it is false.
+```
+
+```{exercise}
+Are the following propositions true or false? Justify your conclusion.
+
+- (a) There exist integers \( x \) and \( y \) such that \( 4x + 6y = 2 \).
+- (b) There exist integers \( x \) and \( y \) such that \( 6x + 15y = 2 \).
+- (c) There exist integers \( x \) and \( y \) such that \( 6x + 15y = 9 \).
+```
+
+<!--chapter:end:05-exercise.Rmd-->
+

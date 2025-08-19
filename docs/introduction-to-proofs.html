@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Introduction to Proofs | Mathematical Logic</title>
+  <meta name="description" content="This book introduces foundational concepts in mathematical logic." />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Introduction to Proofs | Mathematical Logic" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book introduces foundational concepts in mathematical logic." />
+  <meta name="github-repo" content="https://github.com/ashanjayamal/Mathematical-Logic.git" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Introduction to Proofs | Mathematical Logic" />
+  
+  <meta name="twitter:description" content="This book introduces foundational concepts in mathematical logic." />
+  
+
+<meta name="author" content="Ashan De Silva" />
+
+
+<meta name="date" content="2025-08-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mathematical-logic.html"/>
+<link rel="next" href="the-real-number-system-mathbbr.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mathematical Logic</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#chapter-overview"><i class="fa fa-check"></i><b>1.1</b> Chapter Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mathematical-logic.html"><a href="mathematical-logic.html"><i class="fa fa-check"></i><b>2</b> Mathematical logic</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#propositional-logic-logical-operators"><i class="fa fa-check"></i><b>2.1</b> Propositional logic &amp; Logical operators</a></li>
+<li class="chapter" data-level="2.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#statements-and-truth-values"><i class="fa fa-check"></i><b>2.2</b> Statements and Truth Values</a></li>
+<li class="chapter" data-level="2.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#more-about-propositions"><i class="fa fa-check"></i><b>2.3</b> More About Propositions</a></li>
+<li class="chapter" data-level="2.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-operators-connectives"><i class="fa fa-check"></i><b>2.4</b> Logical Operators / Connectives</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-table"><i class="fa fa-check"></i><b>2.4.1</b> Truth Table</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-operators"><i class="fa fa-check"></i><b>2.5</b> Logical Operators</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-negation-operator-simneg"><i class="fa fa-check"></i><b>2.5.1</b> The Negation Operator (<span class="math inline">\(\sim,\neg\)</span>)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-conjunction-operator-and"><i class="fa fa-check"></i><b>2.5.2</b> The Conjunction Operator — “and”</a></li>
+<li class="chapter" data-level="2.5.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-disjunction-operator-or"><i class="fa fa-check"></i><b>2.5.3</b> The Disjunction Operator — “or”</a></li>
+<li class="chapter" data-level="2.5.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-exclusive-or-operator-either-or"><i class="fa fa-check"></i><b>2.5.4</b> The Exclusive OR Operator — “either or”</a></li>
+<li class="chapter" data-level="2.5.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#implication-operator-implies"><i class="fa fa-check"></i><b>2.5.5</b> Implication Operator — “implies”</a></li>
+<li class="chapter" data-level="2.5.6" data-path="mathematical-logic.html"><a href="mathematical-logic.html#biconditional-logic-p-iff-q"><i class="fa fa-check"></i><b>2.5.6</b> Biconditional Logic: <span class="math inline">\(p \iff q\)</span></a></li>
+<li class="chapter" data-level="2.5.7" data-path="mathematical-logic.html"><a href="mathematical-logic.html#terminology"><i class="fa fa-check"></i><b>2.5.7</b> Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-tables-for-compound-propositions"><i class="fa fa-check"></i><b>2.6</b> Truth Tables for Compound Propositions</a></li>
+<li class="chapter" data-level="2.7" data-path="mathematical-logic.html"><a href="mathematical-logic.html#precedence-of-logical-operations"><i class="fa fa-check"></i><b>2.7</b> Precedence of Logical Operations</a></li>
+<li class="chapter" data-level="2.8" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-tables-and-logical-analysis"><i class="fa fa-check"></i><b>2.8</b> Truth Tables and Logical Analysis</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#constructing-a-truth-table"><i class="fa fa-check"></i><b>2.8.1</b> Constructing a Truth Table</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="mathematical-logic.html"><a href="mathematical-logic.html#tautologies-and-contradictions"><i class="fa fa-check"></i><b>2.9</b> Tautologies and Contradictions</a></li>
+<li class="chapter" data-level="2.10" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-equivalence"><i class="fa fa-check"></i><b>2.10</b> Logical Equivalence</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#useful-logical-equivalences"><i class="fa fa-check"></i><b>2.10.1</b> Useful Logical Equivalences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-algebra-of-propositions"><i class="fa fa-check"></i><b>2.11</b> The Algebra of Propositions</a></li>
+<li class="chapter" data-level="2.12" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-algebra-of-propositions-1"><i class="fa fa-check"></i><b>2.12</b> The Algebra of Propositions</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-laws-and-their-equivalences"><i class="fa fa-check"></i><b>2.12.1</b> Logical Laws and Their Equivalences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="mathematical-logic.html"><a href="mathematical-logic.html#predicate-logic-and-quantifiers"><i class="fa fa-check"></i><b>2.13</b> Predicate Logic and Quantifiers</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#predicates"><i class="fa fa-check"></i><b>2.13.1</b> Predicates</a></li>
+<li class="chapter" data-level="2.13.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#converting-predicates-to-propositions"><i class="fa fa-check"></i><b>2.13.2</b> Converting Predicates to Propositions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="mathematical-logic.html"><a href="mathematical-logic.html#quantifiers"><i class="fa fa-check"></i><b>2.14</b> Quantifiers</a>
+<ul>
+<li class="chapter" data-level="2.14.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#universal-quantifier-forall"><i class="fa fa-check"></i><b>2.14.1</b> Universal Quantifier <span class="math inline">\(\forall\)</span></a></li>
+<li class="chapter" data-level="2.14.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-existential-quantifier-exists"><i class="fa fa-check"></i><b>2.14.2</b> The Existential Quantifier “<span class="math inline">\(\exists\)</span>”</a></li>
+<li class="chapter" data-level="2.14.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#quantifiers-and-negation"><i class="fa fa-check"></i><b>2.14.3</b> Quantifiers and Negation</a></li>
+<li class="chapter" data-level="2.14.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#negation-of-quantification"><i class="fa fa-check"></i><b>2.14.4</b> Negation of Quantification</a></li>
+<li class="chapter" data-level="2.14.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#negation-of-conditional-quantification"><i class="fa fa-check"></i><b>2.14.5</b> Negation of Conditional Quantification</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html"><i class="fa fa-check"></i><b>3</b> Introduction to Proofs</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#terminology-1"><i class="fa fa-check"></i><b>3.0.1</b> Terminology</a></li>
+<li class="chapter" data-level="3.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#arguments"><i class="fa fa-check"></i><b>3.1</b> Arguments</a></li>
+<li class="chapter" data-level="3.2" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#valid-argument"><i class="fa fa-check"></i><b>3.2</b> Valid Argument</a></li>
+<li class="chapter" data-level="3.3" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#mathematical-proofs"><i class="fa fa-check"></i><b>3.3</b> Mathematical proofs</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#direct-proofs"><i class="fa fa-check"></i><b>3.3.1</b> Direct proofs</a></li>
+<li class="chapter" data-level="3.3.2" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#proof-by-contradiction"><i class="fa fa-check"></i><b>3.3.2</b> Proof by Contradiction</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#indirect-proofs"><i class="fa fa-check"></i><b>3.4</b> Indirect Proofs</a></li>
+<li class="chapter" data-level="3.5" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#proof-by-cases"><i class="fa fa-check"></i><b>3.5</b> Proof by Cases</a></li>
+<li class="chapter" data-level="3.6" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#proof-by-principle-of-mathematical-induction"><i class="fa fa-check"></i><b>3.6</b> Proof by Principle of Mathematical Induction</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#principle-of-mathematical-induction"><i class="fa fa-check"></i><b>3.6.1</b> Principle of Mathematical Induction</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#exercises"><i class="fa fa-check"></i><b>3.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html"><i class="fa fa-check"></i><b>4</b> The Real Number System <span class="math inline">\(\mathbb{R}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#topics-covered"><i class="fa fa-check"></i><b>4.0.1</b> Topics Covered</a></li>
+<li class="chapter" data-level="4.0.2" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#what-are-the-real-numbers"><i class="fa fa-check"></i><b>4.0.2</b> What Are the Real Numbers?</a></li>
+<li class="chapter" data-level="4.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#axioms-of-real-numbers"><i class="fa fa-check"></i><b>4.1</b> Axioms of real numbers</a></li>
+<li class="chapter" data-level="4.2" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#basic-properties-of-equality"><i class="fa fa-check"></i><b>4.2</b> Basic Properties of Equality</a></li>
+<li class="chapter" data-level="4.3" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#some-algebraic-properties-of-real-numbers"><i class="fa fa-check"></i><b>4.3</b> Some Algebraic Properties of Real Numbers</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#selected-theorems"><i class="fa fa-check"></i><b>4.3.1</b> Selected Theorems</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#the-order-axioms-and-axiom-of-bounds"><i class="fa fa-check"></i><b>4.4</b> The Order Axioms and Axiom of Bounds</a></li>
+<li class="chapter" data-level="4.5" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#absolute-value"><i class="fa fa-check"></i><b>4.5</b> Absolute Value</a></li>
+<li class="chapter" data-level="4.6" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#axiom-of-bound-completeness-axiom"><i class="fa fa-check"></i><b>4.6</b> Axiom of Bound (Completeness Axiom)</a></li>
+<li class="chapter" data-level="4.7" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#archimedean-property"><i class="fa fa-check"></i><b>4.7</b> Archimedean Property</a></li>
+<li class="chapter" data-level="4.8" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#concept-of-infinity-and-intervals-of-mathbbr"><i class="fa fa-check"></i><b>4.8</b> Concept of Infinity and Intervals of <span class="math inline">\(\mathbb{R}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#concept-of-infinity"><i class="fa fa-check"></i><b>4.8.1</b> Concept of Infinity</a></li>
+<li class="chapter" data-level="4.8.2" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#infinity-in-mathbbr"><i class="fa fa-check"></i><b>4.8.2</b> <strong>Infinity in <span class="math inline">\(\mathbb{R}\)</span></strong></a></li>
+<li class="chapter" data-level="4.8.3" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#intervals-in-mathbbr"><i class="fa fa-check"></i><b>4.8.3</b> Intervals in <span class="math inline">\(\mathbb{R}\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="set-theory.html"><a href="set-theory.html"><i class="fa fa-check"></i><b>5</b> Set Theory</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="set-theory.html"><a href="set-theory.html#introduction-to-sets"><i class="fa fa-check"></i><b>5.1</b> Introduction to Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="exercises-1.html"><a href="exercises-1.html"><i class="fa fa-check"></i><b>6</b> Exercises</a></li>
+<li class="divider"></li>
+<li><a href="https://ashan-jayamal-acdamic-work.netlify.app/" target="blank">Property of Ashan De Silva</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematical Logic</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-proofs" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Introduction to Proofs<a href="introduction-to-proofs.html#introduction-to-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="terminology-1" class="section level3 hasAnchor" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Terminology<a href="introduction-to-proofs.html#terminology-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Theorem</strong>: A statement that can be shown to be true (i.e., a fact or result).</li>
+<li><strong>Proposition</strong>: A smaller or less important theorem.</li>
+<li><strong>Axiom / Postulate</strong>: A statement assumed to be true.</li>
+<li><strong>Lemma</strong>: A less important theorem used in the proof of another theorem.</li>
+<li><strong>Corollary</strong>: A less important theorem that follows from a larger theorem.</li>
+<li><strong>Conjecture</strong>: A statement proposed as true but not yet proven.</li>
+</ul>
+<p><strong>Note</strong>: A <strong>proof</strong> is a valid argument that establishes the truth of a theorem (or any statement that can be true or false).<br />
+Axioms and postulates do not require proof—they serve as foundational assumptions, akin to basic words in a dictionary that help define others.</p>
+</div>
+<div id="arguments" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Arguments<a href="introduction-to-proofs.html#arguments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>An <strong>argument</strong> is an assertion that a given set of propositions <span class="math inline">\(p_1, p_2, \ldots, p_n\)</span>, called <strong>premises</strong>, yields another proposition <span class="math inline">\(q\)</span>, called the <strong>conclusion</strong>.</p></li>
+<li><p>This is denoted symbolically as:
+<span class="math display">\[
+p_1, p_2, \ldots, p_n \vdash q
+\]</span></p></li>
+<li><p>The argument is said to be <strong>valid</strong> if <span class="math inline">\(q\)</span> is true whenever all the premises <span class="math inline">\(p_1, p_2, \ldots, p_n\)</span> are true.</p></li>
+<li><p>An argument that is not valid is called a <strong>fallacy</strong>.</p></li>
+<li><p>The argument <span class="math inline">\(p_1, p_2, \ldots, p_n \vdash q\)</span> is <strong>valid</strong> if and only if the compound proposition:
+<span class="math display">\[
+(p_1 \land p_2 \land \ldots \land p_n) \Rightarrow q
+\]</span>
+is a <strong>tautology</strong>.</p></li>
+</ul>
+<div class="example">
+<p><span id="exm:unnamed-chunk-57" class="example"><strong>Example 3.1  </strong></span>Let <span class="math inline">\(n \in \mathbb{N}\)</span>. Consider the following argument:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((-1)^n\)</span> is positive or <span class="math inline">\((-1)^n\)</span> is negative.<br />
+</li>
+<li>If <span class="math inline">\((-1)^n\)</span> is positive, then <span class="math inline">\((-1)^{2n} &gt; 0\)</span>.<br />
+</li>
+<li>If <span class="math inline">\((-1)^n\)</span> is negative, then <span class="math inline">\((-1)^{2n} &gt; 0\)</span>.</li>
+</ol>
+<p>Therefore, <span class="math inline">\((-1)^{2n} &gt; 0\)</span>.</p>
+<p>Let:
+- <span class="math inline">\(p\)</span>: <span class="math inline">\((-1)^n\)</span> is positive<br />
+- <span class="math inline">\(q\)</span>: <span class="math inline">\((-1)^n\)</span> is negative<br />
+- <span class="math inline">\(r\)</span>: <span class="math inline">\((-1)^{2n} &gt; 0\)</span></p>
+<p>We examine the validity of the argument:
+<span class="math display">\[
+\underbrace{(p \lor q)}_{Premise},\ \underbrace{(p \Rightarrow r)}_{Premise},\ \underbrace{(q \Rightarrow r)}_{Premise} \vdash \underbrace{r}_{Conclusion}
+\]</span></p>
+<p>This corresponds to the compound proposition:
+<span class="math display">\[
+((p \lor q) \land (p \Rightarrow r) \land (q \Rightarrow r)) \Rightarrow r
+\]</span></p>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="6%" />
+<col width="9%" />
+<col width="9%" />
+<col width="27%" />
+<col width="35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(r\)</span></th>
+<th align="center"><span class="math inline">\(p \lor q\)</span></th>
+<th align="center"><span class="math inline">\(p \Rightarrow r\)</span></th>
+<th align="center"><span class="math inline">\(q \Rightarrow r\)</span></th>
+<th align="center"><span class="math inline">\((p \lor q) \land (p \Rightarrow r) \land (q \Rightarrow r)\)</span></th>
+<th align="center"><span class="math inline">\(((p \lor q) \land (p \Rightarrow r) \land (q \Rightarrow r)) \Rightarrow r\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+</tbody>
+</table>
+<p>This table confirms that the compound proposition is <strong>not</strong> a tautology, hence the argument is <strong>not valid</strong> in all cases. However, in the specific example from Section 8.3, the premises are true and the conclusion follows, so the argument is valid <strong>in that instance</strong>, though not universally.</p>
+</div>
+</div>
+<div id="valid-argument" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Valid Argument<a href="introduction-to-proofs.html#valid-argument" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>By definition, a argument is <strong>valid</strong> if:
+&gt; If the premises are true, then the conclusion is true.</p>
+<p>This corresponds to the tautology:
+<span class="math display">\[
+((p \Rightarrow q) \land p) \Rightarrow q
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-58" class="example"><strong>Example 3.2  </strong></span>Premises:
+1. <span class="math inline">\(p \Rightarrow q\)</span>
+2. <span class="math inline">\(p\)</span></p>
+<p>Conclusion:
+∴ <span class="math inline">\(q\)</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-59" class="example"><strong>Example 3.3  </strong></span>Is the following argument valid?</p>
+<p>Premises:
+1. If the door is open, then I must close it.
+2. The door is open.</p>
+<p>Conclusion:
+∴ I must close it.</p>
+<p>Let:
+- <span class="math inline">\(p\)</span>: The door is open<br />
+- <span class="math inline">\(q\)</span>: I must close it</p>
+<p>This matches the form:
+<span class="math display">\[
+(p \Rightarrow q),\ p \vdash q
+\]</span></p>
+<p>Since the compound proposition <span class="math inline">\(((p \Rightarrow q) \land p) \Rightarrow q\)</span> is a tautology, the argument is valid.</p>
+</div>
+<p>We consider the argument:</p>
+<p><span class="math display">\[
+[(p \Rightarrow q) \land p] \Rightarrow q
+\]</span></p>
+<p>This structure represents a <strong>valid argument</strong>, often referred to as a <strong>rule of inference</strong>.</p>
+<div id="method-1-truth-table" class="section level4 hasAnchor" number="3.2.0.1">
+<h4><span class="header-section-number">3.2.0.1</span> Method 1: Truth Table<a href="introduction-to-proofs.html#method-1-truth-table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\([(p \Rightarrow q) \land p] \Rightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr class="even">
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+</tr>
+</tbody>
+</table>
+<p>This confirms that the compound proposition is <strong>not always true</strong>, but when both premises are true, the conclusion follows — hence the argument is valid in that case.</p>
+<hr />
+</div>
+<div id="method-2-direct-reasoning" class="section level4 hasAnchor" number="3.2.0.2">
+<h4><span class="header-section-number">3.2.0.2</span> Method 2: Direct Reasoning<a href="introduction-to-proofs.html#method-2-direct-reasoning" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If:</p>
+<ul>
+<li><span class="math inline">\(p\)</span> is true, and</li>
+<li><span class="math inline">\(p \Rightarrow q\)</span> is true,</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li><span class="math inline">\(q\)</span> must be true.</li>
+</ul>
+<div class="remark">
+<p><span id="unlabeled-div-6" class="remark"><em>Remark</em>. </span>A <strong>logical rule of inference</strong> is defined to be any valid argument — that is, one where the conclusion necessarily follows from the premises.</p>
+</div>
+<ol style="list-style-type: lower-roman">
+<li>Modus Ponens
+This rule affirms the consequent based on a conditional and its antecedent:
+<span class="math display">\[
+\begin{array}{ll}
+p \Rightarrow q &amp; \text{(premise 1)} \\
+p &amp; \text{(premise 2)} \\
+\hline
+q &amp; \text{(conclusion)}
+\end{array}
+\]</span>
+If “p implies q” and “p” is true, then “q” must also be true.</li>
+</ol>
+<div class="example">
+<p><span id="exm:unnamed-chunk-61" class="example"><strong>Example 3.4  </strong></span><strong>Claim:</strong><span class="math inline">\(\sqrt{2} &lt; \sqrt{3}\)</span></p>
+<p><span class="math display">\[\begin{align}
+  2&lt;3 &amp; \implies 2-3&lt;0\\
+  &amp; \implies  (\sqrt{2} - \sqrt{3})(\sqrt{2} + \sqrt{3})&lt;0\\
+  &amp;\implies (\sqrt{2} - \sqrt{3})&lt;0\\
+  &amp; \implies \sqrt{2}  &lt; \sqrt{3}                                     \end{align}\]</span></p>
+</div>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Modus Tollens
+This rule denies the antecedent based on a conditional and the negation of its consequent:
+<span class="math display">\[
+\begin{array}{ll}
+p \Rightarrow q &amp; \text{(premise 1)} \\
+\neg q &amp; \text{(premise 2)} \\
+\hline
+\neg p &amp; \text{(conclusion)}
+\end{array}
+\]</span>
+If “p implies q” and “q” is false, then “p” must also be false.</li>
+</ol>
+<div class="example">
+<p><span id="exm:unnamed-chunk-62" class="example"><strong>Example 3.5  </strong></span><strong>Claim:</strong> <span class="math inline">\(\sqrt{2}+\sqrt{3}&lt;\sqrt{11}\)</span></p>
+<p><span class="math display" id="eq:eq2" id="eq:eq1">\[\begin{align}
+\sqrt{2}+\sqrt{3}\geq \sqrt{11} &amp; \implies (\sqrt{2}+\sqrt{3})^2&lt;(\sqrt{11}) \text{Since }\sqrt{2}+\sqrt{3}\geq 11&gt;0\\
+&amp; \implies 2+2\sqrt{6}+3\geq 11\\
+&amp; \implies 5+2\sqrt{6}\geq 11\\
+&amp; \implies 2\sqrt{6}\geq 6\\
+&amp; \implies 4\times 6 \geq 36 \text{ Since } 4\times 6 \geq 36&gt;0\\
+\underbrace{\sqrt{2}+\sqrt{3}\geq \sqrt{11}}_p&amp; \implies \underbrace{24 \geq 36}_q \text{ is true}  \tag{3.1}\\\\
+\text{But } 24 &lt; 36 &amp;\text{ is true}\\
+\therefore 24 \geq 36 &amp;\text{ is false}\\
+\therefore \underbrace{\neg(24 \geq 36)}_{\neg q} &amp;\text{ is true}\tag{3.2}\\
+\therefore \neg p &amp;\\
+\text{ i.e. } \sqrt{2}+\sqrt{3}&lt;\sqrt{11}&amp;
+\end{align}\]</span></p>
+</div>
+</div>
+</div>
+<div id="mathematical-proofs" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Mathematical proofs<a href="introduction-to-proofs.html#mathematical-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are several standard techniques used to establish mathematical theorems. Below are five commonly used methods:</p>
+<ol style="list-style-type: decimal">
+<li>Direct proofs</li>
+<li>Proof by Contradiction</li>
+<li>Indirect proofs</li>
+<li>proof by cases</li>
+<li>Proof by Principle of Mathematical Induction</li>
+</ol>
+<div id="direct-proofs" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Direct proofs<a href="introduction-to-proofs.html#direct-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Direct proof is probably the easiest approach to establish the theorems, as it does not require knowledge of any special techniques. The argument is constructed using a series of simple statements, where each one should follow directly from the previous one. It is important not to miss out any steps as this may lead to a gap in reasoning. To prove the hypothesis, one may use axioms, as well as the previously established statements of different theorems.</p>
+<div id="proving-conditional-statements-pimplies-q" class="section level4 hasAnchor" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Proving Conditional Statements: <span class="math inline">\(p\implies q\)</span><a href="introduction-to-proofs.html#proving-conditional-statements-pimplies-q" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>If <span class="math inline">\(p\)</span> is <strong>false</strong>, then the <strong>implication</strong> is always
+Thus, show that if <span class="math inline">\(p\)</span> is true, then <span class="math inline">\(q\)</span> is true.</p></li>
+<li><p><em>Direct Proof</em>: Assume that <span class="math inline">\(p\)</span> is true. Use rules of inference, axioms, and logical equivalences to show that <span class="math inline">\(q\)</span> must also be true.</p></li>
+</ul>
+Proof of “<span class="math inline">\(p \Rightarrow q\)</span>”:
+<center>
+<img src="fig/fig3.png" style="width:60.0%" />
+</center>
+<p>Before we begin exploring example proofs, it’s essential to clearly define the foundational terms we’ll be using. Based on your notes and the image provided, here are the formal definitions:</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-63" class="definition"><strong>Definition 3.1  (Even and Odd Integers) </strong></span></p>
+<ul>
+<li>An integer <span class="math inline">\(n\)</span> is <strong>even</strong> if there exists an integer <span class="math inline">\(k \in \mathbb{Z}\)</span> such that:
+<span class="math display">\[
+n = 2k
+\]</span></li>
+<li>An integer <span class="math inline">\(n\)</span> is <strong>odd</strong> if there exists an integer <span class="math inline">\(k \in \mathbb{Z}\)</span> such that:
+<span class="math display">\[
+n = 2k + 1
+\]</span></li>
+<li>Every integer is either even or odd, and no integer is both.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-64" class="example"><strong>Example 3.6  </strong></span><span class="math inline">\(5\)</span> is odd integer and <span class="math inline">\(10\)</span> is even integer.</p>
+<ul>
+<li>Since <span class="math inline">\(5=2\times 2 +1\)</span></li>
+<li>Since <span class="math inline">\(10=2\times 5\)</span></li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-65" class="definition"><strong>Definition 3.2  (Divisibility) </strong></span>A integer $b $ <strong><span class="math inline">\(b\)</span> divides another integer <span class="math inline">\(a\)</span></strong> if:
+<span class="math inline">\(\exists k \in \mathbb{Z} \text{ such that } a = k \cdot b\)</span>
+** Notation**: <span class="math inline">\(b\neq 0\)</span> divides <span class="math inline">\(a\)</span> , written <span class="math inline">\(b \mid a\)</span>)</p>
+<p>In this case, <span class="math inline">\(b\)</span> is called a <strong>factor</strong> or <strong>divisor</strong> of <span class="math inline">\(a\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-66" class="example"><strong>Example 3.7  </strong></span></p>
+<ul>
+<li><span class="math inline">\(3 \mid 12\)</span> because <span class="math inline">\(12 = 4 \cdot 3\)</span></li>
+<li><span class="math inline">\(5 \nmid 12\)</span> because there is no integer <span class="math inline">\(k\)</span> such that <span class="math inline">\(12 = 5k\)</span></li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-67" class="example"><strong>Example 3.8  </strong></span>Give a direct proof of the theorem “If <span class="math inline">\(n\)</span> is an odd integer, then <span class="math inline">\(n^2\)</span> is odd.”</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(n \in \mathbb{Z}\)</span> be an odd integer.<br />
+By definition of oddness, there exists an integer <span class="math inline">\(k \in \mathbb{Z}\)</span> such that:
+<span class="math display">\[
+n = 2k + 1
+\]</span></p>
+<p>Now compute <span class="math inline">\(n^2\)</span>:
+<span class="math display">\[
+n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1
+\]</span></p>
+<p>Let <span class="math inline">\(m = 2k^2 + 2k \in \mathbb{Z}\)</span>. Then:
+<span class="math display">\[
+n^2 = 2m + 1
+\]</span></p>
+<p>Thus, <span class="math inline">\(n^2\)</span> is of the form <span class="math inline">\(2m + 1\)</span>, which is odd.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-69" class="theorem"><strong>Theorem 3.1  </strong></span>Let <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> be integers. Then</p>
+<ol style="list-style-type: lower-roman">
+<li>if <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are both even, then <span class="math inline">\(n + m\)</span> is even,</li>
+<li>if <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are both odd, then <span class="math inline">\(n + m\)</span> is even,</li>
+<li>if one of <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> is even and the other is odd, then <span class="math inline">\(n + m\)</span> is odd.</li>
+</ol>
+</div>
+<p><strong>Claim 1:</strong> If <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are both even, then <span class="math inline">\(n + m\)</span> is even.</p>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are even, then there exist integers <span class="math inline">\(a, b \in \mathbb{Z}\)</span> such that:
+<span class="math display">\[
+n = 2a,\quad m = 2b
+\]</span>
+Then:
+<span class="math display">\[
+n + m = 2a + 2b = 2(a + b)
+\]</span>
+Since <span class="math inline">\(a + b \in \mathbb{Z}\)</span>, <span class="math inline">\(n + m\)</span> is divisible by 2, hence even.</p>
+</div>
+<p><strong>Claim 2:</strong> If <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are both odd, then <span class="math inline">\(n + m\)</span> is even.</p>
+<div class="proof">
+<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are odd, then there exist integers <span class="math inline">\(a, b \in \mathbb{Z}\)</span> such that:
+<span class="math display">\[
+n = 2a + 1,\quad m = 2b + 1
+\]</span>
+Then:
+<span class="math display">\[
+n + m = (2a + 1) + (2b + 1) = 2a + 2b + 2 = 2(a + b + 1)
+\]</span>
+Since <span class="math inline">\(a + b + 1 \in \mathbb{Z}\)</span>, <span class="math inline">\(n + m\)</span> is even.</p>
+</div>
+<p><strong>Claim 3:</strong> If one of <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> is even and the other is odd, then <span class="math inline">\(n + m\)</span> is odd.</p>
+<div class="proof">
+<p><span id="unlabeled-div-10" class="proof"><em>Proof</em>. </span>Assume without loss of generality that <span class="math inline">\(n\)</span> is even and <span class="math inline">\(m\)</span> is odd.<br />
+Then there exist integers <span class="math inline">\(a, b \in \mathbb{Z}\)</span> such that:
+<span class="math display">\[
+n = 2a,\quad m = 2b + 1
+\]</span>
+Then:
+<span class="math display">\[
+n + m = 2a + (2b + 1) = 2(a + b) + 1
+\]</span>
+Since <span class="math inline">\(a + b \in \mathbb{Z}\)</span>, <span class="math inline">\(n + m\)</span> is of the form <span class="math inline">\(2k + 1\)</span>, hence odd.</p>
+</div>
+<p>Consider the following definitions</p>
+<ul>
+<li>A integer<span class="math inline">\(a \in \mathbb{Z}\)</span>. said to be Type 0: if there exist integr <span class="math inline">\(n\)</span> such that <span class="math inline">\(a = 3n\)</span>.</li>
+<li>A integer<span class="math inline">\(a \in \mathbb{Z}\)</span>. said to be Type 1: if there exist integr <span class="math inline">\(n\)</span> such that <span class="math inline">\(a = 3n+1\)</span>.</li>
+<li>A integer<span class="math inline">\(a \in \mathbb{Z}\)</span>. said to be Type 2: if there exist integr <span class="math inline">\(n\)</span> such that <span class="math inline">\(a = 3n+2\)</span>.</li>
+</ul>
+<ol style="list-style-type: lower-roman">
+<li>If <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both type 1 integers, then <span class="math inline">\(a + b\)</span> is a type 2 integer.</li>
+</ol>
+<div class="proof">
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(a = 3m + 1\)</span> and <span class="math inline">\(b = 3n + 1\)</span> for some <span class="math inline">\(m, n \in \mathbb{Z}\)</span>.<br />
+Then:
+<span class="math display">\[
+a + b = (3m + 1) + (3n + 1) = 3(m + n) + 2
+\]</span>
+So <span class="math inline">\(a + b\)</span> is of the form <span class="math inline">\(3k + 2\)</span>, hence type 2.</p>
+</div>
+<ol start="2" style="list-style-type: lower-roman">
+<li>If <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both type 2 integers, then <span class="math inline">\(a + b\)</span> is a type 1 integer.</li>
+</ol>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(a = 3m + 2\)</span> and <span class="math inline">\(b = 3n + 2\)</span> for some <span class="math inline">\(m, n \in \mathbb{Z}\)</span>.<br />
+Then:
+<span class="math display">\[
+a + b = (3m + 2) + (3n + 2) = 3(m + n) + 4 = 3(m + n + 1) + 1
+\]</span>
+So <span class="math inline">\(a + b\)</span> is of the form <span class="math inline">\(3k + 1\)</span>, hence type 1.</p>
+</div>
+<ol start="3" style="list-style-type: lower-roman">
+<li>If <span class="math inline">\(a\)</span> is type 1 and <span class="math inline">\(b\)</span> is type 2, then <span class="math inline">\(ab\)</span> is type 2.</li>
+</ol>
+<div class="proof">
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(a = 3m + 1\)</span>, <span class="math inline">\(b = 3n + 2\)</span> for some <span class="math inline">\(m, n \in \mathbb{Z}\)</span>.<br />
+Then:
+<span class="math display">\[
+ab = (3m + 1)(3n + 2) = 9mn + 6m + 3n + 2 = 3(3mn + 2m + n) + 2
+\]</span>
+So <span class="math inline">\(ab\)</span> is of the form <span class="math inline">\(3k + 2\)</span>, hence type 2.</p>
+</div>
+<p><strong>NOte</strong>:<br />
+- Many logical theorems take the form:<br />
+<span class="math display">\[
+  \forall x (P(x) \Rightarrow Q(x))
+  \]</span></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Choose an Arbitrary Element</strong>:<br />
+Let <span class="math inline">\(c\)</span> be an arbitrary element from the domain.</p></li>
+<li><p><strong>Prove the Implication for <span class="math inline">\(c\)</span></strong>:<br />
+Show that <span class="math inline">\(P(c) \Rightarrow Q(c)\)</span> holds.</p></li>
+<li><p><strong>Apply Universal Generalization</strong>:<br />
+Since <span class="math inline">\(c\)</span> was arbitrary, we conclude:<br />
+<span class="math display">\[
+\forall x (P(x) \Rightarrow Q(x))
+\]</span></p></li>
+<li><p><strong>Focus of the Proof</strong>:<br />
+The core task is to prove a statement of the form:<br />
+<span class="math display">\[
+p \Rightarrow q
+\]</span></p></li>
+</ol>
+<p><img src="fig/fig4.png" style="width:60.0%" />
+::: {.example #unnamed-chunk-76}
+Prove that for all $n , if <span class="math inline">\(n\)</span> is even, then <span class="math inline">\(n^2\)</span> is even.<br />
+i.e. Prove that ” <span class="math inline">\(\forall n \in  \mathbb{N}, n\)</span> is even is even.”
+:::</p>
+<div class="proof">
+<p><span id="unlabeled-div-14" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(n \in \mathbb{N}\)</span>.<br />
+Suppose <span class="math inline">\(n\)</span> is even.<br />
+By definition of evenness, there exists an integer <span class="math inline">\(k \in \mathbb{N}\)</span> such that:<span class="math inline">\(n = 2k\)</span></p>
+<p>Now,
+<span class="math display">\[
+n^2 = (2k)^2 = 4k^2 = 2(2k^2)
+\]</span></p>
+<p>Since <span class="math inline">\(2k^2 \in \mathbb{N}\)</span>, it follows that <span class="math inline">\(n^2\)</span> is divisible by 2, hence even.</p>
+</div>
+<p><img src="fig/fig5.png" style="width:60.0%" /></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-78" class="example"><strong>Example 3.9  </strong></span>Prove that <span class="math inline">\(x^2 + 6x + 10 &gt; 0\)</span>, where <span class="math inline">\(x\)</span> is a real number.<br />
+We need to proove that : <span class="math inline">\(\forall x \in \mathbb{R},x^2 + 6x + 10 &gt; 0\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-15" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(x\in \mathbb{R}\)</span>.<br />
+First note that <span class="math inline">\(x^2 + 6x + 10 = (x + 3)^2 + 1\)</span>
+<span class="math display" id="eq:eq5">\[
+\begin{align}
+(x+3)^2 &amp; \geq 0\\
+(x+3)^2+1 &amp; \geq 1&gt;0
+\end{align}
+\]</span></p>
+<p>Threfore, <span class="math inline">\(\forall x \in \mathbb{R},x^2 + 6x + 10 &gt; 0\)</span></p>
+</div>
+</div>
+</div>
+<div id="proof-by-contradiction" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Proof by Contradiction<a href="introduction-to-proofs.html#proof-by-contradiction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a statement <span class="math inline">\(p\)</span>, assume it is false.<br />
+Assume<span class="math inline">\(\neg p\)</span>.<br />
+Prove that <span class="math inline">\(\neg p\)</span> leads to false.<br />
+A contradiction exists.<br />
+</p>
+<ul>
+<li>Given a statement of the form <span class="math inline">\(p \implies q\)</span>.
+To assume it’s false, you only have to consider the case where <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false.</li>
+</ul>
+<p><img src="fig/fig6.png" /></p>
+<p><strong>Claim:</strong> If <span class="math inline">\(n^2\)</span> is even, then <span class="math inline">\(n\)</span> is even.</p>
+<center>
+<img src="fig/fig7.png" />
+</center>
+<div class="example">
+<p><span id="exm:unnamed-chunk-80" class="example"><strong>Example 3.10  </strong></span>Prove: <span class="math inline">\(\forall  x \in \mathbb{R}, x^2 + 6x + 10 &gt; 0\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-16" class="proof"><em>Proof</em>. </span>Suppose that
+begin{equation}
+x , x^2 + 6x + 10 &gt; 0 \tag{3.3}
+\end{equation}
+Assume that statement <a href="introduction-to-proofs.html#eq:eq5">(3.3)</a> is false.  
+<span class="math inline">\(x_0^2 + 6x_0 + 10 \leq 0\)</span> for some <span class="math inline">\(x_0 \in \mathbb{R})\)</span>.<br />
+Now <span class="math inline">\(x_0^2 + 6x_0 + 10 =(x_0+3)^2+1\geq 1\)</span>.<br />
+Hence, <span class="math inline">\(0&lt;1\leq 0\)</span>. This is a contradiction.<br />
+<span class="math inline">\(\therefore\)</span> <a href="introduction-to-proofs.html#eq:eq5">(3.3)</a> is false.<br />
+<span class="math inline">\(\forall  x \in \mathbb{R}, x^2 + 6x + 10 &gt; 0\)</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-82" class="exercise"><strong>Exercise 3.1  </strong></span><strong>Claim:</strong> If <span class="math inline">\(n = ab\)</span>, then <span class="math inline">\(a \leq \sqrt{n}\)</span> or <span class="math inline">\(b \leq \sqrt{n}\)</span>, where <span class="math inline">\(a, b \in \mathbb{Z}^+\)</span>.<br />
+<span class="math inline">\(\exists x_0 \in \mathbb{R}\)</span> such that <span class="math inline">\(x_0^2 + 6x_0 + 10 \leq 0\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-83" class="exercise"><strong>Exercise 3.2  </strong></span><strong>Claim:</strong> <span class="math inline">\(\sqrt{2} \notin \mathbb{Q}\)</span>, where <span class="math inline">\(\mathbb{Q}=\left\{\frac{p}{q}:p,q \in \mathbb{Z}, q\neq 0\right\}\)</span></p>
+</div>
+</div>
+</div>
+<div id="indirect-proofs" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Indirect Proofs<a href="introduction-to-proofs.html#indirect-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider an implication:</p>
+<p><span class="math display">\[
+p \Rightarrow q
+\]</span></p>
+<p>Its contrapositive is:</p>
+<p><span class="math display">\[
+\neg q \Rightarrow \neg p
+\]</span></p>
+<p>This contrapositive is logically equivalent to the original implication.<br />
+Thus, to prove <span class="math inline">\(p \Rightarrow q\)</span>, we may instead prove <span class="math inline">\(\neg q \Rightarrow \neg p\)</span>.</p>
+<p>To perform an <strong>indirect proof</strong>, carry out a <strong>direct proof</strong> on the contrapositive.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-84" class="example"><strong>Example 3.11  </strong></span>Prove that: If <span class="math inline">\(x^2\)</span> is even, then <span class="math inline">\(x\)</span> is even.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-85" class="example"><strong>Example 3.12  </strong></span>Prove that: If <span class="math inline">\((x - 2)^2 \neq 1\)</span>, then <span class="math inline">\(x \neq 3\)</span></p>
+</div>
+</div>
+<div id="proof-by-cases" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Proof by Cases<a href="introduction-to-proofs.html#proof-by-cases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="example">
+<p><span id="exm:unnamed-chunk-86" class="example"><strong>Example 3.13  </strong></span>Let <span class="math inline">\(x\)</span> be any integer. Then <span class="math inline">\(x^2 + x\)</span> is even.</p>
+</div>
+<p>To prove: <span class="math inline">\(\exists x \in \mathbb{Z},\; P(x)\)</span></p>
+<p>We exhibit a member of the universal set for which <span class="math inline">\(P(x)\)</span> is true.<br />
+One example suffices.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-87" class="example"><strong>Example 3.14  </strong></span>Show that:</p>
+<p><span class="math display">\[
+\exists x \in \mathbb{Z} \text{ such that } x^2 = 4
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-17" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(x_0 = -2\)</span>. Then:
+- <span class="math inline">\(x_0 \in \mathbb{Z}\)</span>
+- <span class="math inline">\(x_0^2 = (-2)^2 = 4\)</span></p>
+<p>Thus, <span class="math inline">\(\exists x_0 \in \mathbb{Z},\quad x_0^2 = 4\)</span></p>
+</div>
+</div>
+<div id="proof-by-principle-of-mathematical-induction" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Proof by Principle of Mathematical Induction<a href="introduction-to-proofs.html#proof-by-principle-of-mathematical-induction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="principle-of-mathematical-induction" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Principle of Mathematical Induction<a href="introduction-to-proofs.html#principle-of-mathematical-induction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(P(n)\)</span> be a statement defined for each positive integer <span class="math inline">\(n \in \mathbb{N}\)</span>.<br />
+To prove that <span class="math inline">\(P(n)\)</span> is true for all <span class="math inline">\(n \in \mathbb{N}\)</span>, it suffices to show:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Base Case</strong>:<br />
+<span class="math inline">\(P(1)\)</span> is true.</p></li>
+<li><p><strong>Inductive Step</strong>:<br />
+For every <span class="math inline">\(k \in \mathbb{N}\)</span>, if <span class="math inline">\(P(k)\)</span> is true, then <span class="math inline">\(P(k+1)\)</span> is also true.<br />
+That is:
+<span class="math display">\[   \forall k \in \mathbb{N},\; P(k) \Rightarrow P(k+1)\]</span></p></li>
+<li><p><strong>Conclusion</strong>: If both the base case and the inductive step are established, then:
+<span class="math display">\[
+\forall n \in \mathbb{N},\; P(n) \text{ is true}
+\]</span></p></li>
+</ol>
+<p>This is the foundation for proving propositions over the natural numbers.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-89" class="example"><strong>Example 3.15  </strong></span>Prove by induction that<br />
+<span class="math display">\[
+1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}
+\quad \text{for all } n \in \mathbb{N}.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-90" class="example"><strong>Example 3.16  </strong></span>Prove by induction that<br />
+<span class="math display">\[
+n^3 + 2n \text{ is divisible by } 3
+\quad \text{for all } n \in \mathbb{N}.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="exercises" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Exercises<a href="introduction-to-proofs.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-91" class="exercise"><strong>Exercise 3.3  </strong></span>Prove by induction that<br />
+<span class="math display">\[
+2^{n+1} &gt; n^2
+\quad \text{for all } n \in \mathbb{N}.
+\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-92" class="exercise"><strong>Exercise 3.4  </strong></span>Let the sequence <span class="math inline">\((a_n)\)</span> be defined recursively by<br />
+<span class="math display">\[
+a_1 = \sqrt{2}, \quad a_{n+1} = \sqrt{2 + a_n}, \quad \text{for all } n \in \mathbb{N}.
+\]</span></p>
+<p>Prove the following properties:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(a_n &gt; 0\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>.<br />
+</li>
+<li><span class="math inline">\(a_n \leq 2\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>.<br />
+</li>
+<li><span class="math inline">\(a_{n+1} \geq a_n\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>.</li>
+</ol>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mathematical-logic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-real-number-system-mathbbr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ashanjayamal/Mathematical-Logic/edit/BRANCH/02-proof.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

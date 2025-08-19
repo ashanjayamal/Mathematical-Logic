@@ -79,7 +79,7 @@
 
 \title{Mathematical Logic}
 \author{Ashan De Silva}
-\date{2025-08-17}
+\date{2025-08-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -751,6 +751,12 @@ In this implication:
 \item
   ``\(q\) follows from \(p\)''
 \end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{fig/fig10.jpg}
+\caption{Source: Facebook}
+\end{figure}
 
 \subsubsection{\texorpdfstring{Truth Table for \(p \implies q\)}{Truth Table for p \textbackslash implies q}}\label{truth-table-for-p-implies-q}
 
@@ -2210,7 +2216,7 @@ This corresponds to the tautology:
 2. \(p\)
 
 Conclusion:
-\(\therefore q\)
+∴ \(q\)
 \end{example}
 
 \begin{example}
@@ -2253,7 +2259,7 @@ This structure represents a \textbf{valid argument}, often referred to as a \tex
 \bottomrule\noalign{}
 \endlastfoot
 T & T & T \\
-T & F & F \\
+T & F & T \\
 F & T & T \\
 F & F & T \\
 \end{longtable}
@@ -2310,8 +2316,7 @@ A \textbf{logical rule of inference} is defined to be any valid argument --- tha
   2<3 & \implies 2-3<0\\
   & \implies  (\sqrt{2} - \sqrt{3})(\sqrt{2} + \sqrt{3})<0\\
   &\implies (\sqrt{2} - \sqrt{3})<0\\
-  & \implies \sqrt{2}  < \sqrt{3}                                     
-\end{align}
+  & \implies \sqrt{2}  < \sqrt{3}                                     \end{align}
 \end{example}
 
 \begin{enumerate}
@@ -2336,15 +2341,19 @@ A \textbf{logical rule of inference} is defined to be any valid argument --- tha
 \protect\hypertarget{exm:unnamed-chunk-62}{}\label{exm:unnamed-chunk-62}\textbf{Claim:} \(\sqrt{2}+\sqrt{3}<\sqrt{11}\)
 
 \begin{align} 
-\sqrt{2}+\sqrt{3}\geq \sqrt{11}  & \implies (\sqrt{2}+\sqrt{3})^2\geq (\sqrt{11})  \text{ Since } \sqrt{2}+\sqrt{3}\geq 11>0\\
+\sqrt{2}+\sqrt{3}\geq \sqrt{11} & \implies (\sqrt{2}+\sqrt{3})^2<(\sqrt{11}) \text{Since }\sqrt{2}+\sqrt{3}\geq 11>0\\
 & \implies 2+2\sqrt{6}+3\geq 11\\
 & \implies 5+2\sqrt{6}\geq 11\\
 & \implies 2\sqrt{6}\geq 6\\
 & \implies 4\times 6 \geq 36 \text{ Since } 4\times 6 \geq 36>0\\
-\underbrace{\sqrt{2}+\sqrt{3}\geq \sqrt{11}}_p & \implies \underbrace{24 \geq 36}_q \text{ is true.} \label{eq:eq1}
+\underbrace{\sqrt{2}+\sqrt{3}\geq \sqrt{11}}_p& \implies \underbrace{24 \geq 36}_q \text{ is true}  \label{eq:eq1}\\\\
+\text{But } 24 < 36 &\text{ is true}\\
+\therefore 24 \geq 36 &\text{ is false}\\
+\therefore \underbrace{\neg(24 \geq 36)}_{\neg q} &\text{ is true}\label{eq:eq2}\\
+\therefore \neg p &\\
+\text{ i.e. } \sqrt{2}+\sqrt{3}<\sqrt{11}&
 \end{align}
-
-\section{Upadte Here}\label{upadte-here}
+\end{example}
 
 \section{Mathematical proofs}\label{mathematical-proofs}
 
@@ -2384,7 +2393,6 @@ Proof of ``\(p \Rightarrow q\)'':
 \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{fig/fig3.png}
 
 Before we begin exploring example proofs, it's essential to clearly define the foundational terms we'll be using. Based on your notes and the image provided, here are the formal definitions:
-\end{example}
 
 \begin{definition}[Even and Odd Integers]
 \protect\hypertarget{def:unnamed-chunk-63}{}\label{def:unnamed-chunk-63}\leavevmode
@@ -2620,9 +2628,8 @@ So \(ab\) is of the form \(3k + 2\), hence type 2.
 
 \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{fig/fig4.png}
 ::: \{.example \#unnamed-chunk-76\}
-Prove that for all \(n \in \mathbb{N}\), if \(n\) is even, then \(n^2\) is even.''
-
-i.e.~Prove that ``\(\forall n \in \mathbb{N}, (n \text{ is even} \implies n^2 \text{ is even})\)''
+Prove that for all \$n \in \mathbb{N} , if \(n\) is even, then \(n^2\) is even.\\
+i.e.~Prove that '' \(\forall n \in  \mathbb{N}, n\) is even is even.''
 :::
 
 \begin{proof}
@@ -2648,10 +2655,12 @@ We need to proove that : \(\forall x \in \mathbb{R},x^2 + 6x + 10 > 0\)
 \begin{proof}
 Let \(x\in \mathbb{R}\).\\
 First note that \(x^2 + 6x + 10 = (x + 3)^2 + 1\)
+\[
 \begin{align}
 (x+3)^2 & \geq 0\\
 (x+3)^2+1 & \geq 1>0
 \end{align}
+\]
 
 Threfore, \(\forall x \in \mathbb{R},x^2 + 6x + 10 > 0\)
 \end{proof}
@@ -2682,11 +2691,9 @@ A contradiction exists.\\
 
 \begin{proof}
 Suppose that
-
-\[
-\forall  x \in \mathbb{R}, x^2 + 6x + 10 > 0 \label{eq:eq5}
-\]
-
+begin\{equation\}
+\forall  x \in \mathbb{R}, x\^{}2 + 6x + 10 \textgreater{} 0 \label{eq:eq5}
+\textbackslash end\{equation\}
 Assume that statement \eqref{eq:eq5} is false. ~
 \(x_0^2 + 6x_0 + 10 \leq 0\) for some \(x_0 \in \mathbb{R})\).\\
 Now \(x_0^2 + 6x_0 + 10 =(x_0+3)^2+1\geq 1\).\\
@@ -2799,6 +2806,8 @@ n^3 + 2n \text{ is divisible by } 3
 \quad \text{for all } n \in \mathbb{N}.
 \]
 \end{example}
+
+\section{Exercises}\label{exercises}
 
 \begin{exercise}
 \protect\hypertarget{exr:unnamed-chunk-91}{}\label{exr:unnamed-chunk-91}Prove by induction that\\
@@ -3912,7 +3921,7 @@ Also called:
   The \textbf{relative complement of \(B\) with respect to \(A\)}
 \end{itemize}
 
-\chapter{Exercises}\label{exercises}
+\chapter{Exercises}\label{exercises-1}
 
 \begin{exercise}
 \protect\hypertarget{exr:unnamed-chunk-132}{}\label{exr:unnamed-chunk-132}

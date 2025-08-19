@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mathematical Logic</title>
+  <title>Chapter 5 Set Theory | Mathematical Logic</title>
   <meta name="description" content="This book introduces foundational concepts in mathematical logic." />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mathematical Logic" />
+  <meta property="og:title" content="Chapter 5 Set Theory | Mathematical Logic" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book introduces foundational concepts in mathematical logic." />
   <meta name="github-repo" content="https://github.com/ashanjayamal/Mathematical-Logic.git" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mathematical Logic" />
+  <meta name="twitter:title" content="Chapter 5 Set Theory | Mathematical Logic" />
   
   <meta name="twitter:description" content="This book introduces foundational concepts in mathematical logic." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="mathematical-logic.html"/>
+<link rel="prev" href="the-real-number-system-mathbbr.html"/>
+<link rel="next" href="exercises-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -193,34 +193,213 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mathematical Logic</h1>
-<p class="author"><em>Ashan De Silva</em></p>
-<p class="date"><em>2025-08-19</em></p>
-</div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Mathematical logic is the discipline that formalizes reasoning. It provides a rigorous framework for analyzing statements, constructing arguments, and establishing truth. This textbook is designed to guide students through the foundational principles of logic, beginning with propositional logic and progressing toward predicate logic, proof techniques, and the structure of the real number system.</p>
-<p>The study of logic is essential for all areas of mathematics. It enables us to distinguish valid reasoning from fallacy, to express mathematical ideas with precision, and to construct proofs that are both sound and complete. Logic also serves as a bridge between mathematics and computer science, philosophy, and linguistics, where formal reasoning plays a central role.</p>
-<p>This book is structured to support both conceptual understanding and technical mastery. Each chapter introduces key definitions, examples, and formal notation, followed by exercises that reinforce the material. The progression is cumulative: later chapters build upon the logical foundations established early on.</p>
-<hr />
-<div id="chapter-overview" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Chapter Overview<a href="index.html#chapter-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="set-theory" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Set Theory<a href="set-theory.html#set-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-to-sets" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction to Sets<a href="set-theory.html#introduction-to-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-120" class="definition"><strong>Definition 5.1  </strong></span>A <strong>set</strong> is an unordered collection of “objects.” The objects in a set are called the <strong>elements</strong> or <strong>members</strong> of the set. A set contains its elements.</p>
 <ul>
-<li><p><strong>Chapter 2: Mathematical Logic</strong><br />
-Introduces propositional and predicate logic, truth tables, logical equivalence, and the algebra of propositions.</p></li>
-<li><p><strong>Chapter 3: Introduction to Proofs</strong><br />
-Covers terminology, argument structure, validity, and various proof techniques including indirect proofs and proof by cases.</p></li>
-<li><p><strong>Chapter 4: The Real Number System ℝ</strong><br />
-Presents the axioms of real numbers, properties of equality, order, completeness, and the concept of infinity.</p></li>
-<li><p><strong>Chapter 5: Set Theory</strong><br />
-Introduces the language of sets, operations, and foundational concepts used throughout mathematics.</p></li>
-<li><p><strong>Chapter 6: Exercises</strong><br />
-Provides practice problems to reinforce the concepts and techniques introduced in earlier chapters.</p></li>
+<li>A set is usually denoted by a capital letter, say <span class="math inline">\(A\)</span>.</li>
+<li>An element is usually denoted by a lowercase letter, say <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span>.</li>
+<li>We write <span class="math inline">\(a \in A\)</span> to mean “<span class="math inline">\(a\)</span> is an element of <span class="math inline">\(A\)</span>.”</li>
+<li>We write <span class="math inline">\(a \notin A\)</span> to mean “<span class="math inline">\(a\)</span> is not an element of <span class="math inline">\(A\)</span>,” i.e., <span class="math inline">\(\sim (a \in A)\)</span>.</li>
 </ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-121" class="example"><strong>Example 5.1  </strong></span></p>
+<ul>
+<li><p>Consider the objects <span class="math inline">\(0, 2, -3, 5\)</span>.<br />
+The collection <span class="math inline">\(\{0, 2, -3, 5\}\)</span> is a set.<br />
+The elements of this set are <span class="math inline">\(0, 2, -3, 5\)</span>.</p></li>
+<li><p>Statement:<br />
+<span class="math inline">\(-3\)</span>is a member of the set <span class="math inline">\(\{0, 2, -3, 5\}\)</span></p></li>
+<li><p>Statement:<br />
+<span class="math inline">\(4\)</span> is not a member of the set <span class="math inline">\(\{0, 2, -3, 5\}\)</span></p></li>
+</ul>
+</div>
+<p><strong>Note</strong></p>
+<p>When we consider the collection of all integers, we obtain a set. Any integer is a member of this set. Any object that is not an integer is not a member of this set.</p>
+<p>It is not possible to write down all the integers explicitly. However, we can indicate this set using ellipsis notation:</p>
+<p><span class="math display">\[
+\{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}
+\]</span></p>
+<p>Here, the dots (<span class="math inline">\(\dots\)</span>) represent the members that are not written down, and it is understood what they are.</p>
+<p><strong>Set-Builder Notation</strong></p>
+<ul>
+<li>The set <span class="math inline">\(\left\{ \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right\}\)</span> can be written as: <span class="math inline">\(\left\{ \frac{1}{n} \mid n \in \mathbb{N} \right\}\)</span></li>
+</ul>
+<p>This reads: “The set whose members are <span class="math inline">\(\frac{1}{n}\)</span>, where <span class="math inline">\(n\)</span> ranges over all natural numbers.”</p>
+<ul>
+<li>The set <span class="math inline">\(\{x \mid x \in \mathbb{Z} \text{ and } x &gt; -3\}\)</span> is equal to <span class="math inline">\(\{-2, -1, 0, 1, 2, 3, 4, \dots\}\)</span></li>
+</ul>
+<div class="definition">
+<p><span id="def:unnamed-chunk-122" class="definition"><strong>Definition 5.2  (Subset) </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets.<br />
+We say that <span class="math inline">\(A\)</span> is a <strong>subset</strong> of <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \subseteq B\)</span>, if and only if every element of <span class="math inline">\(A\)</span> is also an element of <span class="math inline">\(B\)</span>.</p>
+<p>Formally: <span class="math inline">\(A \subseteq B \iff \forall x \, (x \in A \Rightarrow x \in B)\)</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-123" class="example"><strong>Example 5.2  </strong></span>Let <span class="math inline">\(A = \{1, 2, 4\}\)</span> and <span class="math inline">\(B = \{1, 2, 3, 4\}\)</span>.<br />
+Then <span class="math inline">\(A \subseteq B\)</span>, but <span class="math inline">\(B \nsubseteq A\)</span>.</p>
+</div>
+<p><strong>Note</strong>:
+Let <span class="math inline">\(A\)</span> be a set.<br />
+Then <span class="math inline">\(A = \{x \mid p(x)\}\)</span>, where <span class="math inline">\(p(x)\)</span> is a predicate.<br />
+An element <span class="math inline">\(x \in A\)</span> if and only if <span class="math inline">\(p(x)\)</span> is true.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-124" class="definition"><strong>Definition 5.3  (Proper Subset) </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets.<br />
+We say that <span class="math inline">\(A\)</span> is a <strong>proper subset</strong> of <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \subset B\)</span>, if and only if:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A \subseteq B\)</span>, and<br />
+</li>
+<li>There exists an element <span class="math inline">\(x_0 \in B\)</span> such that <span class="math inline">\(x_0 \notin A\)</span>.</li>
+</ol>
+<p>Formally:
+<span class="math display">\[
+A \subset B \iff \left( \forall x \, (x \in A \Rightarrow x \in B) \right) \land \left( \exists x_0 \in B \, (x_0 \notin A) \right)
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-125" class="definition"><strong>Definition 5.4  (Equality of Sets) </strong></span>Two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>equal</strong>, denoted <span class="math inline">\(A = B\)</span>, if and only if:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A \subseteq B\)</span>, and<br />
+</li>
+<li><span class="math inline">\(B \subseteq A\)</span></li>
+</ol>
+<p>This is equivalent to:
+<span class="math display">\[
+A = B \iff \forall x \, (x \in A \Leftrightarrow x \in B)
+\]</span>
+or
+<span class="math display">\[
+A = B \iff \left( \forall x \, (x \in A \Rightarrow x \in B) \right) \land \left( \forall x \, (x \in B \Rightarrow x \in A) \right)
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-126" class="definition"><strong>Definition 5.5  (Singleton Set) </strong></span>A set containing exactly one element is called a <strong>singleton set</strong>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-127" class="definition"><strong>Definition 5.6  (Empty Set) </strong></span>The set with no elements is called the <strong>empty set</strong>, denoted by <span class="math inline">\(\emptyset\)</span> or <span class="math inline">\(\{\}\)</span>.<br />
+Note: <span class="math inline">\(\{\emptyset\}\)</span> is not the empty set—it is the set containing the empty set as an element.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-128" class="example"><strong>Example 5.3  </strong></span></p>
+<ul>
+<li><span class="math inline">\(\{x \mid x \in \mathbb{Z} \text{ and } x^2 = 2\} = \emptyset\)</span></li>
+<li><span class="math inline">\(\{x \mid x \in \mathbb{R} \text{ and } x^2 &lt; 0\} = \emptyset\)</span></li>
+</ul>
+<p>Observe:
+<span class="math display">\[
+\{x \mid x \in \mathbb{Z} \text{ and } x^2 = 2\} = \{x \mid x \in \mathbb{R} \text{ and } x^2 &lt; 0\}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-129" class="definition"><strong>Definition 5.7  (Power Set) </strong></span>Let <span class="math inline">\(A\)</span> be a set.<br />
+The <strong>power set</strong> of <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\mathcal{P}(A)\)</span>, is defined as:
+<span class="math display">\[
+\mathcal{P}(A) = \{X \mid X \subseteq A\}
+\]</span>
+That is, the set of all subsets of <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-130" class="example"><strong>Example 5.4  </strong></span>Let <span class="math inline">\(A = \{0, 1\}\)</span>.<br />
+Then:
+<span class="math display">\[
+\mathcal{P}(A) = \{\emptyset, \{0\}, \{1\}, \{0, 1\}\}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-131" class="definition"><strong>Definition 5.8  (Universal Set) </strong></span>A <strong>universal set</strong> is the largest set under consideration, relative to a given context. It contains all elements of the sets being discussed.</p>
+<ul>
+<li>Denoted by <span class="math inline">\(U\)</span> or <span class="math inline">\(E\)</span></li>
+<li>Example: If we are considering subsets of <span class="math inline">\(\mathbb{R}\)</span>, then the universal set is <span class="math inline">\(\mathbb{R}\)</span></li>
+</ul>
+</div>
+<p><strong>Summary</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Subset Definition</strong><br />
+<span class="math display">\[
+A \subseteq B \iff \forall x \, (x \in A \Rightarrow x \in B)
+\]</span></p></li>
+<li><p><strong>Non-subset</strong><br />
+<span class="math display">\[
+A \nsubseteq B \iff \sim (A \subseteq B)
+\]</span></p></li>
+<li><p><strong>Equality of Sets</strong><br />
+<span class="math display">\[
+A = B \iff A \subseteq B \land B \subseteq A
+\]</span></p></li>
+<li><p><strong>Singleton Set</strong><br />
+Example: <span class="math inline">\(A = \{2\}\)</span></p></li>
+<li><p><strong>Empty Set</strong><br />
+<span class="math display">\[   \emptyset,\{\}   \]</span></p></li>
+<li><p><strong>Power Set</strong><br />
+<span class="math display">\[
+\mathcal{P}(A) = \{X \mid X \subseteq A\}
+\]</span></p></li>
+<li><p><strong>Universal Set</strong><br />
+Denoted <span class="math inline">\(E\)</span> or <span class="math inline">\(U\)</span></p></li>
+</ol>
+<div id="set-opertaions" class="section level4 hasAnchor" number="5.1.0.1">
+<h4><span class="header-section-number">5.1.0.1</span> Set Opertaions<a href="set-theory.html#set-opertaions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="union" class="section level5 hasAnchor" number="5.1.0.1.1">
+<h5><span class="header-section-number">5.1.0.1.1</span> Union<a href="set-theory.html#union" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets.<br />
+The <strong>union</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \cup B\)</span>, is the set containing all elements that are in <span class="math inline">\(A\)</span>, in <span class="math inline">\(B\)</span>, or in both.</p>
+<p><span class="math display">\[
+A \cup B = \{ x \mid x \in A \lor x \in B \}
+\]</span></p>
+<p><strong>Note:</strong><br />
+<span class="math display">\[
+x \in A \cup B \iff x \in A \lor x \in B
+\]</span></p>
 <hr />
-<p>This textbook reflects a commitment to clarity, rigor, and accessibility. It is intended for undergraduate students beginning their study of mathematical logic, and for anyone seeking a structured and principled approach to formal reasoning.</p>
+</div>
+<div id="intersection" class="section level5 hasAnchor" number="5.1.0.1.2">
+<h5><span class="header-section-number">5.1.0.1.2</span> Intersection<a href="set-theory.html#intersection" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets.<br />
+The <strong>intersection</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \cap B\)</span>, is the set containing all elements that are in both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
+<p><span class="math display">\[
+A \cap B = \{ x \mid x \in A \land x \in B \}
+\]</span></p>
+<p><strong>Note:</strong><br />
+<span class="math display">\[
+x \in A \cap B \iff x \in A \land x \in B
+\]</span></p>
+<hr />
+</div>
+<div id="complement" class="section level5 hasAnchor" number="5.1.0.1.3">
+<h5><span class="header-section-number">5.1.0.1.3</span> Complement<a href="set-theory.html#complement" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Let <span class="math inline">\(A \subseteq E\)</span>, where <span class="math inline">\(E\)</span> is a universal set.<br />
+The <strong>complement</strong> of <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(A^c\)</span>, is the set of all elements in <span class="math inline">\(E\)</span> that are not in <span class="math inline">\(A\)</span>.</p>
+<p><span class="math display">\[
+A^c = \{ x \mid x \in E \land x \notin A \}
+\]</span></p>
+<p><strong>Note:</strong><br />
+<span class="math display">\[
+x \in A^c \iff x \in E \land x \notin A
+\]</span></p>
+<hr />
+</div>
+<div id="difference" class="section level5 hasAnchor" number="5.1.0.1.4">
+<h5><span class="header-section-number">5.1.0.1.4</span> <strong>Difference</strong><a href="set-theory.html#difference" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets.<br />
+The <strong>difference</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \setminus B\)</span>, is the set of elements that are in <span class="math inline">\(A\)</span> but not in <span class="math inline">\(B\)</span>.</p>
+<p><span class="math display">\[
+A \setminus B = \{ x \mid x \in A \land x \notin B \}
+\]</span></p>
+<p><strong>Note:</strong><br />
+<span class="math display">\[
+x \in A \setminus B \iff x \in A \land x \notin B
+\]</span></p>
+<p>Also called:</p>
+<ul>
+<li>The <strong>complement of <span class="math inline">\(B\)</span> in <span class="math inline">\(A\)</span></strong></li>
+<li>The <strong>relative complement of <span class="math inline">\(B\)</span> with respect to <span class="math inline">\(A\)</span></strong></li>
+</ul>
 
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -228,8 +407,8 @@ Provides practice problems to reinforce the concepts and techniques introduced i
           </div>
         </div>
       </div>
-
-<a href="mathematical-logic.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-real-number-system-mathbbr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -260,7 +439,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/ashanjayamal/Mathematical-Logic/edit/BRANCH/index.Rmd",
+    "link": "https://github.com/ashanjayamal/Mathematical-Logic/edit/BRANCH/04-sets.Rmd",
     "text": "Edit"
   },
   "history": {

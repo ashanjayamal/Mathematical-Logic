@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 The Real Number System \(\mathbb{R}\) | Mathematical Logic</title>
+  <meta name="description" content="This book introduces foundational concepts in mathematical logic." />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 The Real Number System \(\mathbb{R}\) | Mathematical Logic" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book introduces foundational concepts in mathematical logic." />
+  <meta name="github-repo" content="https://github.com/ashanjayamal/Mathematical-Logic.git" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 The Real Number System \(\mathbb{R}\) | Mathematical Logic" />
+  
+  <meta name="twitter:description" content="This book introduces foundational concepts in mathematical logic." />
+  
+
+<meta name="author" content="Ashan De Silva" />
+
+
+<meta name="date" content="2025-08-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-proofs.html"/>
+<link rel="next" href="set-theory.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mathematical Logic</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#chapter-overview"><i class="fa fa-check"></i><b>1.1</b> Chapter Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mathematical-logic.html"><a href="mathematical-logic.html"><i class="fa fa-check"></i><b>2</b> Mathematical logic</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#propositional-logic-logical-operators"><i class="fa fa-check"></i><b>2.1</b> Propositional logic &amp; Logical operators</a></li>
+<li class="chapter" data-level="2.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#statements-and-truth-values"><i class="fa fa-check"></i><b>2.2</b> Statements and Truth Values</a></li>
+<li class="chapter" data-level="2.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#more-about-propositions"><i class="fa fa-check"></i><b>2.3</b> More About Propositions</a></li>
+<li class="chapter" data-level="2.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-operators-connectives"><i class="fa fa-check"></i><b>2.4</b> Logical Operators / Connectives</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-table"><i class="fa fa-check"></i><b>2.4.1</b> Truth Table</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-operators"><i class="fa fa-check"></i><b>2.5</b> Logical Operators</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-negation-operator-simneg"><i class="fa fa-check"></i><b>2.5.1</b> The Negation Operator (<span class="math inline">\(\sim,\neg\)</span>)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-conjunction-operator-and"><i class="fa fa-check"></i><b>2.5.2</b> The Conjunction Operator — “and”</a></li>
+<li class="chapter" data-level="2.5.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-disjunction-operator-or"><i class="fa fa-check"></i><b>2.5.3</b> The Disjunction Operator — “or”</a></li>
+<li class="chapter" data-level="2.5.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-exclusive-or-operator-either-or"><i class="fa fa-check"></i><b>2.5.4</b> The Exclusive OR Operator — “either or”</a></li>
+<li class="chapter" data-level="2.5.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#implication-operator-implies"><i class="fa fa-check"></i><b>2.5.5</b> Implication Operator — “implies”</a></li>
+<li class="chapter" data-level="2.5.6" data-path="mathematical-logic.html"><a href="mathematical-logic.html#biconditional-logic-p-iff-q"><i class="fa fa-check"></i><b>2.5.6</b> Biconditional Logic: <span class="math inline">\(p \iff q\)</span></a></li>
+<li class="chapter" data-level="2.5.7" data-path="mathematical-logic.html"><a href="mathematical-logic.html#terminology"><i class="fa fa-check"></i><b>2.5.7</b> Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-tables-for-compound-propositions"><i class="fa fa-check"></i><b>2.6</b> Truth Tables for Compound Propositions</a></li>
+<li class="chapter" data-level="2.7" data-path="mathematical-logic.html"><a href="mathematical-logic.html#precedence-of-logical-operations"><i class="fa fa-check"></i><b>2.7</b> Precedence of Logical Operations</a></li>
+<li class="chapter" data-level="2.8" data-path="mathematical-logic.html"><a href="mathematical-logic.html#truth-tables-and-logical-analysis"><i class="fa fa-check"></i><b>2.8</b> Truth Tables and Logical Analysis</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#constructing-a-truth-table"><i class="fa fa-check"></i><b>2.8.1</b> Constructing a Truth Table</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="mathematical-logic.html"><a href="mathematical-logic.html#tautologies-and-contradictions"><i class="fa fa-check"></i><b>2.9</b> Tautologies and Contradictions</a></li>
+<li class="chapter" data-level="2.10" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-equivalence"><i class="fa fa-check"></i><b>2.10</b> Logical Equivalence</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#useful-logical-equivalences"><i class="fa fa-check"></i><b>2.10.1</b> Useful Logical Equivalences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-algebra-of-propositions"><i class="fa fa-check"></i><b>2.11</b> The Algebra of Propositions</a></li>
+<li class="chapter" data-level="2.12" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-algebra-of-propositions-1"><i class="fa fa-check"></i><b>2.12</b> The Algebra of Propositions</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#logical-laws-and-their-equivalences"><i class="fa fa-check"></i><b>2.12.1</b> Logical Laws and Their Equivalences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="mathematical-logic.html"><a href="mathematical-logic.html#predicate-logic-and-quantifiers"><i class="fa fa-check"></i><b>2.13</b> Predicate Logic and Quantifiers</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#predicates"><i class="fa fa-check"></i><b>2.13.1</b> Predicates</a></li>
+<li class="chapter" data-level="2.13.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#converting-predicates-to-propositions"><i class="fa fa-check"></i><b>2.13.2</b> Converting Predicates to Propositions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="mathematical-logic.html"><a href="mathematical-logic.html#quantifiers"><i class="fa fa-check"></i><b>2.14</b> Quantifiers</a>
+<ul>
+<li class="chapter" data-level="2.14.1" data-path="mathematical-logic.html"><a href="mathematical-logic.html#universal-quantifier-forall"><i class="fa fa-check"></i><b>2.14.1</b> Universal Quantifier <span class="math inline">\(\forall\)</span></a></li>
+<li class="chapter" data-level="2.14.2" data-path="mathematical-logic.html"><a href="mathematical-logic.html#the-existential-quantifier-exists"><i class="fa fa-check"></i><b>2.14.2</b> The Existential Quantifier “<span class="math inline">\(\exists\)</span>”</a></li>
+<li class="chapter" data-level="2.14.3" data-path="mathematical-logic.html"><a href="mathematical-logic.html#quantifiers-and-negation"><i class="fa fa-check"></i><b>2.14.3</b> Quantifiers and Negation</a></li>
+<li class="chapter" data-level="2.14.4" data-path="mathematical-logic.html"><a href="mathematical-logic.html#negation-of-quantification"><i class="fa fa-check"></i><b>2.14.4</b> Negation of Quantification</a></li>
+<li class="chapter" data-level="2.14.5" data-path="mathematical-logic.html"><a href="mathematical-logic.html#negation-of-conditional-quantification"><i class="fa fa-check"></i><b>2.14.5</b> Negation of Conditional Quantification</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html"><i class="fa fa-check"></i><b>3</b> Introduction to Proofs</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#terminology-1"><i class="fa fa-check"></i><b>3.0.1</b> Terminology</a></li>
+<li class="chapter" data-level="3.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#arguments"><i class="fa fa-check"></i><b>3.1</b> Arguments</a></li>
+<li class="chapter" data-level="3.2" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#valid-argument"><i class="fa fa-check"></i><b>3.2</b> Valid Argument</a></li>
+<li class="chapter" data-level="3.3" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#mathematical-proofs"><i class="fa fa-check"></i><b>3.3</b> Mathematical proofs</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#direct-proofs"><i class="fa fa-check"></i><b>3.3.1</b> Direct proofs</a></li>
+<li class="chapter" data-level="3.3.2" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#proof-by-contradiction"><i class="fa fa-check"></i><b>3.3.2</b> Proof by Contradiction</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#indirect-proofs"><i class="fa fa-check"></i><b>3.4</b> Indirect Proofs</a></li>
+<li class="chapter" data-level="3.5" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#proof-by-cases"><i class="fa fa-check"></i><b>3.5</b> Proof by Cases</a></li>
+<li class="chapter" data-level="3.6" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#proof-by-principle-of-mathematical-induction"><i class="fa fa-check"></i><b>3.6</b> Proof by Principle of Mathematical Induction</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#principle-of-mathematical-induction"><i class="fa fa-check"></i><b>3.6.1</b> Principle of Mathematical Induction</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="introduction-to-proofs.html"><a href="introduction-to-proofs.html#exercises"><i class="fa fa-check"></i><b>3.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html"><i class="fa fa-check"></i><b>4</b> The Real Number System <span class="math inline">\(\mathbb{R}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#topics-covered"><i class="fa fa-check"></i><b>4.0.1</b> Topics Covered</a></li>
+<li class="chapter" data-level="4.0.2" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#what-are-the-real-numbers"><i class="fa fa-check"></i><b>4.0.2</b> What Are the Real Numbers?</a></li>
+<li class="chapter" data-level="4.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#axioms-of-real-numbers"><i class="fa fa-check"></i><b>4.1</b> Axioms of real numbers</a></li>
+<li class="chapter" data-level="4.2" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#basic-properties-of-equality"><i class="fa fa-check"></i><b>4.2</b> Basic Properties of Equality</a></li>
+<li class="chapter" data-level="4.3" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#some-algebraic-properties-of-real-numbers"><i class="fa fa-check"></i><b>4.3</b> Some Algebraic Properties of Real Numbers</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#selected-theorems"><i class="fa fa-check"></i><b>4.3.1</b> Selected Theorems</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#the-order-axioms-and-axiom-of-bounds"><i class="fa fa-check"></i><b>4.4</b> The Order Axioms and Axiom of Bounds</a></li>
+<li class="chapter" data-level="4.5" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#absolute-value"><i class="fa fa-check"></i><b>4.5</b> Absolute Value</a></li>
+<li class="chapter" data-level="4.6" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#axiom-of-bound-completeness-axiom"><i class="fa fa-check"></i><b>4.6</b> Axiom of Bound (Completeness Axiom)</a></li>
+<li class="chapter" data-level="4.7" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#archimedean-property"><i class="fa fa-check"></i><b>4.7</b> Archimedean Property</a></li>
+<li class="chapter" data-level="4.8" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#concept-of-infinity-and-intervals-of-mathbbr"><i class="fa fa-check"></i><b>4.8</b> Concept of Infinity and Intervals of <span class="math inline">\(\mathbb{R}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#concept-of-infinity"><i class="fa fa-check"></i><b>4.8.1</b> Concept of Infinity</a></li>
+<li class="chapter" data-level="4.8.2" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#infinity-in-mathbbr"><i class="fa fa-check"></i><b>4.8.2</b> <strong>Infinity in <span class="math inline">\(\mathbb{R}\)</span></strong></a></li>
+<li class="chapter" data-level="4.8.3" data-path="the-real-number-system-mathbbr.html"><a href="the-real-number-system-mathbbr.html#intervals-in-mathbbr"><i class="fa fa-check"></i><b>4.8.3</b> Intervals in <span class="math inline">\(\mathbb{R}\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="set-theory.html"><a href="set-theory.html"><i class="fa fa-check"></i><b>5</b> Set Theory</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="set-theory.html"><a href="set-theory.html#introduction-to-sets"><i class="fa fa-check"></i><b>5.1</b> Introduction to Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="exercises-1.html"><a href="exercises-1.html"><i class="fa fa-check"></i><b>6</b> Exercises</a></li>
+<li class="divider"></li>
+<li><a href="https://ashan-jayamal-acdamic-work.netlify.app/" target="blank">Property of Ashan De Silva</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematical Logic</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-real-number-system-mathbbr" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> The Real Number System <span class="math inline">\(\mathbb{R}\)</span><a href="the-real-number-system-mathbbr.html#the-real-number-system-mathbbr" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="topics-covered" class="section level3 hasAnchor" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> Topics Covered<a href="the-real-number-system-mathbbr.html#topics-covered" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Axioms of Real Numbers<br />
+</li>
+<li>Order Axioms and Axiom of Bounds<br />
+</li>
+<li>Supremum and Infimum of Subsets of <span class="math inline">\(\mathbb{R}\)</span><br />
+</li>
+<li>Concept of Infinity and Intervals of <span class="math inline">\(\mathbb{R}\)</span></li>
+</ul>
+</div>
+<div id="what-are-the-real-numbers" class="section level3 hasAnchor" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> What Are the Real Numbers?<a href="the-real-number-system-mathbbr.html#what-are-the-real-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The question “What are the real numbers?” is, for now, too deep to answer directly. Instead, we adopt a formal approach: we assume the existence of a set <span class="math inline">\(\mathbb{R}\)</span>, called the set of real numbers, and impose a collection of axioms that define its structure.</p>
+<p>All subsequent mathematical development will be based solely on these axioms.</p>
+</div>
+<div id="axioms-of-real-numbers" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Axioms of real numbers<a href="the-real-number-system-mathbbr.html#axioms-of-real-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We assume that there are two binary operations on <span class="math inline">\(\mathbb{R}\)</span>, that is, “<span class="math inline">\(+\)</span>” and “<span class="math inline">\(\cdot\)</span>” the first called <strong>addition</strong>, and second <strong>multiplication</strong>, such that <span class="math inline">\(a + b \in \mathbb{R}\)</span> and <span class="math inline">\(a\cdot b \in \mathbb{R}\)</span> for all <span class="math inline">\(a, b \in \mathbb{R}\)</span>, and the following properties are satisfied:</p>
+<p><strong>A1. Commutativity of Addition</strong><br />
+For all <span class="math inline">\(a, b \in \mathbb{R}\)</span>, .<span class="math inline">\(a + b = b + a\)</span></p>
+<p><strong>A2. Associativity of Addition</strong><br />
+For all <span class="math inline">\(a, b, c \in \mathbb{R}\)</span>, <span class="math inline">\(a + (b + c) = (a + b) + c\)</span></p>
+<p><strong>A3. Existence of Additive Identity</strong><br />
+There exists an element <span class="math inline">\(0 \in \mathbb{R}\)</span> such that for all <span class="math inline">\(a \in \mathbb{R}\)</span>, <span class="math inline">\(a + 0 = a\)</span></p>
+<p><strong>A4. Existence of Additive Inverse</strong><br />
+For every <span class="math inline">\(a \in \mathbb{R}\)</span>, there exists an element <span class="math inline">\(-a \in \mathbb{R}\)</span> such that: <span class="math inline">\(a + (-a) = 0\)</span></p>
+<p><strong>A5. Commutativity of Multiplication</strong><br />
+For all <span class="math inline">\(a, b \in \mathbb{R}\)</span>, <span class="math inline">\(a \cdot b = b \cdot a\)</span></p>
+<p><strong>A6. Associativity of Multiplication</strong><br />
+For all <span class="math inline">\(a, b, c \in \mathbb{R}\)</span>, <span class="math inline">\(a \cdot (b \cdot c) = (a \cdot b) \cdot c\)</span></p>
+<p><strong>A7. Existence of Multiplicative Identity</strong><br />
+There exists an element <span class="math inline">\(1 \in \mathbb{R}\)</span> such that for all <span class="math inline">\(a \in \mathbb{R}\)</span>, <span class="math inline">\(a \cdot 1 = a\)</span></p>
+<p><strong>A8. Existence of Multiplicative Inverse</strong><br />
+For every <span class="math inline">\(a \in \mathbb{R}\)</span> with <span class="math inline">\(a \ne 0\)</span>, there exists an element <span class="math inline">\(a^{-1} \in \mathbb{R}\)</span> such that: <span class="math inline">\(a \cdot a^{-1} = 1\)</span></p>
+<p><strong>A9. Distributivity of Multiplication over Addition</strong><br />
+For all <span class="math inline">\(a, b, c \in \mathbb{R}\)</span>,<span class="math inline">\(a \cdot (b + c) = a \cdot b + a \cdot c\)</span></p>
+<p>Thank you, Ashan. Based on your image, here’s a formal Markdown rendering of the <strong>Basic Properties of Equality</strong> and <strong>Some Algebraic Properties of Real Numbers</strong>, using LaTeX for clarity and textbook precision:</p>
+</div>
+<div id="basic-properties-of-equality" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Basic Properties of Equality<a href="the-real-number-system-mathbbr.html#basic-properties-of-equality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(x, y, z \in \mathbb{R}\)</span>. Then:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Reflexivity</strong>:<br />
+<span class="math display">\[
+x = x
+\]</span></p></li>
+<li><p><strong>Symmetry</strong>:<br />
+If <span class="math inline">\(x = y\)</span>, then <span class="math inline">\(y = x\)</span>.</p></li>
+<li><p><strong>Transitivity</strong>:<br />
+If <span class="math inline">\(x = y\)</span> and <span class="math inline">\(y = z\)</span>, then <span class="math inline">\(x = z\)</span>.</p></li>
+</ol>
+</div>
+<div id="some-algebraic-properties-of-real-numbers" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Some Algebraic Properties of Real Numbers<a href="the-real-number-system-mathbbr.html#some-algebraic-properties-of-real-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(a, b, c \in \mathbb{R}\)</span>. Then:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><strong>Cancellation Law for Addition</strong>:<br />
+If <span class="math inline">\(a + b = a + c\)</span>, then <span class="math inline">\(b = c\)</span>.</p></li>
+<li><p><strong>Multiplication by Zero</strong>:<br />
+<span class="math display">\[
+   a \cdot 0 = 0
+   \]</span></p></li>
+<li><p><strong>Zero Product Property</strong>:<br />
+If <span class="math inline">\(a \cdot b = 0\)</span>, then <span class="math inline">\(a = 0\)</span> or <span class="math inline">\(b = 0\)</span>.</p></li>
+</ol>
+<div class="proof">
+<p><span id="unlabeled-div-18" class="proof"><em>Proof</em>. </span></p>
+.<br />
+
+<center>
+<img src="fig/fig8.jpg" style="width:80.0%" />
+</center>
+<p>rest of them leave as an exercise</p>
+</div>
+<div id="selected-theorems" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Selected Theorems<a href="the-real-number-system-mathbbr.html#selected-theorems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These theorems follow from the axioms of the real numbers. In all cases, <span class="math inline">\(a, b, c, d \in \mathbb{R}\)</span>, with additional nonzero conditions where specified.</p>
+<ol style="list-style-type: decimal">
+<li><p>Properties of Zero</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(a - a = 0\)</span></li>
+<li><span class="math inline">\(0 = -a + a\)</span></li>
+<li><span class="math inline">\(0 \cdot a = 0\)</span></li>
+<li>If <span class="math inline">\(ab = 0\)</span>, then <span class="math inline">\(a = 0\)</span> or <span class="math inline">\(b = 0\)</span></li>
+</ol></li>
+<li><p>Properties of Signs</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(-0 = 0\)</span></li>
+<li><span class="math inline">\(-(-a) = a\)</span></li>
+<li><span class="math inline">\((-a)b = -(ab) = a(-b)\)</span></li>
+<li><span class="math inline">\((-a)(-b) = ab\)</span></li>
+<li><span class="math inline">\(-a = (-1)a\)</span></li>
+</ol></li>
+<li><p>Additional Distributive Properties</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(-(a + b) = -a - b\)</span></li>
+<li><span class="math inline">\(a - b = -(b - a)\)</span></li>
+<li><span class="math inline">\(-(a - b) = b - a\)</span></li>
+<li><span class="math inline">\(a + a = 2a\)</span></li>
+<li><span class="math inline">\(a(b - c) = ab - ac = (b - c)a\)</span></li>
+<li><span class="math inline">\((a + b)(c + d) = ac + ad + bc + bd\)</span></li>
+<li><span class="math inline">\((a + b)(c - d) = ac - ad + bc - bd = (c - d)(a + b)\)</span></li>
+<li><span class="math inline">\((a - b)(c - d) = ac - ad - bc + bd\)</span></li>
+</ol></li>
+<li><p>Properties of Inverses (for <span class="math inline">\(a, b \ne 0\)</span>)</p>
+<ol style="list-style-type: lower-alpha">
+<li>If <span class="math inline">\(a \ne 0\)</span>, then <span class="math inline">\(a^{-1} \ne 0\)</span></li>
+<li><span class="math inline">\(1^{-1} = 1\)</span></li>
+<li><span class="math inline">\((a^{-1})^{-1} = a\)</span></li>
+<li><span class="math inline">\((-a)^{-1} = -(a^{-1})\)</span></li>
+<li><span class="math inline">\((ab)^{-1} = a^{-1}b^{-1}\)</span></li>
+<li><span class="math inline">\(\left( \frac{a}{b} \right)^{-1} = \frac{b}{a}\)</span></li>
+</ol></li>
+<li><p>Properties of Quotients (for nonzero denominators)</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\frac{a}{1} = a\)</span></li>
+<li><span class="math inline">\(\frac{1}{a} = a^{-1}\)</span></li>
+<li><span class="math inline">\(\frac{a}{a} = 1\)</span></li>
+<li><span class="math inline">\(\frac{a/b}{c/d} = \frac{ac}{bd}\)</span></li>
+<li><span class="math inline">\(\frac{a/b}{c/d} = \frac{ad}{bc}\)</span></li>
+<li><span class="math inline">\(\frac{ac}{bc} = \frac{a}{b}\)</span></li>
+<li><span class="math inline">\(\frac{a}{b/c} = \frac{ab}{c}\)</span></li>
+<li><span class="math inline">\(\frac{ab}{b} = a\)</span></li>
+<li><span class="math inline">\(\frac{-a}{b} = -\left( \frac{a}{b} \right) = \frac{a}{-b}\)</span></li>
+<li><span class="math inline">\(\frac{-a}{-b} = \frac{a}{b}\)</span></li>
+<li><span class="math inline">\(\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}\)</span></li>
+<li><span class="math inline">\(\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}\)</span></li>
+</ol></li>
+</ol>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-94" class="exercise"><strong>Exercise 4.1  </strong></span>Proove theroms</p>
+</div>
+</div>
+</div>
+<div id="the-order-axioms-and-axiom-of-bounds" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> The Order Axioms and Axiom of Bounds<a href="the-real-number-system-mathbbr.html#the-order-axioms-and-axiom-of-bounds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We assume the existence of a subset <span class="math inline">\(P \subseteq \mathbb{R}\)</span> with the following properties:</p>
+<p><strong>A10.</strong> For any <span class="math inline">\(a \in \mathbb{R}\)</span>, exactly one of the following holds:
+<span class="math inline">\(a \in P \text{ or }  a = 0 \text{ or } -a \in P\)</span></p>
+<p><strong>A11.</strong> If <span class="math inline">\(a, b \in P\)</span>, then <span class="math inline">\(a + b \in P\)</span> and <span class="math inline">\(a \cdot b \in P\)</span></p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-95" class="definition"><strong>Definition 4.1  </strong></span>For any <span class="math inline">\(a, b \in \mathbb{R}\)</span>, we define:
+<span class="math display">\[
+a &gt; b \quad \text{if and only if} \quad a - b \in P
+\]</span></p>
+<p>Equivalently, <span class="math inline">\(b &lt; a\)</span>.</p>
+</div>
+<p><strong>Note</strong>: Axioms A10 and A11, together with Axioms A1–A9, endow the field <span class="math inline">\((\mathbb{R}, +, \cdot)\)</span> with an order structure.<br />
+Thus, <span class="math inline">\(\mathbb{R}\)</span> becomes an <strong>ordered field</strong>.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-96" class="exercise"><strong>Exercise 4.2  </strong></span>Prove that for all <span class="math inline">\(a \in P\)</span>, we have <span class="math inline">\(a &gt; 0\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-97" class="exercise"><strong>Exercise 4.3  </strong></span>Prove that <span class="math inline">\(1 \in P\)</span>, i.e., <span class="math inline">\(1 &gt; 0\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-98" class="exercise"><strong>Exercise 4.4  </strong></span>Prove that if <span class="math inline">\(a &gt; 0\)</span>, then <span class="math inline">\(x_a &gt; 0\)</span> for all <span class="math inline">\(a \in \mathbb{R}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-99" class="theorem"><strong>Theorem 4.1  </strong></span>For any two real numbers <span class="math inline">\(a, b\)</span>, exactly one of the following holds:
+- <span class="math inline">\(a &lt; b \text{ or } b &lt; a \text{ or } a = b\)</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-100" class="theorem"><strong>Theorem 4.2  (Order Properties of Real Numbers) </strong></span>Let <span class="math inline">\(a, b, c \in \mathbb{R}\)</span>. Then:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Transitivity</strong><br />
+If <span class="math inline">\(a &lt; b\)</span> and <span class="math inline">\(b &lt; c\)</span>, then <span class="math inline">\(a &lt; c\)</span>.</p></li>
+<li><p><strong>Addition Preservation</strong><br />
+If <span class="math inline">\(a &lt; b\)</span>, then <span class="math inline">\(a + c &lt; b + c\)</span>.</p></li>
+<li><p><strong>Multiplication by Positive</strong><br />
+If <span class="math inline">\(c &gt; 0\)</span> and <span class="math inline">\(a &lt; b\)</span>, then <span class="math inline">\(a \cdot c &lt; b \cdot c\)</span>.</p></li>
+<li><p><strong>Multiplication by Negative</strong><br />
+If <span class="math inline">\(c &lt; 0\)</span> and <span class="math inline">\(a &lt; b\)</span>, then <span class="math inline">\(a \cdot c &gt; b \cdot c\)</span>.<br />
+<em>(Note: This reverses the inequality.)</em></p></li>
+</ol>
+</div>
+<p>Thanks, Ashan. Here’s a formal transcription of the image content, formatted for textbook inclusion:</p>
+<hr />
+</div>
+<div id="absolute-value" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Absolute Value<a href="the-real-number-system-mathbbr.html#absolute-value" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-101" class="definition"><strong>Definition 4.2  </strong></span>For any real number <span class="math inline">\(x\)</span>, the absolute value (or modulus) of <span class="math inline">\(x\)</span> is defined as:
+<span class="math display">\[
+|x| =
+\begin{cases}
+x, &amp; \text{if } x \geq 0 \\
+-x, &amp; \text{if } x &lt; 0
+\end{cases}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-102" class="theorem"><strong>Theorem 4.3  (Properties of Absolute Value) </strong></span>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span>. Then:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(|a| = 0 \iff a = 0\)</span></li>
+<li><span class="math inline">\(|a| \geq 0\)</span></li>
+<li><span class="math inline">\(|a| = |-a|\)</span></li>
+<li><span class="math inline">\(-|a| \leq a \leq |a|\)</span></li>
+<li>If <span class="math inline">\(b &gt; 0\)</span>, then <span class="math inline">\(|a| \leq b \iff -b \leq a \leq b\)</span></li>
+<li>If <span class="math inline">\(b &gt; 0\)</span>, then <span class="math inline">\(|a| \geq b \iff a \geq b\)</span> or <span class="math inline">\(a \leq -b\)</span></li>
+<li><span class="math inline">\(|a + b| \leq |a| + |b|\)</span></li>
+</ol>
+</div>
+<p><em>Proof</em>: Leave as a exercise</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-103" class="example"><strong>Example 4.1  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(a &lt; b\)</span> and both <span class="math inline">\(a, b &gt; 0\)</span>, then <span class="math inline">\(a^{-1} &gt; b^{-1}\)</span>.</li>
+<li><span class="math inline">\(ab &gt; 0 \iff a, b\)</span> are both positive or both negative.</li>
+<li><span class="math inline">\(ab &lt; 0 \iff\)</span> one of <span class="math inline">\(a, b\)</span> is positive and the other is negative.</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-104" class="definition"><strong>Definition 4.3  (Minimum and Maximum) </strong></span>Let <span class="math inline">\(A \subseteq \mathbb{R}\)</span> be a non-empty set.</p>
+<ul>
+<li><p>An element <span class="math inline">\(m \in A\)</span> is called the <strong>minimum</strong> of <span class="math inline">\(A\)</span> if:<span class="math inline">\(m \leq x \quad \text{for all } x \in A\)</span></p></li>
+<li><p>An element <span class="math inline">\(M \in A\)</span> is called the <strong>maximum</strong> of <span class="math inline">\(A\)</span> if:<span class="math inline">\(M \geq x \quad \text{for all } x \in A\)</span></p></li>
+</ul>
+</div>
+<p><strong>Note:</strong> If a minimum or maximum exists, it is unique.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-105" class="example"><strong>Example 4.2  </strong></span>Let <span class="math inline">\(A = \{2, -3, 8, 17, -5\}\)</span></p>
+<ul>
+<li><p><strong>Minimum of <span class="math inline">\(A\)</span></strong>:<br />
+<span class="math inline">\(\min A = -5\)</span>. (Because <span class="math inline">\(2 \geq -5,
+-3\geq -5,
+8 \geq -5,
+17\geq -5,
+-5 \geq -5\)</span>).</p></li>
+<li><p><strong>Maximum of <span class="math inline">\(A\)</span></strong>:<br />
+<span class="math inline">\(\max A = 17\)</span>. (Because <span class="math inline">\(2 \leq 17,
+-3\leq 17,
+8 \leq 17,
+17\leq 17,
+-5 \leq 17\)</span>)</p></li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-106" class="example"><strong>Example 4.3  </strong></span>Let <span class="math inline">\(A = \{1 + \frac{2}{n} \mid n \in \mathbb{N} \}\)</span></p>
+<p>This is an infinite set of real numbers:
+<span class="math display">\[
+A = \left\{1 + \frac{2}{1}, 1 + \frac{2}{2}, 1 + \frac{2}{3}, \dots \right\} = \left\{3, 2, \frac{5}{3}, \dots \right\}
+\]</span></p>
+</div>
+<!--**Maximum of \( A \)**:  
+  The largest value occurs when \( n = 1 \):  
+  \[
+  1 + \frac{2}{1} = 3
+  \]  
+  But the question says “Show that maximum of \( A \) is 2.”  
+  This is incorrect unless the set is defined differently. If instead:
+  \[
+  A = \left\{1 + \frac{1}{n} \mid n \in \mathbb{N} \right\}
+  \]
+  then the maximum is \( 2 \) (when \( n = 1 \)). Please confirm the intended definition.
+
+- **Minimum of \( A \)**:  
+  As \( n \to \infty \), \( \frac{2}{n} \to 0 \), so:
+  \[
+  \inf A = 1
+  \]
+  But there is no \( n \in \mathbb{N} \) such that \( 1 + \frac{2}{n} = 1 \), so the minimum does **not** exist in \( A \).
+-->
+<div class="definition">
+<p><span id="def:unnamed-chunk-107" class="definition"><strong>Definition 4.4  (Bounded Above) </strong></span>A non-empty set <span class="math inline">\(A \subseteq \mathbb{R}\)</span> is said to be <strong>bounded above</strong> if there exists a number <span class="math inline">\(k \in \mathbb{R}\)</span> such that:<span class="math inline">\(\forall x \in A, \quad x \leq k\)</span></p>
+<p>The number <span class="math inline">\(k\)</span> is called an <strong>upper bound</strong> of the set <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-108" class="definition"><strong>Definition 4.5  (Bounded Below) </strong></span>A non-empty set <span class="math inline">\(A \subseteq \mathbb{R}\)</span> is said to be <strong>bounded below</strong> if there exists a number <span class="math inline">\(k \in \mathbb{R}\)</span> such that:</p>
+<p><span class="math display">\[
+\forall x \in A, \quad x \geq k
+\]</span></p>
+<p>The number <span class="math inline">\(k\)</span> is called a <strong>lower bound</strong> of the set <span class="math inline">\(A\)</span>.</p>
+</div>
+<p><strong>Note:</strong>
+Let <span class="math inline">\(M \subseteq d\)</span> and <span class="math inline">\(A \subseteq \mathbb{R}\)</span>.</p>
+<ul>
+<li><p>A set <span class="math inline">\(A\)</span> is bounded above <span class="math inline">\(\underbrace{\iff}_{\text{Def}^\text{n}}
+\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \leq k\)</span></p></li>
+<li><p>A set <span class="math inline">\(A\)</span> is <strong>not</strong> bounded above <span class="math inline">\(\iff \neg (\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \leq k)\equiv\forall k \in \mathbb{R} \quad \exists x \in A, \quad x &gt; k\)</span></p></li>
+</ul>
+<div class="example">
+<p><span id="exm:unnamed-chunk-109" class="example"><strong>Example 4.4  </strong></span>Let <span class="math inline">\(A = \{ x \in \mathbb{R} \mid x \geq -7 \}\)</span> and <span class="math inline">\(B = \{ 2n + 3 \mid n \in \mathbb{N} \}\)</span></p>
+</div>
+<p><strong>Note:</strong>
+Let <span class="math inline">\(M \subseteq d\)</span> and <span class="math inline">\(A \subseteq \mathbb{R}\)</span>.</p>
+<ul>
+<li><p>A set <span class="math inline">\(A\)</span> is bounded below <span class="math inline">\(\underbrace{\iff}_{\text{Def}^\text{n}}
+\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \geq k\)</span></p></li>
+<li><p>A set <span class="math inline">\(A\)</span> is <strong>not</strong> bounded below <span class="math inline">\(\iff \neg (\exists k \in \mathbb{R} \quad \forall x \in A, \quad x \geq k)\equiv\forall k \in \mathbb{R} \quad \exists x \in A, \quad x &gt; k\)</span></p></li>
+</ul>
+<div class="definition">
+<p><span id="def:unnamed-chunk-110" class="definition"><strong>Definition 4.6  </strong></span>Let <span class="math inline">\(A \subseteq \mathbb{R}\)</span>, with <span class="math inline">\(A \neq \emptyset\)</span>.</p>
+<ul>
+<li>A set <span class="math inline">\(A\)</span> is <strong>bounded</strong> if it is both bounded above and bounded below.</li>
+<li>A set <span class="math inline">\(A\)</span> is <strong>unbounded</strong> if it is not bounded.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-111" class="definition"><strong>Definition 4.7  (Least Upper Bound (Supremum)) </strong></span>An element <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is called the <strong>least upper bound</strong> (or <strong>supremum</strong>) of <span class="math inline">\(A\)</span> if:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\lambda\)</span> is an upper bound of <span class="math inline">\(A\)</span>, i.e.,
+<span class="math display">\[
+\forall x \in A, \quad x \leq \lambda
+\]</span></li>
+<li>No upper bound of <span class="math inline">\(A\)</span> is less than <span class="math inline">\(\lambda\)</span>, i.e.,
+<span class="math display">\[
+\forall u \in \mathbb{R}, \left( \forall x \in A, \ x \leq u \right) \Rightarrow \lambda \leq u
+\]</span></li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-112" class="definition"><strong>Definition 4.8  (Greatest Lower Bound (Infimum)) </strong></span>An element <span class="math inline">\(\mu \in \mathbb{R}\)</span> is called the <strong>greatest lower bound</strong> (or <strong>infimum</strong>) of <span class="math inline">\(A\)</span> if:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mu\)</span> is a lower bound of <span class="math inline">\(A\)</span>, i.e.,
+<span class="math display">\[
+\forall x \in A, \quad x \geq \mu
+\]</span></li>
+<li>No lower bound of <span class="math inline">\(A\)</span> is greater than <span class="math inline">\(\mu\)</span>, i.e.,
+<span class="math display">\[
+\forall u \in \mathbb{R}, \left( \forall x \in A, \ x \geq u \right) \Rightarrow \mu \geq u
+\]</span></li>
+</ol>
+</div>
+</div>
+<div id="axiom-of-bound-completeness-axiom" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Axiom of Bound (Completeness Axiom)<a href="the-real-number-system-mathbbr.html#axiom-of-bound-completeness-axiom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>A12. Least Upper Bound Axiom</strong></p>
+<p>If <span class="math inline">\(A \subseteq \mathbb{R}\)</span> is non-empty and bounded above, then:</p>
+<p><span class="math display">\[
+\exists \sup A \in \mathbb{R}
+\]</span></p>
+<p>That is, every non-empty subset of <span class="math inline">\(\mathbb{R}\)</span> that is bounded above has a <strong>least upper bound</strong> (supremum) in <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><strong>A12′. Greatest Lower Bound Axiom</strong></p>
+<p>If <span class="math inline">\(A \subseteq \mathbb{R}\)</span> is non-empty and bounded below, then:</p>
+<p><span class="math display">\[
+\exists \inf A \in \mathbb{R}
+\]</span></p>
+<p>That is, every non-empty subset of <span class="math inline">\(\mathbb{R}\)</span> that is bounded below has a <strong>greatest lower bound</strong> (infimum) in <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-113" class="example"><strong>Example 4.5  </strong></span>Let <span class="math inline">\(A = \{ x \in \mathbb{R} \mid x^2 &lt; 2 \}\)</span></p>
+<ul>
+<li>This set is <strong>bounded above</strong>.</li>
+<li>The least upper bound (supremum) of <span class="math inline">\(A\)</span> is:</li>
+</ul>
+<p><span class="math display">\[
+\sup A = \lambda
+\]</span></p>
+<p>Since:</p>
+<p><span class="math display">\[
+\sqrt{2}^2 = 2 \quad \text{and} \quad \sqrt{2} \in \mathbb{R}
+\]</span></p>
+</div>
+<p>Thank you for sharing the image. Here’s a formal Markdown transcription using LaTeX notation, suitable for textbook inclusion:</p>
+<hr />
+</div>
+<div id="archimedean-property" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Archimedean Property<a href="the-real-number-system-mathbbr.html#archimedean-property" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-114" class="theorem"><strong>Theorem 4.4  (Archimedean Property) </strong></span>For all <span class="math inline">\(a \in \mathbb{R}^+\)</span> and <span class="math inline">\(b \in \mathbb{R}\)</span>, there exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that: <span class="math inline">\(na \geq b\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-19" class="proof"><em>Proof</em>. </span>Suppose the Archimedean Property is false.
+Then<span class="math inline">\(\exists a \in \mathbb{R}^+, \exists b \in \mathbb{R}, \forall n \in \mathbb{N}, \quad na \leq b\)</span></p>
+<p>Define the set <span class="math inline">\(S := \{ na \mid n \in \mathbb{N} \}\)</span></p>
+<p>Then <span class="math inline">\(b\)</span> is an upper bound of <span class="math inline">\(S\)</span>. By the completeness axiom, the supremum <span class="math inline">\(s_0 := \sup S\)</span> exists.</p>
+<p>Let <span class="math inline">\(n \in \mathbb{N}\)</span>. Then <span class="math inline">\(n + 1 \in \mathbb{N}\)</span>, and <span class="math inline">\(s_0 \geq (n + 1)a = na + a \Rightarrow s_0 - a \geq na\)</span></p>
+<p>So <span class="math inline">\(s_0 - a\)</span> is an upper bound of <span class="math inline">\(S\)</span>, but <span class="math inline">\(s_0 - a &lt; s_0\)</span></p>
+<p>This contradicts the fact that <span class="math inline">\(s_0\)</span> is the least upper bound of <span class="math inline">\(S\)</span>. Hence, the Archimedean Property holds. </p>
+</div>
+<div class="corollary">
+<p><span id="cor:unnamed-chunk-116" class="corollary"><strong>Corollary 4.1  </strong></span>For any <span class="math inline">\(x \in \mathbb{R}\)</span> with <span class="math inline">\(x &gt; 0\)</span>, there exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that <span class="math inline">\(\frac{1}{n} &lt; x\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-20" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(a = x\)</span>, <span class="math inline">\(b = 1\)</span>. Since <span class="math inline">\(a &gt; 0\)</span>, by the Archimedean Property, there exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that:</p>
+<p><span class="math display">\[
+na &gt; 1 \Rightarrow x &gt; \frac{1}{n}
+\]</span></p>
+</div>
+</div>
+<div id="concept-of-infinity-and-intervals-of-mathbbr" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Concept of Infinity and Intervals of <span class="math inline">\(\mathbb{R}\)</span><a href="the-real-number-system-mathbbr.html#concept-of-infinity-and-intervals-of-mathbbr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="concept-of-infinity" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Concept of Infinity<a href="the-real-number-system-mathbbr.html#concept-of-infinity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<center>
+<div class="float">
+<img src="fig/fig8.png" style="width:20.0%" alt="The infinity symbol is a mathematical symbol representing the concept of infinity. This symbol is also called a lemniscate," />
+<div class="figcaption">The infinity symbol is a mathematical symbol representing the concept of infinity. This symbol is also called a lemniscate,</div>
+</div>
+</center>
+<p>Infinity comes from the Latin <em>infinitas</em>, meaning “unboundedness.” It refers to several distinct concepts—usually linked to the idea of “without end.”</p>
+<ul>
+<li>We encounter infinity for the first time in school, where we meet the set:</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{N} = \{1, 2, 3, \dots\}
+\]</span></p>
+<ul>
+<li>The concept of this set can be formulated as follows:</li>
+</ul>
+<p>For each natural number <span class="math inline">\(n\)</span>, there exists a larger natural number <span class="math inline">\(n + 1\)</span>.<br />
+In other words, there does not exist a natural number that is larger than all natural numbers.<br />
+That is, there exists no largest natural number.</p>
+<p>• We are unable to write down the list of all natural
+numbers.
+• Hence, our writing is never- ending process,
+because of this we talk about infinity or
+unboundedness of natural numbers.
+• We realize that we have infinitely many natural
+numbers, but we are unable to perceive all natural
+numbers at once.
+• We have a similar situation with the idea (the notion)
+of a line in Geometry.
+• Length of any line is infinite or unbounded
+(infinitely large)
+• One can walk along a line for an arbitrarily long
+time and one never reaches the end.
+• We unable to see a whole infinite line at once.</p>
+<p>• The main problem with understanding the concept of
+infinity is that we are not capable of imagining object
+at once.
+• We are only able to see a finite fraction (part) of
+an infinite object.
+• The way out we use is to denote infinite objects
+by symbols.
+• We work with these symbols as a finite
+representation of the corresponding infinite
+objects.
+Infinity is not a number, but a concept that describes something unbounded or without limit.</p>
+<ul>
+<li><p>Infinity is not a number, but a concept that describes something <strong>unbounded</strong> or <strong>without limit</strong>.</p></li>
+<li><p>In mathematics, we denote infinity using the symbol:</p></li>
+</ul>
+<p><span class="math display">\[
+\infty
+\]</span></p>
+</div>
+<div id="infinity-in-mathbbr" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> <strong>Infinity in <span class="math inline">\(\mathbb{R}\)</span></strong><a href="the-real-number-system-mathbbr.html#infinity-in-mathbbr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(S \subseteq \mathbb{R}\)</span> be a non-empty subset.</p>
+<ul>
+<li><span class="math inline">\(S\)</span> is <strong>not bounded above</strong> if it has no upper bound.</li>
+<li><span class="math inline">\(S\)</span> is <strong>not bounded below</strong> if it has no lower bound.</li>
+</ul>
+<p>To facilitate mathematical reasoning, we adjoin two <strong>fictitious points</strong> to <span class="math inline">\(\mathbb{R}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(+\infty\)</span> (often written simply as <span class="math inline">\(\infty\)</span>)</li>
+<li><span class="math inline">\(-\infty\)</span></li>
+</ul>
+<p>These points are <strong>not elements of</strong> <span class="math inline">\(\mathbb{R}\)</span>, i.e.,</p>
+<p><span class="math display">\[
+\infty, -\infty \notin \mathbb{R}
+\]</span></p>
+<p>For any real number <span class="math inline">\(x \in \mathbb{R}\)</span>:</p>
+<p><span class="math display">\[
+-\infty &lt; x &lt; \infty
+\]</span></p>
+<p>If <span class="math inline">\(S \subseteq \mathbb{R}\)</span> is non-empty and <strong>not bounded above</strong>, we write:</p>
+<p><span class="math display">\[
+\sup S = \infty
+\]</span></p>
+<p>This notation indicates that <span class="math inline">\(S\)</span> has no finite supremum.</p>
+</div>
+<div id="intervals-in-mathbbr" class="section level3 hasAnchor" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Intervals in <span class="math inline">\(\mathbb{R}\)</span><a href="the-real-number-system-mathbbr.html#intervals-in-mathbbr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-118" class="definition"><strong>Definition 4.9  </strong></span>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a &lt; b\)</span>. We define the following intervals:</p>
+<ul>
+<li><p><strong>Bounded Intervals</strong></p>
+<ul>
+<li><p><strong>Closed Interval</strong>:
+<span class="math display">\[
+  [a, b] = \{ x \in \mathbb{R} \mid a \leq x \leq b \}
+  \]</span></p></li>
+<li><p><strong>Open Interval</strong>:
+<span class="math display">\[
+  (a, b) = \{ x \in \mathbb{R} \mid a &lt; x &lt; b \}
+  \]</span></p></li>
+<li><p><strong>Half-Open Intervals</strong>:
+<span class="math display">\[
+  (a, b] = \{ x \in \mathbb{R} \mid a &lt; x \leq b \}, \quad [a, b) = \{ x \in \mathbb{R} \mid a \leq x &lt; b \}
+  \]</span></p></li>
+</ul></li>
+</ul>
+<p>These are called <strong>bounded intervals</strong> because both endpoints <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are real numbers.</p>
+<ul>
+<li><p><strong>Unbounded Intervals</strong></p>
+<ul>
+<li><p><strong>Right-Unbounded</strong>:
+<span class="math display">\[
+  [a, \infty) = \{ x \in \mathbb{R} \mid x \geq a \}, \quad (a, \infty) = \{ x \in \mathbb{R} \mid x &gt; a \}
+  \]</span></p></li>
+<li><p><strong>Left-Unbounded</strong>:
+<span class="math display">\[
+  (-\infty, b] = \{ x \in \mathbb{R} \mid x \leq b \}, \quad (-\infty, b) = \{ x \in \mathbb{R} \mid x &lt; b \}
+  \]</span></p></li>
+<li><p><strong>Entire Real Line</strong>:
+<span class="math display">\[
+  (-\infty, \infty) = \mathbb{R}
+  \]</span></p></li>
+</ul></li>
+</ul>
+</div>
+<ul>
+<li><p><strong>Non-Emptiness of Open Intervals</strong></p>
+<p>Any open interval <span class="math inline">\((a, b)\)</span> with <span class="math inline">\(a &lt; b\)</span> is nonempty.
+For example, it contains <span class="math inline">\(\frac{a + b}{2}\)</span></p></li>
+</ul>
+<center>
+<img src="fig/fig9.png" />
+</center>
+<div class="example">
+<p><span id="exm:unnamed-chunk-119" class="example"><strong>Example 4.6  </strong></span>Write Down a Set</p>
+<ol style="list-style-type: decimal">
+<li><p>Set <span class="math inline">\(A\)</span> such that <span class="math inline">\(\sup A = \infty\)</span>, <span class="math inline">\(\inf A = 2\)</span>:
+<span class="math display">\[
+A = [2, \infty)
+\]</span></p></li>
+<li><p>Set <span class="math inline">\(B\)</span> such that <span class="math inline">\(\sup B = \infty\)</span>, <span class="math inline">\(\inf B = 1\)</span>:
+<span class="math display">\[
+B = [1, \infty)
+\]</span></p></li>
+<li><p>Set <span class="math inline">\(C\)</span> such that <span class="math inline">\(\sup C = 2\)</span>, <span class="math inline">\(\inf C = -\infty\)</span>:
+<span class="math display">\[
+C = (-\infty, 2]
+\]</span></p></li>
+<li><p>Set <span class="math inline">\(D\)</span> such that <span class="math inline">\(\sup D = \infty\)</span>, <span class="math inline">\(\inf D = -\infty\)</span>:
+<span class="math display">\[
+D = (-\infty, \infty) = \mathbb{R}
+\]</span></p></li>
+</ol>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-proofs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="set-theory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ashanjayamal/Mathematical-Logic/edit/BRANCH/03-real.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

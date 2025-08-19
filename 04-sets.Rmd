@@ -1,0 +1,253 @@
+# Set Theory
+
+
+## Introduction to Sets
+
+```{definition}
+A **set** is an unordered collection of “objects.” The objects in a set are called the **elements** or **members** of the set. A set contains its elements.
+
+- A set is usually denoted by a capital letter, say \( A \).
+- An element is usually denoted by a lowercase letter, say \( a \) or \( b \).
+- We write \( a \in A \) to mean “\( a \) is an element of \( A \).”
+- We write \( a \notin A \) to mean “\( a \) is not an element of \( A \),” i.e., \( \sim (a \in A) \).
+```
+
+```{example}
+
+- Consider the objects \( 0, 2, -3, 5 \).  
+  The collection \( \{0, 2, -3, 5\} \) is a set.  
+  The elements of this set are \( 0, 2, -3, 5 \).
+
+- Statement:  
+  \( -3 \)is a member of the set \(\{0, 2, -3, 5\} \)
+
+- Statement:  
+  \( 4 \) is not a member of the set \( \{0, 2, -3, 5\} \)
+```
+
+**Note**
+
+When we consider the collection of all integers, we obtain a set. Any integer is a member of this set. Any object that is not an integer is not a member of this set.
+
+It is not possible to write down all the integers explicitly. However, we can indicate this set using ellipsis notation:
+
+\[
+\{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}
+\]
+
+Here, the dots (\( \dots \)) represent the members that are not written down, and it is understood what they are.
+
+
+**Set-Builder Notation**
+
+- The set \( \left\{ \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right\} \) can be written as:  \(  \left\{ \frac{1}{n} \mid n \in \mathbb{N} \right\}\)
+  
+This reads: “The set whose members are \( \frac{1}{n} \), where \( n \) ranges over all natural numbers.”
+
+- The set \( \{x \mid x \in \mathbb{Z} \text{ and } x > -3\} \) is equal to \(  \{-2, -1, 0, 1, 2, 3, 4, \dots\}\)
+
+```{definition,name='Subset'}
+
+Let \( A \) and \( B \) be sets.  
+We say that \( A \) is a **subset** of \( B \), denoted \( A \subseteq B \), if and only if every element of \( A \) is also an element of \( B \).
+
+Formally: \(A \subseteq B \iff \forall x \, (x \in A \Rightarrow x \in B)\)
+```
+
+```{example}  
+Let \( A = \{1, 2, 4\} \) and \( B = \{1, 2, 3, 4\} \).  
+Then \( A \subseteq B \), but \( B \nsubseteq A \).
+```
+
+**Note**: 
+Let \( A \) be a set.  
+Then \(A = \{x \mid p(x)\} \), where \( p(x) \) is a predicate.  
+An element \( x \in A \) if and only if \( p(x) \) is true.
+
+
+
+
+```{definition,name='Proper Subset'}
+
+Let \( A \) and \( B \) be sets.  
+We say that \( A \) is a **proper subset** of \( B \), denoted \( A \subset B \), if and only if:
+
+1. \( A \subseteq B \), and  
+2. There exists an element \( x_0 \in B \) such that \( x_0 \notin A \).
+
+Formally:
+\[
+A \subset B \iff \left( \forall x \, (x \in A \Rightarrow x \in B) \right) \land \left( \exists x_0 \in B \, (x_0 \notin A) \right)
+\]
+```
+
+
+```{definition,name='Equality of Sets'}
+
+Two sets \( A \) and \( B \) are **equal**, denoted \( A = B \), if and only if:
+
+1. \( A \subseteq B \), and  
+2. \( B \subseteq A \)
+
+This is equivalent to:
+\[
+A = B \iff \forall x \, (x \in A \Leftrightarrow x \in B)
+\]
+or
+\[
+A = B \iff \left( \forall x \, (x \in A \Rightarrow x \in B) \right) \land \left( \forall x \, (x \in B \Rightarrow x \in A) \right)
+\]
+
+```
+
+```{definition ,name='Singleton Set'}
+
+A set containing exactly one element is called a **singleton set**.
+```
+
+```{definition,name='Empty Set'}
+
+The set with no elements is called the **empty set**, denoted by \( \emptyset \) or \( \{\} \).  
+Note: \( \{\emptyset\} \) is not the empty set—it is the set containing the empty set as an element.
+```
+
+
+```{example}
+
+- \( \{x \mid x \in \mathbb{Z} \text{ and } x^2 = 2\} = \emptyset \)
+- \( \{x \mid x \in \mathbb{R} \text{ and } x^2 < 0\} = \emptyset \)
+
+Observe:
+\[
+\{x \mid x \in \mathbb{Z} \text{ and } x^2 = 2\} = \{x \mid x \in \mathbb{R} \text{ and } x^2 < 0\}
+\]
+
+```
+
+```{definition,name='Power Set'}
+
+Let \( A \) be a set.  
+The **power set** of \( A \), denoted \( \mathcal{P}(A) \), is defined as:
+\[
+\mathcal{P}(A) = \{X \mid X \subseteq A\}
+\]
+That is, the set of all subsets of \( A \).
+```
+
+```{example}  
+Let \( A = \{0, 1\} \).  
+Then:
+\[
+\mathcal{P}(A) = \{\emptyset, \{0\}, \{1\}, \{0, 1\}\}
+\]
+```
+
+```{definition ,name='Universal Set'}
+
+A **universal set** is the largest set under consideration, relative to a given context. It contains all elements of the sets being discussed.
+
+- Denoted by \( U \) or \( E \)
+- Example: If we are considering subsets of \( \mathbb{R} \), then the universal set is \( \mathbb{R} \)
+```
+
+**Summary**:
+
+1. **Subset Definition**  
+   \[
+   A \subseteq B \iff \forall x \, (x \in A \Rightarrow x \in B)
+   \]
+
+2. **Non-subset**  
+   \[
+   A \nsubseteq B \iff \sim (A \subseteq B)
+   \]
+
+3. **Equality of Sets**  
+   \[
+   A = B \iff A \subseteq B \land B \subseteq A
+   \]
+
+4. **Singleton Set**  
+   Example: \(   A = \{2\}\)
+
+5. **Empty Set**  
+   \[   \emptyset,\{\}   \]
+
+6. **Power Set**  
+   \[
+   \mathcal{P}(A) = \{X \mid X \subseteq A\}
+   \]
+
+7. **Universal Set**  
+   Denoted \( E \) or \( U \)
+
+#### Set Opertaions
+
+
+##### Union
+
+Let \( A \) and \( B \) be sets.  
+The **union** of \( A \) and \( B \), denoted \( A \cup B \), is the set containing all elements that are in \( A \), in \( B \), or in both.
+
+\[
+A \cup B = \{ x \mid x \in A \lor x \in B \}
+\]
+
+**Note:**  
+\[
+x \in A \cup B \iff x \in A \lor x \in B
+\]
+
+---
+
+##### Intersection
+
+Let \( A \) and \( B \) be sets.  
+The **intersection** of \( A \) and \( B \), denoted \( A \cap B \), is the set containing all elements that are in both \( A \) and \( B \).
+
+\[
+A \cap B = \{ x \mid x \in A \land x \in B \}
+\]
+
+**Note:**  
+\[
+x \in A \cap B \iff x \in A \land x \in B
+\]
+
+---
+
+##### Complement
+
+Let \( A \subseteq E \), where \( E \) is a universal set.  
+The **complement** of \( A \), denoted \( A^c \), is the set of all elements in \( E \) that are not in \( A \).
+
+\[
+A^c = \{ x \mid x \in E \land x \notin A \}
+\]
+
+**Note:**  
+\[
+x \in A^c \iff x \in E \land x \notin A
+\]
+
+---
+
+##### **Difference**
+
+Let \( A \) and \( B \) be sets.  
+The **difference** of \( A \) and \( B \), denoted \( A \setminus B \), is the set of elements that are in \( A \) but not in \( B \).
+
+\[
+A \setminus B = \{ x \mid x \in A \land x \notin B \}
+\]
+
+**Note:**  
+\[
+x \in A \setminus B \iff x \in A \land x \notin B
+\]
+
+Also called: 
+
+- The **complement of \( B \) in \( A \)**
+- The **relative complement of \( B \) with respect to \( A \)**
+
